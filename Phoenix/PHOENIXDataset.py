@@ -104,11 +104,8 @@ class PhoenixDataset(data.Dataset):
         self.ipt_dir = ipt_dir
         self.split=split
         self.vocab_size = vocab_size
-
-        if self.split == 'train':
-          self.df = df
-        else:
-          self.df = preprocess_df(df, save=False, save_name=None)
+        self.df = preprocess_df(df, save=False, save_name=None)
+        self.original_df = df
   
         self.video_folders = list(self.df['name'])
         self.DataAugmentation = DataAugmentations()
@@ -136,16 +133,21 @@ class PhoenixDataset(data.Dataset):
         ipt_len = images.size(1)
 
         # make a one-hot vector for target class
-        trg_labels = torch.tensor(self.df.iloc[idx]['gloss_labels'], dtype=torch.int32)
+        if self.split == 'train':
+          trg_labels = torch.tensor(self.df.iloc[idx]['gloss_labels'], dtype=torch.int32)
+        else:
+          trg_labels = self.original_df.iloc[idx]['orth'].lower()
         trg_length = len(trg_labels)
+        translation = self.df.iloc[idx]['translation']
 
-        return images, ipt_len, trg_labels, trg_length
+        return images, ipt_len, trg_labels, trg_length, translation
 
     def __len__(self):
         return len(self.df)
 
+
 def collator(data):
-  ipts, ipt_lens, trgs,  trg_lens = list(zip(*data))
+  ipts, ipt_lens, trgs,  trg_lens, translations = list(zip(*data))
   max_ipt_len = max(ipt_lens)
   max_trg_len = max(trg_lens)
 
@@ -153,51 +155,38 @@ def collator(data):
   targets = torch.zeros((len(trgs), max_trg_len))
 
   for i, ipt in enumerate(ipts):
-    if ipt.size(1) > max_ipt_len:
-      batch[i] = upsample(ipt)
-    
+    if ipt.size(1) < max_ipt_len:
+      batch[i] = upsample(ipt, max_ipt_len)
+    else:
+      batch[i] = ipt
+
     pad = torch.nn.ConstantPad1d((0, max_trg_len - len(trgs[i])), value=-1)
     targets[i] = pad(trgs[i])
 
+  batch_ipt_lens = torch.ones(batch.shape[0], dtype=torch.int32) * int(torch.ceil(torch.tensor(max_ipt_len/4)))
+  batch_trg_lens = torch.tensor(trg_lens)
   
-  return batch, torch.tensor(ipt_lens, dtype=torch.int32), targets, torch.tensor(trg_lens, dtype=torch.int32)
+  return batch, batch_ipt_lens, targets, batch_trg_lens, translations
 
 
+def collator_val(data):
+  ipts, ipt_lens, trgs,  trg_lens, translations = list(zip(*data))
+  max_ipt_len = max(ipt_lens)
+  max_trg_len = max(trg_lens)
 
+  batch = torch.zeros((len(ipts), 3, max_ipt_len, 224, 224))
+  targets = torch.zeros((len(trgs), max_trg_len))
+
+  for i, ipt in enumerate(ipts):
+    if ipt.size(1) < max_ipt_len:
+      batch[i] = upsample(ipt, max_ipt_len)
+    else:
+      batch[i] = ipt
+
+    pad = torch.nn.ConstantPad1d((0, max_trg_len - len(trgs[i])), value=-1)
+    targets[i] = pad(trgs[i])
+
+  batch_ipt_lens = torch.ones(batch.shape[0], dtype=torch.int32) * int(torch.ceil(torch.tensor(max_ipt_len/4)))
+  batch_trg_lens = torch.tensor(trg_lens)
   
-"""
-from torch.utils.data import DataLoader
-
-class DataPaths:
-  def __init__(self):
-    self.phoenix_videos = '/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/features/fullFrame-210x260px'
-    self.phoenix_labels = '/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/annotations/manual'
-
-dp = DataPaths()
-test_df = pd.read_csv(os.path.join(dp.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
-PhoenixTest = PhoenixDataset(test_df, dp.phoenix_videos, vocab_size=1085, split='test')
-
-#data = [PhoenixTest.__getitem__(0), (PhoenixTest.__getitem__(1))]
-
-#ipts, ipt_lens, _, _ = list(zip(*data))
-
-#print(ipt_lens)
-#print(ipts[0].size())
-#max_len = max(ipt_lens)
-
-#D = [('1', 'hi', 5), ('2', 'hola', 4)]
-#z = zip(*D)
-#print(list(z))
-
-dataloaderTest = DataLoader(PhoenixTest, batch_size=1, 
-                                   shuffle=False,
-                                   num_workers=0,
-                                   collate_fn=collator)
-
-for (ipt, ipt_len, trg, trg_len) in dataloaderTest:
-  print("IPTT", ipt.size())
-  print(ipt_len)
-  print("TRGG", trg.size())
-  print(trg_len)
-
-"""
+  return batch, batch_ipt_lens, targets, batch_trg_lens, translations
