@@ -22,7 +22,7 @@ class cfg:
         self.visual_model_checkpoint = os.path.join(self.save_path, '/work3/s204138/bach-models/trained_models/S3D_WLASL-91_epochs-3.358131_loss_0.300306_acc')
         
         ### dimensions ###
-        self.visual_model_vocab_size = 1085
+        self.visual_model_vocab_size = 1088
         self.n_visual_features = 512
 
         ### model params ###
@@ -34,7 +34,7 @@ class cfg:
         ### training params ###
         self.verbose = True
         self.verbose_batches = True
-        self.num_workers = 1
+        self.num_workers = 8
         self.epochs = 100
         self.train_batch_size = 1
         self.val_batch_size = 1
@@ -63,7 +63,7 @@ def main():
     PhoenixTrain = PhoenixDataset(train_df, CFG.phoenix_videos, vocab_size=CFG.visual_model_vocab_size, split='train')
     PhoenixVal = PhoenixDataset(val_df, CFG.phoenix_videos, vocab_size=CFG.visual_model_vocab_size, split='dev')
     PhoenixTest = PhoenixDataset(test_df, CFG.phoenix_videos, vocab_size=CFG.visual_model_vocab_size, split='test')
-
+    
     dataloaderTrain = DataLoader(PhoenixTrain, batch_size=CFG.train_batch_size, 
                                    shuffle=True,
                                    num_workers=CFG.num_workers,

@@ -18,19 +18,31 @@ class Sign2Text(torch.nn.Module):
         self.device = CFG.device
         self.visual_model = get_visual_model(CFG.visual_model_vocab_size, CFG.visual_model_checkpoint, CFG.device)
         self.VL_mapper = get_VL_mapper(CFG.n_visual_features, CFG.device)
-        self.GL_mapper = get_GL_mapper(CFG.visual_model_vocab_size+1, CFG.device)
+        self.GL_mapper = get_GL_mapper(CFG.visual_model_vocab_size, CFG.device)
         self.language_model = TranslationModel(CFG.mbart_path, CFG.beam_width, CFG.max_seq_length, CFG.length_penalty, CFG.device)
         self.use_GL_mapper = CFG.use_GL_mapper
 
     def forward(self, x):
+        if torch.isnan(x).any():
+            print("INPUT FAILURE")
         reps, probs = self.visual_model(x)
+        if torch.isnan(reps).any() or torch.isnan(probs).any():
+            print("VISUAL FAILURE")
         visual_features_permute = reps.permute(0,2,1)
         visual_language_features = self.VL_mapper(visual_features_permute)
+        if torch.isnan(visual_language_features).any():
+            print("VL_mapper FAILURE")
         if self.use_GL_mapper:
             gloss_language_features = self.GL_mapper(probs)
+            if torch.isnan(gloss_language_features).any():
+                print("GL_mapper FAILURE")
             out = self.language_model(visual_language_features, gloss_language_features)
+            if torch.isnan(out).any():
+                print("language_model FAILURE")
         else:
             out = self.language_model(visual_language_features)
+            if torch.isnan(out).any():
+                print("language_model FAILURE")
         return out, probs
 
     def predict(self, x, skip_special_tokens = True):

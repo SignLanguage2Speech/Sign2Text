@@ -4,7 +4,7 @@ import torch.nn as nn
 import torch.optim.lr_scheduler as lr_scheduler
 from utils.get_baseline_metrics import get_baseline_metrics
 from utils.compute_metrics import compute_metrics
-
+import time
 
 def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, device):
     tokenized_targets = [tokenizer.encode(
@@ -41,6 +41,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
     losses = {}
     epoch_losses = {}
     epoch_metrics = {}
+    epoch_times = {}
 
     if CFG.verbose:
         print("\n" + "-"*20 + "Preparing Baseline Metrics" + "-"*20)
@@ -57,6 +58,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
     
     for epoch in range(CFG.epochs):
         losses[epoch] = []
+        epoch_start_time = time.time()
 
         for i, (ipt, ipt_len, trg, trg_len, trg_transl) in enumerate(dataloaderTrain):
 
@@ -78,24 +80,31 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
                     trg, 
                     input_lengths=ipt_len, 
                     target_lengths=trg_len))
+
             optimizer.zero_grad()
-            loss.backward()
-            optimizer.step()
-            scheduler.step()
-            losses[epoch].append(loss.detach().cpu().numpy())
+            if loss != loss:
+                print(f"NAN VALUE!!!! {trg_transl}")
+            else:
+                loss.backward()
+                optimizer.step()
+                scheduler.step()
+                losses[epoch].append(loss.detach().cpu().numpy())
 
             if CFG.verbose_batches and i % 500 == 0:
                 print(f"{i}/{len(dataloaderTrain)}", end="\r", flush=True)
 
         epoch_losses[epoch] = sum(losses[epoch])/len(dataloaderTrain)
         epoch_metrics[epoch] = compute_metrics(model, dataloaderVal, CFG)
+        epoch_times[epoch] = time.time() - epoch_start_time
         
         if CFG.verbose:
+
             print("\n" + "-"*50)
             print(f"EPOCH: {epoch}")
+            print(f"TIME: {epoch_times[epoch]}")
             print(f"AVG. LOSS: {epoch_losses[epoch]}")
             print(f"EPOCH METRICS: {epoch_metrics[epoch]}")
             print(f"BASELINE METRICS: {baseline_metrics}")
             print("-"*50)
 
-    return losses, epoch_losses, epoch_metrics
+    return losses, epoch_losses, epoch_metrics, epoch_times

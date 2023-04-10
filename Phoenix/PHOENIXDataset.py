@@ -155,7 +155,7 @@ def collator(data):
   targets = torch.zeros((len(trgs), max_trg_len))
 
   for i, ipt in enumerate(ipts):
-    if ipt.size(1) < max_ipt_len:
+    if ipt.size(1) < max_ipt_len: 
       batch[i] = upsample(ipt, max_ipt_len)
     else:
       batch[i] = ipt
