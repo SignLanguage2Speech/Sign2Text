@@ -5,15 +5,15 @@ import torch.nn as nn
 import torch
 
 class TranslationModel(nn.Module):
-    def __init__(self, model_path, beam_width, max_seq_length, length_penalty, device):
+    def __init__(self,CFG):
         super(TranslationModel, self).__init__()
         
-        self.device = device
-        self.tokenizer = get_tokenizer(model_path)
-        self.mbart = MBartForConditionalGeneration.from_pretrained(model_path).to(self.device) 
-        self.beam_width = beam_width
-        self.max_seq_length = max_seq_length
-        self.length_penalty = length_penalty
+        self.device = CFG.device
+        self.tokenizer = get_tokenizer(CFG.mbart_path)
+        self.mbart = MBartForConditionalGeneration.from_pretrained(CFG.mbart_path).to(CFG.device) 
+        self.beam_width = CFG.beam_width
+        self.max_seq_length = CFG.max_seq_length
+        self.length_penalty = CFG.length_penalty
 
     def generate(self, visual_language_features, gloss_language_features = None, skip_special_tokens = True):
         logits = self.forward(visual_language_features, gloss_language_features)
