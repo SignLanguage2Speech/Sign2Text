@@ -6,6 +6,8 @@ from utils.get_baseline_metrics import get_baseline_metrics
 from utils.compute_metrics import compute_metrics
 import time
 import numpy as np
+from utils.save_checkpoint import save_checkpoint
+from utils.load_checkpoint import load_checkpoint
 
 def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, device):
     tokenized_targets = [tokenizer.encode(
@@ -27,26 +29,28 @@ def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, devi
 def train(model, dataloaderTrain, dataloaderVal, CFG):
 
     loss_preds_fc = nn.CrossEntropyLoss(
-        # ignore_index = 1,
-        label_smoothing=CFG.ce_label_smoothing)
-    ctc_loss_fc = nn.CTCLoss()
+        label_smoothing=CFG.ce_label_smoothing).to(CFG.device)
+    ctc_loss_fc = torch.nn.CTCLoss(
+        blank=0, 
+        zero_infinity=True, 
+        reduction='sum').to(CFG.device)
     optimizer = optim.Adam(
         params = model.get_params(CFG), 
         lr=CFG.init_base_lr,
         betas = CFG.betas,
         weight_decay = CFG.weight_decay)
-    # scheduler = optim.lr_scheduler.CosineAnnealingLR(
-    #     optimizer, 
-    #     T_max = CFG.epochs)
-    scheduler = optim.lr_scheduler.LinearLR(
-        optimizer,
-        start_factor = 1,
-        end_factor = 0.01,
-        total_iters = CFG.epochs)
+    scheduler = optim.lr_scheduler.CosineAnnealingLR(
+        optimizer, 
+        T_max = CFG.epochs)
 
+    if CFG.load_checkpoint_path is not None:
+        print("\n" + "-"*20 + "Loading Model From Checkpoint" + "-"*20)
+        model, optimizer, scheduler, current_epoch, epoch_losses, val_b4 = load_checkpoint(CFG.load_checkpoint_path, model, optimizer, scheduler)
+        CFG.start_epoch = current_epoch
+    else:
+        epoch_losses = {}
 
     losses = {}
-    epoch_losses = {}
     epoch_metrics = {}
     epoch_times = {}
 
@@ -58,7 +62,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
     if CFG.verbose:
         print("\n" + "-"*20 + "Starting Training" + "-"*20)
     
-    for epoch in range(CFG.epochs):
+    for epoch in range(CFG.start_epoch, CFG.epochs):
         losses[epoch] = []
         epoch_start_time = time.time()
 
@@ -71,7 +75,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
                 int(np.ceil(max_ipt_len/4)), 
                 CFG.device)
 
-            preds, probs = model(ipt.to(CFG.device))
+            preds, probs = model(ipt.to(CFG.device), ipt_len)
             preds_permute = preds.permute(0,2,1)
             probs_permute = probs.permute(1, 0, 2)
 
@@ -111,10 +115,15 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             print(f"AVG. LOSS: {epoch_losses[epoch]}")
             print(f"EPOCH METRICS: {epoch_metrics[epoch]}")
             print(f"BASELINE METRICS: {baseline_metrics}")
-            print(model.predict(ipt.to(CFG.device)))
+            print(model.predict(ipt.to(CFG.device),ipt_len))
             print(trg_transl)
             print("-"*50)
 
         scheduler.step()
+
+        ### save model ### 
+        if CFG.save_checkpoints and epoch % 5 == 0:
+            save_path = CFG.save_path +  "Sign2Text_Epoch" + str(epoch+1) + "_loss_" + str(epoch_losses[epoch]) +  "_B4_" + str(epoch_metrics[epoch]["BLEU_4"])
+            save_checkpoint(save_path, model, optimizer, scheduler, epoch, epoch_losses, epoch_metrics[epoch]["BLEU_4"])
 
     return losses, epoch_losses, epoch_metrics, epoch_times

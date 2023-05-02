@@ -32,8 +32,8 @@ class Sign2Text(torch.nn.Module):
         return [{'params':self.get_language_params(), 'lr': CFG.init_lr_language_model},
             {'params':self.get_visual_params(), 'lr': CFG.init_lr_visual_model}]
 
-    def forward(self, x):
-        reps, probs = self.visual_encoder(x)
+    def forward(self, x, ipt_len):
+        probs, reps = self.visual_encoder(x, ipt_len)
         gloss_representations = self.VL_mapper(reps)
         if self.use_GL_mapper:
             gloss_language_features = self.GL_mapper(probs)
@@ -42,8 +42,8 @@ class Sign2Text(torch.nn.Module):
             out = self.language_model(gloss_representations)
         return out, probs
 
-    def predict(self, x, skip_special_tokens = True):
-        reps, probs = self.visual_encoder(x)
+    def predict(self, x, ipt_len, skip_special_tokens = True):
+        probs, reps = self.visual_encoder(x, ipt_len)
         gloss_representations = self.VL_mapper(reps)
         if self.use_GL_mapper:
             gloss_language_features = self.GL_mapper(probs)

@@ -18,7 +18,7 @@ def compute_metrics(model, dataloaderTest, CFG):
 
     example_index = np.random.randint(len(dataloaderTest))
     for j, datapoint in enumerate(dataloaderTest):
-        raw_preds = model.predict(datapoint[0].to(CFG.device))
+        raw_preds = model.predict(datapoint[0].to(CFG.device), datapoint[1])
         raw_targets = datapoint[4]
 
         for i in range(len(raw_preds)):

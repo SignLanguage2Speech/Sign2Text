@@ -19,7 +19,7 @@ def main():
     torch.backends.cudnn.deterministic = True
     
     ### initialize data ###
-    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:1]
+    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:2]
     val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')[:1]
     test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
 
