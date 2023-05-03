@@ -1,8 +1,9 @@
 import numpy as np
 import evaluate
+import torch
 
 
-def compute_metrics(model, dataloaderTest, CFG):
+def compute_metrics(model, dataloaderTest, loss_preds_fc, ctc_loss_fc, tokenize_targets, CFG):
 
     metrics = {}
     bleu = evaluate.load("bleu")
@@ -10,6 +11,7 @@ def compute_metrics(model, dataloaderTest, CFG):
     metrics[f"BLEU_2"] = 0
     metrics[f"BLEU_3"] = 0
     metrics[f"BLEU_4"] = 0
+    metrics[f"LOSS"] = 0
     rouge = evaluate.load('rouge')
     metrics["ROUGE"] = 0
 
@@ -30,10 +32,39 @@ def compute_metrics(model, dataloaderTest, CFG):
             else:
                 preds.append("@")
 
+        ipt, ipt_len, trg, trg_len, trg_transl, trg_gloss, max_ipt_len = datapoint
+
+        tokenized_trg_transl = tokenize_targets(
+            trg_transl, 
+            model.language_model.tokenizer, 
+            "de_DE", 
+            int(np.ceil(max_ipt_len/4)), 
+            CFG.device)
+
+        predicts, probs = model(ipt.to(CFG.device), ipt_len)
+        preds_permute = predicts.permute(0,2,1)
+        probs_permute = probs.permute(1, 0, 2)
+
+        trg = torch.concat([t[:trg_len[i]] for i, t in enumerate(trg)])
+        ipt_len = torch.full(size=(probs.size(0),), fill_value = probs.size(1), dtype=torch.int32)
+        
+        loss = (loss_preds_fc(
+            preds_permute, 
+            tokenized_trg_transl)
+            + 
+            ctc_loss_fc(
+                torch.log(probs_permute), 
+                trg, 
+                input_lengths=ipt_len, 
+                target_lengths=trg_len))
+
+        metrics[f"LOSS"] += loss.detach().cpu().numpy()
+
     metrics[f"BLEU_1"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 1).get("bleu")
     metrics[f"BLEU_2"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 2).get("bleu")
     metrics[f"BLEU_3"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 3).get("bleu")
     metrics[f"BLEU_4"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 4).get("bleu")
     metrics[f"ROUGE"] += rouge.compute(predictions = preds, references = [[target] for target in targets]).get("rouge1")
+    metrics[f"LOSS"] /= len(dataloaderTest)
     
     return metrics

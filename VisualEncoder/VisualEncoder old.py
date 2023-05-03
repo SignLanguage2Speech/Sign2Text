@@ -53,8 +53,8 @@ class VisualEncoder(torch.nn.Module):
         for name, param in self.head.named_parameters():
             param.requires_grad = True
 
-    def forward(self, x, vid_lens=None):
-        x, _ = self.backbone(x, video_lens=None)
+    def forward(self, x, vid_lens):
+        x, mask = self.backbone(x, vid_lens)
         gloss_probs, gloss_reps = self.head(x, None)
         return gloss_probs, gloss_reps
     

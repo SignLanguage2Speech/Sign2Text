@@ -29,6 +29,7 @@ def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, devi
 def train(model, dataloaderTrain, dataloaderVal, CFG):
 
     loss_preds_fc = nn.CrossEntropyLoss(
+        ignore_index = 1,
         label_smoothing=CFG.ce_label_smoothing).to(CFG.device)
     ctc_loss_fc = torch.nn.CTCLoss(
         blank=0, 
@@ -82,16 +83,15 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             trg = torch.concat([t[:trg_len[i]] for i, t in enumerate(trg)])
             ipt_len = torch.full(size=(probs.size(0),), fill_value = probs.size(1), dtype=torch.int32)
             
-            with torch.backends.cudnn.flags(enabled=False):
-                loss = (loss_preds_fc(
-                    preds_permute, 
-                    tokenized_trg_transl)
-                    + 
-                    ctc_loss_fc(
-                        torch.log(probs_permute), 
-                        trg, 
-                        input_lengths=ipt_len, 
-                        target_lengths=trg_len))
+            loss = (loss_preds_fc(
+                preds_permute, 
+                tokenized_trg_transl)
+                + 
+                ctc_loss_fc(
+                    torch.log(probs_permute), 
+                    trg, 
+                    input_lengths=ipt_len, 
+                    target_lengths=trg_len))
 
             optimizer.zero_grad()
             loss.backward()
@@ -104,7 +104,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
         with torch.no_grad():
             model.eval()
             epoch_losses[epoch] = sum(losses[epoch])/len(dataloaderTrain)
-            epoch_metrics[epoch] = compute_metrics(model, dataloaderVal, CFG)
+            epoch_metrics[epoch] = compute_metrics(model, dataloaderVal, loss_preds_fc, ctc_loss_fc, tokenize_targets, CFG)
             epoch_times[epoch] = time.time() - epoch_start_time
             model.train()
         

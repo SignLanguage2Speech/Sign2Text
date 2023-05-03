@@ -10,8 +10,8 @@ class HeadNetwork(nn.Module):
         self.residual_connection = CFG.residual_connection
 
         self.fc1 = nn.Linear(CFG.input_size, CFG.hidden_size)
-        #self.bn1 = MaskedNorm(num_features=CFG.hidden_size, norm_type='batch') #nn.BatchNorm1d(num_features=CFG.hidden_size)
-        self.bn1 = nn.BatchNorm1d(num_features=CFG.hidden_size)
+        self.bn1 = MaskedNorm(num_features=CFG.hidden_size, norm_type='batch') #nn.BatchNorm1d(num_features=CFG.hidden_size)
+        self.bn11 = nn.BatchNorm1d(num_features=CFG.hidden_size)
         self.relu1 = nn.ReLU()
 
         self.PE = PositionalEncoding(d_model=CFG.hidden_size, N=10000)
@@ -43,16 +43,18 @@ class HeadNetwork(nn.Module):
         # Head
         x = self.fc1(x)
         if mask is not None:
+
             x = self.bn1(x.transpose(1, 2), mask) # N x 512 x T/4
             x = self.relu1(x)
-            x = self.PE(x) # N x T/4 x 512
+            x = self.PE(x)
         else:
-            x = self.bn1(x.transpose(1, 2))
+            x = self.bn11(x.transpose(1, 2))
             x = self.relu1(x)
-            x = self.PE(x.transpose(1, 2)) # N x T/4 x 512
-
-        x = self.dropout1(x)
-
+            x = self.PE(x.transpose(1, 2))
+        #x = self.PE(x.transpose(1, 2)) # N x T/4 x 512
+        #x = self.PE(x) # N x 512 x T/4
+        #x = self.dropout1(x)
+        
         # temporal convolutional block
         if self.residual_connection:
             gloss_reps = self.temp_conv_block(self.layer_norm1(x).transpose(1, 2)).transpose(1, 2) + x 
@@ -60,6 +62,6 @@ class HeadNetwork(nn.Module):
             gloss_reps = self.temp_conv_block(self.layer_norm1(x).transpose(1, 2)).transpose(1, 2)
 
         # gloss translation layer
-        logits = self.translation_layer(self.layer_norm2(gloss_reps)) # N x vocab_size
+        logits = self.translation_layer(self.layer_norm2(gloss_reps))
         gloss_probs = self.Softmax(logits)
         return gloss_probs, gloss_reps

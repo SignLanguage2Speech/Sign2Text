@@ -288,3 +288,13 @@ BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319,
 ['', '', '', '']
 ['dazu weht ein schwacher bis mäßiger südwind', 'und der letzte sommertag sozusagen wird sich auch morgen mit wenig sommerlichen temperaturen vor allen dingen im norden verabschieden', 'am sonntag im norden nur wenig regen richtung süden scheint oft die sonne', 'heute nacht regnet oder schneit es noch im äußersten osten und südosten']
 --------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 26
+TIME: 2177.0232968330383
+AVG. LOSS: 6.600871267555263
+EPOCH METRICS: {'BLEU_1': 0.0, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'ROUGE': 0.0, 'EXAMPLE': 'pred: , target: am tag minus sieben grad im vogtland und null grad an der ostsee'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.23383719770483652}
+['', '', '', '']
+['heute nacht werte zwischen sieben und ein grad am tag dann acht grad im vogtland und fünfzehn grad am oberrhein', 'am donnerstag ziehen über die nordhälfte wolken vereinzelt regnet es etwas sonst sonnenschein', 'am donnerstag weiten sich in der nordwesthälfte wieder regenwolken aus und am freitag wird es überall wechselhaft', 'und morgen die sonne ziemlich ungerecht verteilt']
+--------------------------------------------------

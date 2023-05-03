@@ -1,3 +1,4 @@
+import glob
 import torch
 import torch.nn as nn
 
@@ -26,18 +27,13 @@ class WeightsLoader:
         
     
     def load(self, verbose=True):
-        try:
-            weight_type = None
-            weights = torch.load(self.weight_filename, map_location='cpu')['model_state_dict']
-            if "wlasl" in self.weight_filename.lower():
-                weight_type = 'WLASL'
-            elif "phoenix" in self.weight_filename.lower():
-                weight_type = 'PHOENIX'
-        except:
-            weights = torch.load('weights/Kinetics/S3D_kinetics400.pt')
-            weight_type = "Kinetics"
-        
-    
+        weight_type = None
+        weights = torch.load(self.weight_filename, map_location='cpu')['model_state_dict']
+
+        if "wlasl" in self.weight_filename.lower():
+            weight_type = 'WLASL'
+        elif "phoenix" in self.weight_filename.lower():
+            weight_type = 'PHOENIX'
         print(f"Loading {weight_type} weights")
         for name, param in weights.items():
             #print("name: ", name)
