@@ -2,7 +2,7 @@ import os
 import torch
 import pandas as pd
 from Sign2Text.Sign2Text import Sign2Text
-from configs.VisualEncoder_config import VisualEncoder_cfg
+from configs.VisualEncoderConfig import cfg as VisualEncoder_cfg
 from configs.Sign2Text_config import Sign2Text_cfg
 from configs.Training_config import Training_cfg
 from train_datasets.PHOENIXDataset import PhoenixDataset, collator, DataAugmentations
@@ -16,11 +16,10 @@ def main():
     VE_CFG = VisualEncoder_cfg()
     S2T_CFG = Sign2Text_cfg()
     T_CFG = Training_cfg()
-    torch.backends.cudnn.deterministic = True
     
     ### initialize data ###
-    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:2]
-    val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')[:1]
+    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:1]
+    val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')
     test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
 
     ### initialize data ###

@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
-from model.Sign2Text.VisualEncoder.S3D.model import S3D
-from model.Sign2Text.VisualEncoder.utils import WeightsLoader
+from VisualEncoder.S3D.model import S3D
+from VisualEncoder.utils import WeightsLoader
 import pdb
 
 class S3D_backbone(S3D):
@@ -35,9 +35,9 @@ class S3D_backbone(S3D):
             for name, param in self.base[i].named_parameters():
                 param.requires_grad = False
     
-    def forward(self, x, video_lens=None):
+    def forward(self, x, video_lens):
         B, C, T_ipt, H, W = x.shape
-        mask = None
+
         x = self.base(x)
         if self.CFG.use_block == 5:
             x = F.avg_pool3d(x, (2, x.size(3), x.size(4)), stride=1)
@@ -47,13 +47,11 @@ class S3D_backbone(S3D):
         x = torch.mean(x, dim=[3, 4])
         x = x.transpose(1, 2)
         
-        if video_lens is not None:
-            T_out = x.size(1)
-            mask = torch.zeros(x.size(0), 1, T_out, dtype=bool, device=x.device)
-            actual_temporal_lens = torch.ceil(video_lens*T_out/T_ipt).to(torch.long)
-            # loop over batches
-            for b in range(mask.size(0)):
-                mask[b, :, :actual_temporal_lens[b]] = True
-                    
+        T_out = x.size(1)
+        mask = torch.zeros(x.size(0), 1, T_out, dtype=bool, device=x.device)
+        actual_temporal_lens = torch.ceil(video_lens*T_out/T_ipt).to(torch.long)
+        # loop over batches
+        for b in range(mask.size(0)):
+            mask[b, :, :actual_temporal_lens[b]] = True
         
         return x, mask

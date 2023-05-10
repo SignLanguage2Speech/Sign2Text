@@ -1,6 +1,6 @@
-from model.Sign2Text.VisualEncoder.HeadNetwork import HeadNetwork
-from model.Sign2Text.VisualEncoder.S3D_backbone import S3D_backbone
-from model.Sign2Text.VisualEncoder.utils import WeightsLoader
+from VisualEncoder.HeadNetwork import HeadNetwork
+from VisualEncoder.S3D_backbone import S3D_backbone
+from VisualEncoder.utils import WeightsLoader
 import torch
 
 class VisualEncoder(torch.nn.Module):
@@ -53,8 +53,8 @@ class VisualEncoder(torch.nn.Module):
         for name, param in self.head.named_parameters():
             param.requires_grad = True
 
-    def forward(self, x, vid_lens=None):
-        x, _ = self.backbone(x, video_lens=None)
+    def forward(self, x, vid_lens):
+        x, mask = self.backbone(x, vid_lens)
         gloss_probs, gloss_reps = self.head(x, None)
         return gloss_probs, gloss_reps
     
