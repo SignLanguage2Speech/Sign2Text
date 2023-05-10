@@ -10,27 +10,24 @@ from utils.save_checkpoint import save_checkpoint
 from utils.load_checkpoint import load_checkpoint
 
 def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, device):
-    tokenized_targets = [tokenizer.encode(
+    tokenized_targets = [[tokenizer.lang_code_to_id["de_DE"]] + tokenizer.encode(
         target_text,
         add_special_tokens=False,
     ) + [tokenizer.eos_token_id] for target_text in target_texts]
 
-    # Add the [lang_code] token at the beginning of each target text
-    tokenized_targets = [[tokenizer.lang_code_to_id[target_lang_code]] + target_text for target_text in tokenized_targets]
-
     # Pad the tokenized target texts to a maximum length
     padded_targets = torch.ones((len(target_texts), max_length), dtype=torch.long) * tokenizer.pad_token_id
     for i, target in enumerate(tokenized_targets):
-        length = min(len(target), max_length)
-        padded_targets[i, :length] = torch.tensor(target[:length])
+        length = len(target)
+        padded_targets[i, :length] = torch.tensor(target[:])
     
     return padded_targets.to(device)
 
 def train(model, dataloaderTrain, dataloaderVal, CFG):
 
     loss_preds_fc = nn.CrossEntropyLoss(
-        ignore_index = 1,
-        label_smoothing=CFG.ce_label_smoothing).to(CFG.device)
+        ignore_index = model.language_model.tokenizer.pad_token_id,
+        label_smoothing = CFG.ce_label_smoothing).to(CFG.device)
     ctc_loss_fc = torch.nn.CTCLoss(
         blank=0, 
         zero_infinity=True, 
@@ -73,16 +70,16 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
                 trg_transl, 
                 model.language_model.tokenizer, 
                 "de_DE", 
-                int(np.ceil(max_ipt_len/4)), 
+                model.language_model.max_seq_length, 
                 CFG.device)
 
-            preds, probs = model(ipt.to(CFG.device), ipt_len)
+            preds, probs = model(ipt.to(CFG.device), tokenized_trg_transl, ipt_len)
             preds_permute = preds.permute(0,2,1)
             probs_permute = probs.permute(1, 0, 2)
 
             trg = torch.concat([t[:trg_len[i]] for i, t in enumerate(trg)])
             ipt_len = torch.full(size=(probs.size(0),), fill_value = probs.size(1), dtype=torch.int32)
-            
+
             loss = (loss_preds_fc(
                 preds_permute, 
                 tokenized_trg_transl)
@@ -95,7 +92,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
 
             optimizer.zero_grad()
             loss.backward()
-            optimizer.step() 
+            optimizer.step()
             losses[epoch].append(loss.detach().cpu().numpy())
 
             if CFG.verbose_batches and i % 500 == 0:
@@ -106,6 +103,9 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             epoch_losses[epoch] = sum(losses[epoch])/len(dataloaderTrain)
             epoch_metrics[epoch] = compute_metrics(model, dataloaderVal, loss_preds_fc, ctc_loss_fc, tokenize_targets, CFG)
             epoch_times[epoch] = time.time() - epoch_start_time
+            train_pred = model.predict(ipt.to(CFG.device),ipt_len,skip_special_tokens = True)
+            train_for = model.language_model.tokenizer.batch_decode(torch.argmax(preds_permute, dim=1),skip_special_tokens=True)
+            train_target = model.language_model.tokenizer.batch_decode(tokenized_trg_transl, skip_special_tokens=True)
             model.train()
         
         if CFG.verbose:
@@ -115,14 +115,15 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             print(f"AVG. LOSS: {epoch_losses[epoch]}")
             print(f"EPOCH METRICS: {epoch_metrics[epoch]}")
             print(f"BASELINE METRICS: {baseline_metrics}")
-            print(model.predict(ipt.to(CFG.device),ipt_len))
-            print(trg_transl)
+            print(train_pred)
+            print(train_for)
+            print(train_target)
             print("-"*50)
 
         scheduler.step()
 
         ### save model ### 
-        if CFG.save_checkpoints and epoch % 5 == 0:
+        if CFG.save_checkpoints and epoch % 3 == 0:
             save_path = CFG.save_path +  "Sign2Text_Epoch" + str(epoch+1) + "_loss_" + str(epoch_losses[epoch]) +  "_B4_" + str(epoch_metrics[epoch]["BLEU_4"])
             save_checkpoint(save_path, model, optimizer, scheduler, epoch, epoch_losses, epoch_metrics[epoch]["BLEU_4"])
 

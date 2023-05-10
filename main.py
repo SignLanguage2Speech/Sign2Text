@@ -16,11 +16,10 @@ def main():
     VE_CFG = VisualEncoder_cfg()
     S2T_CFG = Sign2Text_cfg()
     T_CFG = Training_cfg()
-    torch.backends.cudnn.deterministic = True
     
     ### initialize data ###
     train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:1]
-    val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')[:1]
+    val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')
     test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
 
     ### initialize data ###

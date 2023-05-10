@@ -1,0 +1,350 @@
+Mon May  8 14:34:46 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
+| N/A   42C    P0               48W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+Loading entire state dict directly...
+Succesfully loaded
+Freezing up to block 4 in S3D backbone
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+
+--------------------------------------------------
+EPOCH: 0
+TIME: 1564.6916708946228
+AVG. LOSS: 38.024506886620934
+EPOCH METRICS: {'BLEU_1': 0.006347763988554448, 'BLEU_2': 0.0033655716528351236, 'BLEU_3': 0.0016500925150072802, 'BLEU_4': 0.0008289714558490628, 'LOSS': 15.032220983780878, 'ROUGE': 0.14042149013839125, 'EXAMPLE': 'pred: am sonn grad im norden und bisz, target: auch am sonntag ist es neben wolkenfeldern teilweise freundlich und trocken bei minus fünf bis plus zwei grad'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', '', 'heute nacht', '']
+['im süden schwacher wind sonst weht er teilweise mäßig an der nordsee auch frisch', 'die nächsten tage eigentlich ganz genauso freitag also schauriges und windiges wetter in norddeutschland', 'heute nacht fallen in der osthälfte zunächst noch einzelne schauer die aber abklingen verbreitet ist es klar', 'am dienstag in der nordosthälfte viel sonne von südwesten kommt regen auf teilweise ist es windig']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 1
+TIME: 1746.9450800418854
+AVG. LOSS: 31.81185488448202
+EPOCH METRICS: {'BLEU_1': 0.018640440267335814, 'BLEU_2': 0.010416081337530811, 'BLEU_3': 0.005823769501851144, 'BLEU_4': 0.0031562855273993065, 'LOSS': 15.03617152588905, 'ROUGE': 0.17964677964709402, 'EXAMPLE': 'pred: auch am sam es im norden, target: am samstag im norden und südosten regen dabei ist es teilweise windig'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['es wird', '', 'an', 'und']
+['am wochenende bleibt es wechselhaft in manchen regionen fällt schnee in den niederungen auch regen', 'heute nacht plus vier bis minus drei grad vorsicht wegen glätte', 'am tag zehn grad an den alpen und minus ein grad im nordwesten', 'und nun die wettervorhersage für morgen montag den dreiundzwanzigsten november']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 2
+TIME: 1755.1899302005768
+AVG. LOSS: 29.890192974514193
+EPOCH METRICS: {'BLEU_1': 0.041658971538833564, 'BLEU_2': 0.020040901453746884, 'BLEU_3': 0.009475689577874811, 'BLEU_4': 0.0038860949804088323, 'LOSS': 15.658198164147908, 'ROUGE': 0.2038877917358169, 'EXAMPLE': 'pred: liebe zu, target: liebe zuschauer guten abend'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'morgen', '', '']
+['morgen deutlich kühlere achtzehn bis dreiundzwanzig am main bis vierundzwanzig grad', 'und morgen er flaut ein bisschen ab der sturm windstärke etwa sechs bis acht', 'am wochenende sorgen dann noch mildere luft und viel wind gebietsweise für zweistellige plusgrade', 'heute nacht von der nordsee bis zum niederrhein drei bis fünf grad sonst verbreitet werte um den gefrierpunkt']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 3
+TIME: 1778.6199915409088
+AVG. LOSS: 29.982971799682737
+EPOCH METRICS: {'BLEU_1': 0.10071805295217719, 'BLEU_2': 0.04439314781439753, 'BLEU_3': 0.020603303754998897, 'BLEU_4': 0.010151007409255956, 'LOSS': 15.209907202821705, 'ROUGE': 0.2488996652528172, 'EXAMPLE': 'pred: heute nacht grad an am alpen undr, target: in der nacht fünf grad an der nordfriesischen küste und minus vier grad an den alpen'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['und norden schauer', 'am son es im westen', 'und das sich wolken über', 'heute nacht ist est']
+['im nordosten morgen stellenweise schauer im süden auch kräftige gewitter', 'am sonntag ist es in der westhälfte teils sonnig teils wolkig auch einige unwetterartige gewitter sind dabei', 'es zieht über die nordsee richtung südskandinavien aber die dicken wolken überqueren uns mit zum teil kräftigen regen und wie gesagt sturmböen', 'und die nacht wird kühl dort wo es aufklart auf jeden fall unter zehn grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 4
+TIME: 1744.9469590187073
+AVG. LOSS: 29.889681928187372
+EPOCH METRICS: {'BLEU_1': 0.012914485340348066, 'BLEU_2': 0.0051658622428801156, 'BLEU_3': 0.0020816996445776345, 'BLEU_4': 0.0, 'LOSS': 15.425870641348219, 'ROUGE': 0.14441569900996065, 'EXAMPLE': 'pred: morgen, target: morgen dann eigentlich recht freundlich in norddeutschland'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'es', '', '']
+['und nun die wettervorhersage für morgen freitag den siebten oktober', 'und nun die wettervorhersage für morgen mittwoch den dreißigsten september', 'dort morgen bis siebzehn bei dauerregen nur kühle acht bis zehn grad', 'vor allem in der südosthälfte kann es mitunter leicht schneien']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 5
+TIME: 1771.1768987178802
+AVG. LOSS: 29.831284011230125
+EPOCH METRICS: {'BLEU_1': 0.07158637834771203, 'BLEU_2': 0.028168881859330093, 'BLEU_3': 0.009504825652131007, 'BLEU_4': 0.003458370899950492, 'LOSS': 15.03585761314642, 'ROUGE': 0.17331971753716868, 'EXAMPLE': 'pred: am imstenen freundlich, target: im laufe des tages wird es in der westhälfte freundlicher mit sonnigen abschnitten'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['o', 'amhn grad', 'auch sch', 'auchwechselwechsel']
+['richtung osten und süden ist es klar oder nur leicht bewölkt stellenweise bildet sich nebel', 'am tag siebzehn grad im raum köln und sieben grad an der ostsee', 'richtung osten immer noch etwas schnee anfangs dann aber auch regen anfangs auch noch glättegefahr', 'auch am montag unbeständiges wetter teilweise regnet es kräftig auch gewitter sind mit dabei']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 6
+TIME: 1794.4935977458954
+AVG. LOSS: 29.656594844385896
+EPOCH METRICS: {'BLEU_1': 0.13239698859621848, 'BLEU_2': 0.03838918978536512, 'BLEU_3': 0.010103180897560795, 'BLEU_4': 0.0, 'LOSS': 15.152535381574392, 'ROUGE': 0.16683244986594753, 'EXAMPLE': 'pred: von imsten nordwest, target: im westen und nordwesten beruhigt sich später das wetter'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['und nun', 'der wind schw schw schw schw bis bis aus aus aus aus aus aus aus aus aus aus aus aus aus aus aus aus aus aus aus', 'und es wird', 'hhhhhhhhh']
+['und nun die wettervorhersage für morgen donnerstag den dreiundzwanzigsten juli', 'der wind kommt aus ost im norden weht er schwach bis mäßig sonst meist nur schwach', 'für uns leider nicht in sicht obwohl die landwirtschaft darunter stöhnt unter der trockenheit', 'dort morgen sechzehn bis achtzehn grad im südwesten bis siebenundzwanzig grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 7
+TIME: 1810.6591725349426
+AVG. LOSS: 29.47317639036942
+EPOCH METRICS: {'BLEU_1': 0.13005610891121058, 'BLEU_2': 0.045151934335245614, 'BLEU_3': 0.012863388901954598, 'BLEU_4': 0.0, 'LOSS': 15.184429186157638, 'ROUGE': 0.15545221839007364, 'EXAMPLE': 'pred: liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe liebe, target: liebe zuschauer guten abend'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['am tag im im nord der', 'im wird wird', 'amch und im der nord nord an', '']
+['am tag zehn grad an der nordsee einundzwanzig grad im breisgau', 'auch im westen wird es wieder freundlich', 'am mittwoch gebietsweise schneefall der vor allem an der ostsee auch kräftig sein kann', 'am wochenende und auch zu beginn der neuen woche kann die zwanzig grad marke zumindest im süden geknackt werden']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 8
+TIME: 1974.095134973526
+AVG. LOSS: 29.086969369428132
+EPOCH METRICS: {'BLEU_1': 0.035410282601293835, 'BLEU_2': 0.008869933152786343, 'BLEU_3': 0.002114864893553088, 'BLEU_4': 0.0, 'LOSS': 15.089095875477286, 'ROUGE': 0.07630161428097396, 'EXAMPLE': 'pred: im im sch sch sch sch sch sch sch sch sch sch sch sch gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef gef, target: von westen breitet sich teils schnee teils regen aus auch gefrierender regen ist in der nacht dabei und es muss mit gefährlicher glätte gerechnet werden'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'und und nun nun we we we wettervors für für für für für für für für für für für für für für morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen', 'und we wevor für für für für für für für für', 'imen son son son son wol wol wol wol wol wol wolkenkenkenkenkenken']
+['am sonntag regnet es im südosten teilweise sonst neben wolken auch freundliche momente', 'und nun die wettervorhersage für morgen sonntag den siebenundzwanzigsten januar', 'und nun die wettervorhersage für morgen samstag den sechsten november', 'am montag recht ruhiges winterwetter sonne dichte wolken teilweise nebel aber trocken']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 9
+TIME: 1938.6672790050507
+AVG. LOSS: 28.69827291070407
+EPOCH METRICS: {'BLEU_1': 0.033200240660723086, 'BLEU_2': 0.007487914227678364, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.267398256327604, 'ROUGE': 0.06470242091039982, 'EXAMPLE': 'pred: im süd süd süd süd süd süd süd morgen morgen morgen morgen minus minus minus minus minus minus minus minus minus minus minus grad grad grad grad grad grad grad, target: im südosten schneit es etwas sonst ist es trocken bei minus acht bis plus ein grad'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen temperaturen', 'auch auch auch', 'sch sch sch sch sch sch sch sch sch sch sch sch', 'auch auch am sch sch sch sch sch']
+['das etwas mildere temperaturen niveau entspricht durchaus der jahreszeit', 'bei auflandigem wind an der ostsee morgen angenehme dreiundzwanzig grad im südwesten bis zweiunddreißig grad', 'gewarnt wird vor neuschnee und schneeverwehungen', 'am freitag gibt es weitere schneefälle im nordwesten bleibt es dabei teilweise trocken bei werten zwischen minus sieben und null grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 10
+TIME: 2028.9733457565308
+AVG. LOSS: 28.976291851637193
+EPOCH METRICS: {'BLEU_1': 0.025366958920303415, 'BLEU_2': 0.005773973698899615, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.291593483188018, 'ROUGE': 0.044361897743595405, 'EXAMPLE': 'pred: , target: morgen regnet es vor allem noch in der südosthälfte'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['heute heute heute heute heute heute heute heute heute noch noch noch noch noch noch', 'morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen', 'im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im im', '']
+['es ist eine milde nacht und morgen haben wir dann immer noch dichte wolken bewölkung hier im nordwesten und an den küsten immer wieder gibt es regenschauer', 'und nun die wettervorhersage für morgen montag den zehnten august', 'am oberrhein heute nacht ein grad plus an der oder minus sieben grad', 'von der temperatur her im süden sind es so zwanzig bis dreiundzwanzig grad im küstenbereich siebzehn achtzehn grad und sonst so neunzehn bis zweiundzwanzig grad also ganz angenehm']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 11
+TIME: 2058.5662121772766
+AVG. LOSS: 28.997687884086687
+EPOCH METRICS: {'BLEU_1': 0.025689534999502148, 'BLEU_2': 0.007600503045630563, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 14.918919708457755, 'ROUGE': 0.038059615861189056, 'EXAMPLE': 'pred: das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das, target: erst in der kommenden woche macht sich wieder wärmere luft bemerkbar'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['heute heute heute heute heute heute heute', '', '', '']
+['in der nacht schneit es stellenweise im westen nur leicht sonst auch mal kräftiger', 'an der nordsee morgen dreiundzwanzig am oberrhein bis neunundzwanzig grad', 'in der nacht werden die wolken von westen dichter regenschauer breiten sich aus teilweise sind gewitter dabei', 'und in den nächsten tagen naa']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 12
+TIME: 2070.640385866165
+AVG. LOSS: 28.44393130703467
+EPOCH METRICS: {'BLEU_1': 0.019735921242943124, 'BLEU_2': 0.004005295941445701, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 14.977285200460798, 'ROUGE': 0.026126541561585337, 'EXAMPLE': 'pred: , target: morgen teils dicht bewölkt teils sonnig wobei sich die sonne im osten am häufigsten zeigt'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf', '', 'am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das']
+['vor allem auf den bergen sowie an der küste orkanartige böen', 'heute nacht gibt es einzelne schneeschauer im westen und in der mitte kann es später kräftiger schneien in den niederungen ist auch schneeregen dabei', 'am montag teilweise kräftige schauer und gewitter die unwetterartig ausfallen können im norden ist es sehr windig', 'und nun die wettervorhersage für morgen donnerstag den vierundzwanzigsten januar']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 13
+TIME: 2100.9136066436768
+AVG. LOSS: 28.295040135991076
+EPOCH METRICS: {'BLEU_1': 0.01693531932258722, 'BLEU_2': 0.0033610716569704453, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.021631812314308, 'ROUGE': 0.025867895099017425, 'EXAMPLE': 'pred: , target: in der nacht lockert es hier und da auf stellenweise kann sich nebel oder hochnebel bilden'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab ab', 'und und die dievorvorvorageageageage morgen morgen morgen morgen morgen morgen morgen', 'sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst', 'ab ab ab ab ab ab ab ab ab']
+['allerdings geht es gleich schon wieder ungemütlich weiter das nächste tief holt uns ein bringt uns wieder viele wolken regen und nasskaltes wetter', 'und nun die wettervorhersage für morgen samstag den siebzehnten april', 'sonst regnet es hier und da im bergland auch schnee', 'am dienstag richtung ostsee und an den alpen etwas mehr sonne']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 14
+TIME: 2083.818492412567
+AVG. LOSS: 28.468352364042296
+EPOCH METRICS: {'BLEU_1': 0.016578514600648925, 'BLEU_2': 0.0024564275383926115, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.207271704094948, 'ROUGE': 0.023416903255419553, 'EXAMPLE': 'pred: nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun, target: und nun die wettervorhersage für morgen dienstag den sechsten april'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['am am am am am am am am amggggggggggggggg', 'das das das das das das das das das das das', 'ckenckenckenckenckenckenckenckenckenckenckenckenckenckencken tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro tro', 'das das das das das das das das das das das das das das das das das das das']
+['am montag besonders im osten und süden noch regen sonst wird es langsam wieder freundlicher', 'im norden und westen sind die temperaturen noch ein bisschen verhalten da sind es siebzehn bis dreiundzwanzig grad', 'aber es bleibt meist trocken', 'am tag breiten sich die regenfälle über weite teile des landes aus vor allem im westen regnet es zum teil kräftig']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 15
+TIME: 2073.3675718307495
+AVG. LOSS: 27.82775939411348
+EPOCH METRICS: {'BLEU_1': 0.016297075129038427, 'BLEU_2': 0.00296403192370876, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.34284474394914, 'ROUGE': 0.022922904630312095, 'EXAMPLE': 'pred: das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das, target: hinter dem tief fließt polare kaltluft heran die für schnee und glättegefahr sorgt'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'amstagstagstagstagstagstagstagstag nord nord nord nord nord nord nord', 'das das das das das das das das das das das das das das das das das das das das das das das', 'dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei']
+['und auch diese temperaturen sind noch so nah am gefrierpunkt dass es oft glatt sein kann auf gehwegen und straßen', 'am donnerstag wechselhaftes wetter einzelne schauer im norden viel wind', 'so bleibt es nicht ganz', 'im bergland rieselt auch schnee']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 16
+TIME: 2074.805339574814
+AVG. LOSS: 27.444377868527624
+EPOCH METRICS: {'BLEU_1': 0.016344854639759408, 'BLEU_2': 0.0014787495187165581, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.254871522760116, 'ROUGE': 0.02529978322650371, 'EXAMPLE': 'pred: , target: in der mitte und im norden regnet es heute nacht vereinzelt etwas'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und', 'schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw', 'morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen', '']
+['und nun die wettervorhersage für morgen montag den elften januar', 'am tag weht der wind schwach bis mäßig im norden frisch an den küsten stürmische böen', 'morgen bleibt es kalt in bayern mit höchstwerten zwischen ein und drei grad', 'und nun die wettervorhersage für morgen dienstag den elften januar']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 17
+TIME: 2077.706084251404
+AVG. LOSS: 27.167989535423114
+EPOCH METRICS: {'BLEU_1': 0.015055941802108758, 'BLEU_2': 0.004459283143480412, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 14.942258976787501, 'ROUGE': 0.019172874955235498, 'EXAMPLE': 'pred: am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei frei, target: freitag und samstag im norden sehr windiges regenwetter im süden freundlicher und meist trocken'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf auf', '', 'das das das das das das das das das das', 'süd süd süd süd süd süd süd süd süd süd süd süd süd süd süd süd süd']
+['auf den nordseeinseln bis elf grad', 'am tag dreizehn grad bei dauerregen im süden bis fünfundzwanzig grad an der oder', 'ein atlantischer tiefausläufer lenkt dann am sonntag von nordwesten schauer und gewitterwolken heran', 'im südwesten einige schauer und im gesamten nordwesten ganz freundlich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 18
+TIME: 2106.2296667099
+AVG. LOSS: 27.316694172554918
+EPOCH METRICS: {'BLEU_1': 0.012283916984496508, 'BLEU_2': 0.0020908134077976723, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 14.978347522904647, 'ROUGE': 0.015580601009389378, 'EXAMPLE': 'pred: am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am amstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstagstag, target: am samstag im norden einzelne schauer sonst ist es freundlich ganz im süden später regen'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw', 'am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am am', 'und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und', 'dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei']
+['der wind weht schwach bis mäßig im norden und westen teilweise frisch mit starken an der see stürmischen böen', 'am donnerstag regnet es vor allem in der nordhälfte zum teil länger anhaltend im süden freundlicher', 'und nun die wettervorhersage für morgen montag den fünfundzwanzigsten juli', 'an den temperaturen ändert sich wenig']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 19
+TIME: 2111.989525794983
+AVG. LOSS: 26.96994873501671
+EPOCH METRICS: {'BLEU_1': 0.013134851138353765, 'BLEU_2': 0.002685298511175331, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.002316585165916, 'ROUGE': 0.017702028975994558, 'EXAMPLE': 'pred: , target: und es wird dann auch bis freitag wieder kühler'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['nord nord nord nord nord nord nord nord nord nord nord nord nord', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'heute heute heute heute heute heute heute heute heute heute heute heute nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht nacht', 'we we we we we we we we we we we we we we we we we we we we we we we we']
+['im norden und nordosten gibt es in der nacht noch vereinzelte schauer sonst teils wolkig teils klar', 'das wird sich dann in den nächsten tagen noch steigern', 'in der nacht schneit es vor allem in der südwesthälfte gebietsweise stellenweise ist gefrierender regen möglich', 'der westen heute von der sonne eindeutig begünstigt wie hier in bremerhaven oder auch in düsseldorf schien die sonne dort zehn grad plus']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 20
+TIME: 2082.8072497844696
+AVG. LOSS: 26.71661773932155
+EPOCH METRICS: {'BLEU_1': 0.011607105712027294, 'BLEU_2': 0.0019870407350045267, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.301866241962234, 'ROUGE': 0.015940749034349583, 'EXAMPLE': 'pred: , target: aber im osten haben wir noch anfangs die wärme vierundzwanzig grad genauso wie im östlichen bayern'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen', '', '', '']
+['am tag morgen dann wieder viel sonne ganz im westen und südwesten ist es zum teil wolkig schauer oder gewitter gibt es aber nur vereinzelt', 'und nach mitternacht haben wir die ersten kleineren regenschauer die ziehen morgen vormittag dann schnell über norddeutschland nach osten weiter', 'am tag fünf bis zehn grad im süden bis zwölf grad', 'am freitag mal sonne mal wolken teilweise aber auch schauer und gewitter im norden viel wind']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 21
+TIME: 2122.344309568405
+AVG. LOSS: 26.292768076280595
+EPOCH METRICS: {'BLEU_1': 0.009600222613857713, 'BLEU_2': 0.0024353338227666227, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.38058456106682, 'ROUGE': 0.011625194355262325, 'EXAMPLE': 'pred: morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen, target: dort wird es auch windig seien die höchsten temperaturen bewegen sich zwischen fünf grad in vorpommern und dreizehn grad im breisgau'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun nun', '', 'schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw schw']
+['am dienstag teils freundlich teils wolkig gebietsweise schauert oder gewittert es in der südosthälfte auch heftig', 'und nun die wettervorhersage für morgen montag den sechzehnten november', 'guten abend liebe zuschauer', 'sonst schwacher bis mäßiger wind aus west bis nordwest']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 22
+TIME: 2046.6027557849884
+AVG. LOSS: 26.14740406673952
+EPOCH METRICS: {'BLEU_1': 0.008803404539385848, 'BLEU_2': 0.001838164697279666, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.508932536737078, 'ROUGE': 0.011588898848626138, 'EXAMPLE': 'pred: , target: in der nacht fünf grad an der nordfriesischen küste und minus vier grad an den alpen'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'am am am am am am am am am am am am am am am am am am am am donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner donner', 'das das das das das das das das das das das das das das', 'einzelne einzelne einzelne einzelne einzelne einzelne einzelne einzelne einzelne']
+['montag gibt es noch ein kleines fragezeichen', 'am donnerstag in der nordosthälfte mal sonne mal dichtere wolken hier und da schauer in der südwesthälfte sonne und wolken', 'ruhiges herbstliches hochdruckwetter erwartet uns die höheren lagen sind dabei weiter sonnenbegünstigt', 'bei schauern und gewittern starke böen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 23
+TIME: 2099.1057295799255
+AVG. LOSS: 26.12720089781244
+EPOCH METRICS: {'BLEU_1': 0.010355831175868505, 'BLEU_2': 0.003403695585665344, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.276301372487652, 'ROUGE': 0.009368557482016962, 'EXAMPLE': 'pred: und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und und, target: und nun die wettervorhersage für morgen freitag den zehnten juli'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', '', '']
+['morgen weht der wind schwach im norden mäßig und an den küsten auch frisch aus ost bis nordost', 'ganz deutschland gelangt in das sturmfeld des tiefs am stärksten ist der sturm dabei im norden', 'donnerstag und freitag zeigt sich hier und da auch mal die sonne aber meist bleibt es stark bewölkt und gebietsweise fällt etwas schnee oder regen', 'anfangs ist allerdings auch schnee dabei zumindest in den mittelgebirgen und der wind legt dann auch noch zu']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 24
+TIME: 2117.9031789302826
+AVG. LOSS: 25.641169381383577
+EPOCH METRICS: {'BLEU_1': 0.008228980322003577, 'BLEU_2': 0.0024729482184037625, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.64049180302776, 'ROUGE': 0.006275978654880814, 'EXAMPLE': 'pred: , target: und es kann auch örtlich zum teil auch gefährlich glatt werden denn vor allen dingen in der mitte und auch im süden wird es frostig'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das']
+['dabei kühlt die eingeflossene kaltluft noch weiter aus', 'richtung süden ist es freundlicher', 'allerdings am rhein ist das gröbste schon wieder vorbei aber hier über den mittelgebirgen bis hoch nach niedersachsen wird es in den nächsten stunden weiterhin sehr glatt sein', 'tiefdruckgebiete bestimmen unser wetter']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 25
+TIME: 2134.011352777481
+AVG. LOSS: 25.302644189342168
+EPOCH METRICS: {'BLEU_1': 0.008027198035697423, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.164846241129617, 'ROUGE': 0.004189715885862212, 'EXAMPLE': 'pred: , target: am donnerstag bis sechsundzwanzig grad bei viel sonne'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord nord', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst dienst', 'monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta monta montagggggggggggggggggggggggggggggggggggggggggggggggggggggggg']
+['im norden ist es windig', 'und nun die wettervorhersage für morgen donnerstag den sechsundzwanzigsten august', 'am dienstag ist es teilweise freundlich nur an den alpen regnet es noch ab und an', 'am montag im norden wechselhaft im süden recht freundlich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 26
+TIME: 2147.075957775116
+AVG. LOSS: 24.41150780030544
+EPOCH METRICS: {'BLEU_1': 0.009094088842252534, 'BLEU_2': 0.0012907523933030451, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.95471940885849, 'ROUGE': 0.005698527999817866, 'EXAMPLE': 'pred: , target: im laufe des tages wird es in der westhälfte freundlicher mit sonnigen abschnitten'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei', 'klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar klar', '']
+['allerdings bestimmt es erst am dienstag das wetter im ganzen land', 'wegen des anhaltenden regens und des tauwetters muss dort örtlich mit überschwemmungen gerechnet werden', 'wo es aufklart kommt noch überfrierende nässe dazu', 'dazu auch teilweise etwas dichtere wolken aber insgesamt wird es kaum regnen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 27
+TIME: 2148.4198100566864
+AVG. LOSS: 25.32628201605099
+EPOCH METRICS: {'BLEU_1': 0.0073990340150036, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.095018257754846, 'ROUGE': 0.003923413798927807, 'EXAMPLE': 'pred: , target: an den küsten ist es windig'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['westwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwestwest', '', 'mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit mit', 'sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst sonst']
+['richtung südwesten scheint neben schleierwolken die sonne', 'es ist eine milde nacht und morgen haben wir dann immer noch dichte wolken bewölkung hier im nordwesten und an den küsten immer wieder gibt es regenschauer', 'am mittwoch breiten sich schauer und gewitter nach osten aus dabei besteht unwettergefahr', 'sonst scheint verbreitet die sonne']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 28
+TIME: 2150.241353034973
+AVG. LOSS: 24.195518277005924
+EPOCH METRICS: {'BLEU_1': 0.006696187493249813, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.835704948171715, 'ROUGE': 0.002582929976756325, 'EXAMPLE': 'pred: , target: am tag zieht dann auch dieser regen richtung osten'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', '', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', 'dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei']
+['am sonntag zieht der regen ostwärts ab dahinter fallen noch einzelne schauer', 'südlich der donau beginnt es lang andauernd zu regnen', 'am samstag nach auflösung örtlicher nebelfelder in vielen regionen recht freundlich und etwas milder', 'abgesehen von gewitterböen schwacher bis mäßiger nordwestwind']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 29
+TIME: 2119.984954357147
+AVG. LOSS: 24.185156514975237
+EPOCH METRICS: {'BLEU_1': 0.006414126169634772, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.786007570163822, 'ROUGE': 0.003824674738727733, 'EXAMPLE': 'pred: das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das, target: richtung südwesten bekommt auch die sonne gelegentlich eine chance'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute heute', 'nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach nach', 'dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei dabei', '']
+['heute nacht liegen die werte zwischen minus zwei und minus acht grad', 'ja heute nachmittag sind schon diese heftigen gewitter sie sehen es hier an diesen starken regenechos nach norden weitergezogen und haben dann unwetter schon über schleswig holstein gebracht', 'am samstag wird es deutlich kühler dabei ist es wechselhaft und teilweise windig', 'dann gibt es erste regenschauer die lage könnte sich etwas entspannen aber viel nicht']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 30
+TIME: 2149.736553668976
+AVG. LOSS: 23.629026475861217
+EPOCH METRICS: {'BLEU_1': 0.0045362903225806455, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.884729529162133, 'ROUGE': 0.002125798915970858, 'EXAMPLE': 'pred: , target: dort wird es auch windig seien die höchsten temperaturen bewegen sich zwischen fünf grad in vorpommern und dreizehn grad im breisgau'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', '', '', 'morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen morgen']
+['guten abend', 'in den nächsten tagen deutlich wärmer', 'bei frostigen höchsttemperaturen gibt es meist mehr wolken als sonne und in einigen regionen fällt auch noch schnee', 'und am wochenende sind auch fünfundzwanzig grad im südwesten drin dazu dann erst am montag erste regenschauer und auch gewitter können wir dringend brauchen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 31
+TIME: 2143.453017950058
+AVG. LOSS: 23.729766491435157
+EPOCH METRICS: {'BLEU_1': 0.006613454960091223, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'LOSS': 15.561744586580751, 'ROUGE': 0.002922915881576195, 'EXAMPLE': 'pred: , target: der ausläufer eines tiefs verlagert sich morgen vom westen deutschlands weiter nach osten'}
+BASELINE METRICS: {'BLEU_1': 0.09094908292497328, 'BLEU_2': 0.04322398958422319, 'BLEU_3': 0.0208016188292086, 'BLEU_4': 0.01154076525203481, 'ROUGE': 0.234343426361656}
+['', 'das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das das', '', '']
+['elf grad heute nacht im norden bis neunzehn grad am oberrhein', 'deutschland liegt weiterhin zwischen einem mittelmeerhoch und einem tief über england', 'sie sehen hier schon am rand den vorderen rand einer wolken und gewitterfront', 'am montag verbreitet sonnig später dann im westen und südwesten teilweise kräftige schauer und gewitter']
+--------------------------------------------------

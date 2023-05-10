@@ -15,8 +15,8 @@ class Sign2Text(torch.nn.Module):
 
         self.device = Sign2Text_cfg.device
         self.visual_encoder = VisualEncoder(VisualEncoder_cfg)
-        self.VL_mapper = get_VL_mapper(Sign2Text_cfg)
         self.language_model = TranslationModel(Sign2Text_cfg)
+        self.VL_mapper = get_VL_mapper(Sign2Text_cfg)
 
     def get_language_params(self):
         return self.language_model.parameters()
@@ -29,10 +29,10 @@ class Sign2Text(torch.nn.Module):
         return [{'params':self.get_language_params(), 'lr': CFG.init_lr_language_model},
             {'params':self.get_visual_params(), 'lr': CFG.init_lr_visual_model}]
 
-    def forward(self, x, ipt_len):
+    def forward(self, x, trg, ipt_len):
         probs, reps = self.visual_encoder(x, ipt_len)
         gloss_representations = self.VL_mapper(reps)
-        out = self.language_model(gloss_representations, ipt_len)
+        out = self.language_model(gloss_representations, trg, ipt_len)
         return out, probs
 
     def predict(self, x, ipt_len, skip_special_tokens = True):
@@ -40,5 +40,6 @@ class Sign2Text(torch.nn.Module):
         gloss_representations = self.VL_mapper(reps)
         preds = self.language_model.generate(
             gloss_representations, 
+            ipt_len,
             skip_special_tokens = skip_special_tokens)
         return preds

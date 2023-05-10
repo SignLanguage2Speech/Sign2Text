@@ -20,28 +20,16 @@ def compute_metrics(model, dataloaderTest, loss_preds_fc, ctc_loss_fc, tokenize_
 
     example_index = np.random.randint(len(dataloaderTest))
     for j, datapoint in enumerate(dataloaderTest):
-        raw_preds = model.predict(datapoint[0].to(CFG.device), datapoint[1])
-        raw_targets = datapoint[4]
-
-        for i in range(len(raw_preds)):
-            targets.append(raw_targets[i])
-            if j == example_index:
-                metrics[f"EXAMPLE"] = f"pred: {raw_preds[i]}, target: {raw_targets[i]}"
-            if raw_preds[i]:
-                preds.append(raw_preds[i])
-            else:
-                preds.append("@")
-
         ipt, ipt_len, trg, trg_len, trg_transl, trg_gloss, max_ipt_len = datapoint
 
         tokenized_trg_transl = tokenize_targets(
             trg_transl, 
             model.language_model.tokenizer, 
             "de_DE", 
-            int(np.ceil(max_ipt_len/4)), 
+            model.language_model.max_seq_length, 
             CFG.device)
 
-        predicts, probs = model(ipt.to(CFG.device), ipt_len)
+        predicts, probs = model(ipt.to(CFG.device), tokenized_trg_transl, ipt_len)
         preds_permute = predicts.permute(0,2,1)
         probs_permute = probs.permute(1, 0, 2)
 
@@ -59,6 +47,19 @@ def compute_metrics(model, dataloaderTest, loss_preds_fc, ctc_loss_fc, tokenize_
                 target_lengths=trg_len))
 
         metrics[f"LOSS"] += loss.detach().cpu().numpy()
+
+        # raw_preds = model.predict(datapoint[0].to(CFG.device), datapoint[1])
+        raw_preds = model.language_model.tokenizer.batch_decode(torch.argmax(preds_permute, dim=1),skip_special_tokens=True)
+        raw_targets = datapoint[4]
+
+        for i in range(len(raw_preds)):
+            targets.append(raw_targets[i])
+            if j == example_index:
+                metrics[f"EXAMPLE"] = f"pred: {raw_preds[i]}, target: {raw_targets[i]}"
+            if raw_preds[i]:
+                preds.append(raw_preds[i])
+            else:
+                preds.append("@")
 
     metrics[f"BLEU_1"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 1).get("bleu")
     metrics[f"BLEU_2"] += bleu.compute(predictions = preds, references = [[target] for target in targets], max_order = 2).get("bleu")
