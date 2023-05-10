@@ -3,11 +3,11 @@ import os
 from torchsummary import summary
 from torchvision.ops import MLP
 from torch import nn
-from VisualEncoder.VisualEncoder import VisualEncoder
-from VL_mapper.get_VL_mapper import get_VL_mapper
-from GL_mapper.get_GL_mapper import get_GL_mapper
-from mBART.TranslationModel import TranslationModel
-from mBART.get_tokenizer import get_tokenizer
+from model.Sign2Text.VisualEncoder.VisualEncoder import VisualEncoder
+from model.Sign2Text.VL_mapper.get_VL_mapper import get_VL_mapper
+from model.Sign2Text.GL_mapper.get_GL_mapper import get_GL_mapper
+from model.Sign2Text.mBART.TranslationModel import TranslationModel
+from model.Sign2Text.mBART.get_tokenizer import get_tokenizer
 
 class Sign2Text(torch.nn.Module):
     def __init__(self, Sign2Text_cfg, VisualEncoder_cfg):

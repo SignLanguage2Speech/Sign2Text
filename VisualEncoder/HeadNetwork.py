@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from VisualEncoder.utils import PositionalEncoding, WeightsLoader, MaskedNorm
+from model.Sign2Text.VisualEncoder.utils import PositionalEncoding, WeightsLoader, MaskedNorm
 
 class HeadNetwork(nn.Module):
     def __init__(self, CFG) -> None:

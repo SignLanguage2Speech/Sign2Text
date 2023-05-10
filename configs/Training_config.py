@@ -27,3 +27,4 @@ class Training_cfg:
         self.load_checkpoint_path = '/work3/s200925/Sign2Text/models/Sign2Text_Epoch26_loss_6.633391824354582_B4_0.0'
         ### device ###
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+        # self.device = torch.device('mps')

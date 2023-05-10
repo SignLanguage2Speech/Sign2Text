@@ -1,6 +1,6 @@
 from transformers import MBartForConditionalGeneration
 from transformers import BeamSearchScorer
-from mBART.get_tokenizer import get_tokenizer
+from model.Sign2Text.mBART.get_tokenizer import get_tokenizer
 import torch.nn as nn
 import torch
 

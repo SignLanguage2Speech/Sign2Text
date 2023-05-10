@@ -1,6 +1,6 @@
-from VisualEncoder.HeadNetwork import HeadNetwork
-from VisualEncoder.S3D_backbone import S3D_backbone
-from VisualEncoder.utils import WeightsLoader
+from model.Sign2Text.VisualEncoder.HeadNetwork import HeadNetwork
+from model.Sign2Text.VisualEncoder.S3D_backbone import S3D_backbone
+from model.Sign2Text.VisualEncoder.utils import WeightsLoader
 import torch
 
 class VisualEncoder(torch.nn.Module):

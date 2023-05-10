@@ -13,6 +13,7 @@ class PositionalEncoding(nn.Module):
         A = pos / torch.pow(10000, torch.arange(0, d_model, 2, dtype=torch.float32) / d_model)
 
         self.PE = torch.zeros(1, N, d_model, device = 'cuda' if torch.cuda.is_available() else 'cpu')
+        # self.PE = torch.zeros(1, N, d_model, device = torch.device('mps'))
         self.PE[:, :, 0::2] = torch.sin(A)
         self.PE[:, :, 1::2] = torch.cos(A)
 
@@ -28,7 +29,8 @@ class WeightsLoader:
     
     def load(self, verbose=True):
         weight_type = None
-        weights = torch.load(self.weight_filename, map_location='cpu')['model_state_dict']
+        # weights = torch.load(self.weight_filename, map_location='cpu')['model_state_dict']
+        weights = torch.load(self.weight_filename, map_location='mps')['model_state_dict']
 
         if "wlasl" in self.weight_filename.lower():
             weight_type = 'WLASL'

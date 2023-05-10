@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
-from VisualEncoder.S3D.model import S3D
-from VisualEncoder.utils import WeightsLoader
+from model.Sign2Text.VisualEncoder.S3D.model import S3D
+from model.Sign2Text.VisualEncoder.utils import WeightsLoader
 import pdb
 
 class S3D_backbone(S3D):
