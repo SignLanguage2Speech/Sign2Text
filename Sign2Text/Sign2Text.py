@@ -22,7 +22,7 @@ class Sign2Text(torch.nn.Module):
         return self.language_model.parameters()
 
     def get_visual_params(self):
-        return list(self.visual_encoder.parameters()) \
+        return list(filter(lambda p: p.requires_grad, self.visual_encoder.parameters())) \
         + list(self.VL_mapper.parameters())
 
     def get_params(self, CFG):
@@ -32,8 +32,8 @@ class Sign2Text(torch.nn.Module):
     def forward(self, x, trg, ipt_len):
         probs, reps = self.visual_encoder(x, ipt_len)
         gloss_representations = self.VL_mapper(reps)
-        out = self.language_model(gloss_representations, trg, ipt_len)
-        return out, probs
+        out, loss = self.language_model(gloss_representations, trg, ipt_len)
+        return out, probs, loss
 
     def predict(self, x, ipt_len, skip_special_tokens = True):
         probs, reps = self.visual_encoder(x, ipt_len)
