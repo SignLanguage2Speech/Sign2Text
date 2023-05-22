@@ -25,13 +25,14 @@ class TranslationModel(nn.Module):
         self.mbart.generation_config = generation_config
         self.mbart.config.dropout = CFG.mbart_dropout
         self.mbart.config.attention_dropout = CFG.mbart_attention_dropout
-
+        self.mbart.config.classif_dropout = CFG.mbart_classif_dropout
 
     def generate(self, visual_language_features, input_lengths, skip_special_tokens = True):
         kwargs = self.prepare_feature_inputs(visual_language_features, input_lengths, generate = True)
         output_dict = self.mbart.generate(
             inputs_embeds=kwargs["inputs_embeds"],
             attention_mask=kwargs["attention_mask"],
+            # decoder_input_ids = kwargs["decoder_input_ids"],
             decoder_start_token_id = self.tokenizer.lang_code_to_id["de_DE"],
             num_beams=self.beam_width, 
             length_penalty=self.length_penalty, 
@@ -65,8 +66,9 @@ class TranslationModel(nn.Module):
         
         labels = None
         # decoder_input_ids = None
+        # decoder_input_ids = None
         # if generate:
-        #     decoder_input_ids = torch.ones([batch_size,1],dtype=torch.long, device=visual_language_features.device) * self.tokenizer.bos_token_id
+        #     decoder_input_ids = torch.ones([batch_size,2],dtype=torch.long, device=visual_language_features.device) * self.tokenizer.lang_code_to_id["de_DE"]
         if not generate:
             labels = trg
 

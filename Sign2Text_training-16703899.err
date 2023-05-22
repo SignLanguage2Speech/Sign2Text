@@ -1,0 +1,10 @@
+Loaded dependency [python3/3.10.7]: gcc/11.3.0-binutils-2.38
+Loaded module: python3/3.10.7
+
+Loading python3/3.10.7
+  Loading requirement: gcc/11.3.0-binutils-2.38
+Loaded module: cuda/12.0
+Loaded module: cudnn/v8.3.2.44-prod-cuda-11.X
+WARNING:evaluate.loading:Using the latest cached version of the module from /zhome/6b/b/151617/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--bleu/9e0985c1200e367cce45605ce0ecb5ede079894e0f24f54613fca08eeb8aff76 (last modified on Tue Mar 21 11:16:25 2023) since it couldn't be found locally at evaluate-metric--bleu, or remotely on the Hugging Face Hub.
+WARNING:evaluate.loading:Using the latest cached version of the module from /zhome/6b/b/151617/.cache/huggingface/modules/evaluate_modules/metrics/evaluate-metric--rouge/b01e0accf3bd6dd24839b769a5fda24e14995071570870922c71970b3a6ed886 (last modified on Tue Mar 21 11:24:07 2023) since it couldn't be found locally at evaluate-metric--rouge, or remotely on the Hugging Face Hub.
+User defined signal 2

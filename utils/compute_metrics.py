@@ -39,9 +39,13 @@ def compute_metrics(model, dataloaderTest, loss_preds_fc, ctc_loss_fc, tokenize_
         trg = torch.concat([t[:trg_len[i]] for i, t in enumerate(trg)])
         ipt_len_ctc = torch.full(size=(probs.size(0),), fill_value = probs.size(1), dtype=torch.int32)
         
+        # loss_nll = loss_preds_fc(
+        #         nn.functional.log_softmax(predicts, dim=-1).contiguous().view(-1,predicts.size(-1)), 
+        #         tokenized_trg_transl.contiguous().view(-1)) / ipt.size(0)
+
         loss_nll = loss_preds_fc(
-                nn.functional.log_softmax(predicts, dim=-1).contiguous().view(-1,predicts.size(-1)), 
-                tokenized_trg_transl.contiguous().view(-1)) / ipt.size(0)
+                nn.functional.log_softmax(predicts,dim=-1), 
+                tokenized_trg_transl) / ipt.size(0)
 
         loss_ctc = ctc_loss_fc(
                 torch.log(probs_permute), 

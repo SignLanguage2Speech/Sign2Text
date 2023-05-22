@@ -16,14 +16,14 @@ class Training_cfg:
         self.num_workers = 8
         ### verbose ###
         self.verbose = True
-        self.verbose_batches = True
+        self.verbose_batches = False
         ### paths ###
         self.phoenix_videos = '/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/features/fullFrame-210x260px'
         self.phoenix_labels = '/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/annotations/manual'
         ### saving models ###
-        self.save_path = '/work3/s200925/Sign2Text/new_loss/'
+        self.save_path = '/work3/s200925/Sign2Text/freeze_less/'
         self.save_checkpoints = True
         ### loading model ###
-        self.load_checkpoint_path =  None # '/work3/s200925/Sign2Text/no_mask_dropout_03/Sign2Text_Epoch28_loss_21.39952958127423_B4_0.10217316517638868'
+        self.load_checkpoint_path =  '/work3/s200925/Sign2Text/freeze_less/Sign2Text_Epoch33_loss_14.825744169002993_B4_0.23380275115107788' # '/work3/s200925/Sign2Text/label_smooth/Sign2Text_Epoch37_loss_16.43221887015436_B4_0.2297965381199748'
         ### device ###
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

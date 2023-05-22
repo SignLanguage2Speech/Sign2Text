@@ -9,6 +9,7 @@ import numpy as np
 import random
 from utils.save_checkpoint import save_checkpoint
 from utils.load_checkpoint import load_checkpoint
+from utils.loss import CustomLoss
 
 def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, epoch, n_epochs, device):
 
@@ -44,9 +45,12 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
     # loss_preds_fc = nn.CrossEntropyLoss(
     #     ignore_index = model.language_model.tokenizer.pad_token_id,
     #     label_smoothing = CFG.ce_label_smoothing).to(CFG.device)
-    loss_preds_fc = nn.NLLLoss(
-        ignore_index = model.language_model.tokenizer.pad_token_id,
-        reduction = "sum").to(CFG.device)
+    # loss_preds_fc = nn.NLLLoss(
+    #     ignore_index = model.language_model.tokenizer.pad_token_id,
+    #     reduction = "sum").to(CFG.device)
+    loss_preds_fc = CustomLoss(
+        ignore_index = model.language_model.tokenizer.pad_token_id, 
+        label_smoothing = CFG.ce_label_smoothing)
     ctc_loss_fc = torch.nn.CTCLoss(
         blank=0, 
         zero_infinity=True, 
@@ -104,9 +108,13 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             trg = torch.concat([t[:trg_len[i]] for i, t in enumerate(trg)])
             ipt_len_ctc = torch.full(size=(probs.size(0),), fill_value = probs.size(1), dtype=torch.int32)
 
+            # loss_nll = loss_preds_fc(
+            #     nn.functional.log_softmax(preds,dim=-1).contiguous().view(-1,preds.size(-1)), 
+            #     tokenized_trg_transl.contiguous().view(-1)) / ipt.size(0)
+
             loss_nll = loss_preds_fc(
-                nn.functional.log_softmax(preds,dim=-1).contiguous().view(-1,preds.size(-1)), 
-                tokenized_trg_transl.contiguous().view(-1)) / ipt.size(0)
+                nn.functional.log_softmax(preds,dim=-1), 
+                tokenized_trg_transl) / ipt.size(0)
 
             loss_ctc = ctc_loss_fc(
                     torch.log(probs_permute), 
@@ -159,7 +167,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
         scheduler.step()
 
         ### save model ### 
-        if CFG.save_checkpoints and epoch % 3 == 0:
+        if CFG.save_checkpoints and epoch % 2 == 0:
             save_path = CFG.save_path +  "Sign2Text_Epoch" + str(epoch+1) + "_loss_" + str(epoch_losses[epoch]) +  "_B4_" + str(epoch_metrics[epoch]["BLEU_4"])
             save_checkpoint(save_path, model, optimizer, scheduler, epoch, epoch_losses, epoch_metrics[epoch]["BLEU_4"])
 

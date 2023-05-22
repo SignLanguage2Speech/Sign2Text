@@ -10,7 +10,9 @@ class Sign2Text_cfg:
         self.max_seq_length = 100
         self.length_penalty = 1
         self.mbart_dropout = 0.3
+        self.mbart_classif_dropout = 0.0
         self.mbart_attention_dropout = 0.1
+        self.VL_mapper_dropout = 0.0
         ### ??? ###
         self.n_visual_features = 512
         self.n_classes = 1085 + 1
