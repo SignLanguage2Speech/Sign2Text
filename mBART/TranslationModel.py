@@ -4,6 +4,7 @@ from mBART.get_tokenizer import get_tokenizer
 import torch.nn as nn
 import torch
 import numpy as np
+from mBART.get_default_model import get_model_and_tokenizer, reduce_to_vocab
 
 class TranslationModel(nn.Module):
     def __init__(self,CFG):
@@ -13,16 +14,24 @@ class TranslationModel(nn.Module):
         self.beam_width = CFG.beam_width
         self.max_seq_length = CFG.max_seq_length
         self.length_penalty = CFG.length_penalty
-        self.tokenizer = get_tokenizer(CFG.mbart_path)
-        self.mbart = MBartForConditionalGeneration.from_pretrained(CFG.mbart_path).to(CFG.device) 
         
-        old_vocab_size = self.mbart.config.vocab_size
-        mbart_pre = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-cc25") 
-        config = mbart_pre.config
-        config.vocab_size = old_vocab_size
-        generation_config = mbart_pre.generation_config
-        self.mbart.config = config
-        self.mbart.generation_config = generation_config
+        if CFG.mbart_path is not None:
+            print("Loading model from pretrained checkpoint!")
+            self.tokenizer = get_tokenizer(CFG.mbart_path)
+            self.mbart = MBartForConditionalGeneration.from_pretrained(CFG.mbart_path).to(CFG.device) 
+            old_vocab_size = self.mbart.config.vocab_size
+            mbart_pre = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-cc25") 
+            config = mbart_pre.config
+            config.vocab_size = old_vocab_size
+            #generation_config = mbart_pre.generation_config
+            self.mbart.config = config
+            #self.mbart.generation_config = generation_config
+        else:
+            print("Loading model with cc25 initialization!")
+            default_model, default_tokenizer = get_model_and_tokenizer(CFG)
+            self.mbart, self.tokenizer = reduce_to_vocab(default_model, default_tokenizer, CFG) ### prune default mBART
+            
+            
         self.mbart.config.dropout = CFG.mbart_dropout
         self.mbart.config.attention_dropout = CFG.mbart_attention_dropout
         self.mbart.config.classif_dropout = CFG.mbart_classif_dropout

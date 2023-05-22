@@ -37,7 +37,7 @@ def tokenize_targets(target_texts, tokenizer, target_lang_code, max_length, epoc
     
     # return padded_targets.to(device)
 
-    padded_targets = tokenizer(text_target=target_texts, padding=True, return_tensors="pt").input_ids
+    padded_targets = tokenizer(text=target_texts, padding=True, return_tensors="pt").input_ids
     return padded_targets.to(device)
 
 def train(model, dataloaderTrain, dataloaderVal, CFG):
