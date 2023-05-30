@@ -1,0 +1,43 @@
+Mon May 22 11:43:40 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
+| N/A   59C    P0               57W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+Loading entire state dict directly...
+Succesfully loaded
+Freezing up to block 4 in S3D backbone
+
+--------------------Loading Model From Checkpoint--------------------
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+
+--------------------------------------------------
+EPOCH: 32
+TIME: 1745.8913841247559
+AVG. LOSS: 8.354811038548943
+EPOCH METRICS: {'BLEU_1': 0.45625583980739304, 'BLEU_2': 0.3514867769871396, 'BLEU_3': 0.2821997313365363, 'BLEU_4': 0.2345591579526895, 'LOSS': 37.35800644353405, 'ROUGE': 0.49268384888593003, 'EXAMPLE': 'pred: im laufe des tages breitet sich der regen langsam richtung osten aus, target: am tag zieht dann auch dieser regen richtung osten'}
+BASELINE METRICS: {}
+['am mittwoch ähnliches wetter im norden und westen allerdings sehr windig', 'den regen ja der kommt auch bis zu uns in den westen und der schnee der fällt vor allen dingen in skandinavien', 'sonst bleibt es meist stark bewölkt erst regnet es im westen später dann auch weiter richtung osten und süden im bergland fällt zum teil schnee', 'tagsüber sorgt das hoch aber verbreitet für freundliches wetter und steigende temperaturen']
+['am mittwoch änderts wetter im norden und westen allerdings sehr windig', 'da regen ja der bringt auch bis zur in den westen und der schnee der fällt vor allen dingen in skandinavien', 'sonst bleibt stark bewölkt erst regnet es im westen später dann auch weiter richtung osten und süden im bergland fällt zumfangs auch schnee', 'tagsüber sorgt das hoch aber verbreitet für freundliches wetter und steigende temperaturen']
+['am mittwoch ähnliches wetter im norden und westen allerdings sehr windig', 'den regen ja der kommt auch bis zu uns in den westen und der schnee der fällt vor allen dingen in skandinavien', 'sonst meist stark bewölkt erst regnet es im westen später dann auch weiter richtung osten und süden im bergland fällt anfangs auch schnee', 'tagsüber sorgt das hoch aber verbreitet für freundliches wetter und steigende temperaturen']
+--------------------------------------------------

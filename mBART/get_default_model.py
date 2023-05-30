@@ -28,8 +28,8 @@ def get_data_for_tokenizer(data_path: str):
     for line in file.readlines():
         german_words.append(line.replace("\n",""))
     df_train = load_phoenix_train()
-    #train_words = list(set([word for sent in df_train['translation'] for word in sent.split(' ')]))
-    #german_words = list(set(german_words + train_words))
+    train_words = list(set([word for sent in df_train['translation'] for word in sent.split(' ')]))
+    german_words = list(set(german_words + train_words))
     return german_words
 
 def prune_model_embeddings(model: MBartForConditionalGeneration, tokenizer: MBartTokenizer, CFG):

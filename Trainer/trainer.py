@@ -55,7 +55,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
         blank=0, 
         zero_infinity=True, 
         reduction='sum').to(CFG.device)
-    optimizer = optim.Adam(
+    optimizer = optim.AdamW(
         params = model.get_params(CFG), 
         lr=CFG.init_base_lr,
         betas = CFG.betas,

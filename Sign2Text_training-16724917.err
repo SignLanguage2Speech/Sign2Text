@@ -1,0 +1,23 @@
+Loaded dependency [python3/3.10.7]: gcc/11.3.0-binutils-2.38
+Loaded module: python3/3.10.7
+
+Loading python3/3.10.7
+  Loading requirement: gcc/11.3.0-binutils-2.38
+Loaded module: cuda/12.0
+Loaded module: cudnn/v8.3.2.44-prod-cuda-11.X
+Traceback (most recent call last):
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 59, in <module>
+    main()
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 55, in main
+    train(model, dataloader_train, dataloader_val, T_CFG)
+  File "/zhome/6b/b/151617/Sign2Text/Trainer/trainer.py", line 172, in train
+    save_checkpoint(save_path, model, optimizer, scheduler, epoch, epoch_losses, epoch_metrics[epoch]["BLEU_4"])
+  File "/zhome/6b/b/151617/Sign2Text/utils/save_checkpoint.py", line 4, in save_checkpoint
+    torch.save({'epoch' : epoch,
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/serialization.py", line 440, in save
+    with _open_zipfile_writer(f) as opened_zipfile:
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/serialization.py", line 315, in _open_zipfile_writer
+    return container(name_or_buffer)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/serialization.py", line 288, in __init__
+    super().__init__(torch._C.PyTorchFileWriter(str(name)))
+RuntimeError: File /work3/s204138/bach-models/Sign2Text/cc25_init/Sign2Text_Epoch1_loss_107.01948747610703_B4_0.057753820484099876 cannot be opened.
