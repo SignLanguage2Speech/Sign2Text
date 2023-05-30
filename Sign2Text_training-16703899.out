@@ -1,0 +1,536 @@
+Wed May 17 06:54:28 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
+| N/A   30C    P0               41W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+Loading entire state dict directly...
+Succesfully loaded
+Freezing up to block 4 in S3D backbone
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+
+--------------------------------------------------
+EPOCH: 0
+TIME: 1636.5414927005768
+AVG. LOSS: 37.56662483602393
+EPOCH METRICS: {'BLEU_1': 0.2706151910396155, 'BLEU_2': 0.17720131903496386, 'BLEU_3': 0.125129026487674, 'BLEU_4': 0.09517177295286518, 'LOSS': 45.80207432212168, 'ROUGE': 0.3093903566142864, 'EXAMPLE': 'pred: heute nacht muss gebietsweise mit schauern und gewittern gerechnet werden die örtlich kräftig sein können, target: und es könnte dann am abend vielleicht mal ein regenschauer oder gewitter in den alpen geben'}
+BASELINE METRICS: {}
+['im norden und nordwesten deutschlands sorgt das hoch über großbritannien', 'und das wird sich dann auch in den nächsten tagen nicht ganz so kalt aber es ist nicht in sicht', 'und es wird auch noch ein bisschen kühler', 'im westen und südwesten bleibt es unter leichten hochdruckeinfluss']
+['und der nordsee morgen sonne', 'es esinter wird die jatspannung die zu jetzt wieder für', 'und es wird eben kühl mit weitgehend einundigen temperaturen', 'im der südoshälfte ist es heute klar']
+['an der nordsee etwas sonne', 'und dahinter kommt die entspannung die ist jetzt wieder aushalten', 'und dafür aber relativ kühl mit weitgehend einstelligen temperaturen', 'in der südwesthälfte ist es verbreitet klar']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 1
+TIME: 1824.34202170372
+AVG. LOSS: 47.61590493330154
+EPOCH METRICS: {'BLEU_1': 0.33644532132736527, 'BLEU_2': 0.22655811560839514, 'BLEU_3': 0.16301863901242253, 'BLEU_4': 0.12451565048226325, 'LOSS': 45.14216204599149, 'ROUGE': 0.37224148779901806, 'EXAMPLE': 'pred: im norden und osten einzelne schauer, target: im norden noch schauer'}
+BASELINE METRICS: {}
+['das tief über westeuropa sorgt bei uns für schneefälle am alpenrand', 'in der nacht regnet es im norden und osten hier und da sonst nur hier und da etwas regen', 'in der nacht verbreitet leichter frost an der ostsee bis acht grad', 'am tag minus fünf grad an der ostsee und bis minus fünf grad im breisgau']
+['tief der lichen mittelgebirgen ist es nacht sch schnee oder im vonee sein', 'in nacht gibt norden und und da schauer im im südensten reg einseits  schauer ist paar nebel oder', 'und heute nacht ist es überall nochrot im im sind es im nordensten noch bis im im im westen bis', 'am tag fünf fünf grad im ovogtland und zwei fünf grad im der ostseee wen sich']
+['in den westlichen mittelgebirgen kann heute nacht sogar schnee fallen', 'heute nacht im norden hier und da schauer auch im südosten noch abziehende schauer sonst ein paar nebelfelder', 'aber die nacht bleibt fast überall frostfrei da sind es im nordosten ein grad sieben grad im westen', 'am tag minus fünf grad im vogtland und plus zwei grad an der ostsee']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 2
+TIME: 1807.1167333126068
+AVG. LOSS: 41.77010818425536
+EPOCH METRICS: {'BLEU_1': 0.34899989932054987, 'BLEU_2': 0.24508223408341254, 'BLEU_3': 0.1835763333639662, 'BLEU_4': 0.14519516062431673, 'LOSS': 43.10680882090089, 'ROUGE': 0.39974427507138055, 'EXAMPLE': 'pred: das wetter ändert sich an diesem wetter wenig, target: und eher wechselhaft geht es mit unserem wetter auch weiter'}
+BASELINE METRICS: {}
+['von südwesten macht sich allerdings das hoch über großbritannien sorgt dafür dass es teilweise freundliches wetter', 'heute nacht minus ein grad an den alpen frostfrei leichter frost', 'am sonntag gibt es vor allem in der osthälfte hier und da schauer', 'dort morgen bis achtzehn grad sonst scheint häufig die sonne']
+['von derwesten t sich ein das hoher luftdruck aus aberdass sich in den nächsten tagen wirdes hoch teilweise freundliches webstwetter', 'heute nacht minus grad minus grad inweise leicht es leichtdenfrost', 'amntag gibt ooen schgebieter und gew im süden fällt', 'sonst scheint häufig uns zu kzezwanzig grad häufig die sonne']
+['von südwesten breitet sich aber zunehmend hoher luftdruck aus sodass uns in den nächsten tagen ruhiges und teilweise freundliches herbstwetter erwartet', 'heute nacht sieben bis ein grad stellenweise gibt es bodenfrost', 'sonntag im nordwesten schauer und auch im süden', 'sonst scheint bei bis zu achtundzwanzig grad häufig die sonne']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 3
+TIME: 1806.9425146579742
+AVG. LOSS: 40.44051135513667
+EPOCH METRICS: {'BLEU_1': 0.3657162117443183, 'BLEU_2': 0.2657824750034588, 'BLEU_3': 0.20353124684374657, 'BLEU_4': 0.1619106286881003, 'LOSS': 40.95153069358341, 'ROUGE': 0.42336043808946605, 'EXAMPLE': 'pred: auch am freitag wird es langsam wieder kühler, target: und es wird dann auch bis freitag wieder kühler'}
+BASELINE METRICS: {}
+['heute nacht acht grad am niederrhein und minus ein grad an den alpen', 'und nun die wettervorhersage für morgen mittwoch den dritten februar', 'an den küsten regnet es am nachmittag scheint zeitweise die sonne teilweise ist es windig', 'am tag ist es im osten und südosten teilweise freundlich sonst einzelne schauer oder gewitter']
+['heute nacht acht zwischen acht und plus grad am der alpen ein ein grad an', 'und nun die wettervorhersage für morgen mittwoch den zweiten', 'dort dort scheint auch wieder die ein sonne morgen es auch am mittag ein ein paar regenschauer geben es es auch auch allen dingen auch sehrig', 'am tag ist es imrichtung südosten noch noch länger freundlich sonst im es im im im teilweise im im übrigen land gebieter oder gew teil wetterartige gewitter']
+['heute nacht temperaturen zwischen acht und ein grad an den alpen minus ein grad', 'und nun die wettervorhersage für morgen mittwoch den dritten februar', 'aber dort scheint auch mal wieder die sonne wenn es auch am vormittag noch ein paar regenschauer gibt und es ist vor allen dingen noch windig', 'am tag ist es richtung südosten zunächst noch recht freundlich später gibt es dann auch dort wie bereits im übrigen land schauer und zum teil unwetterartige gewitter']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 4
+TIME: 1843.0833716392517
+AVG. LOSS: 37.72704385609073
+EPOCH METRICS: {'BLEU_1': 0.29984051036682613, 'BLEU_2': 0.20500839999461237, 'BLEU_3': 0.1475704073523511, 'BLEU_4': 0.11086196528280917, 'LOSS': 44.580229616808296, 'ROUGE': 0.3090108944785207, 'EXAMPLE': 'pred: im süden bleibt es meist sonnig und trocken, target: südlich der donau kommt auch mal die sonne zum zuge und es bleibt trocken'}
+BASELINE METRICS: {}
+['das tief das sich von südwesten zur ostsee verlagert sorgt morgen bei uns für längere zeit freundliches wetter', 'das tief das sich von südwesten zur ostsee verlagert bringt uns morgen teilweise heftige turbulenzen', 'am tag steigen die werte an auf achtzehn grad an der oder', 'am tag achtzehn grad an der oder und neiße bis zu den alpen']
+['daszw am einunternee unds bleibt istert', 'und und da regen auch regene gewschauer und gewitter', 'und  und stürdinavien sorgt unser wetter auch', 'im tief über west mitteltikldeutschlandtischer  denu oder und wol wetter']
+['da auch wieder mit schnee vermischt', 'hier und da aber auch heftige schauer und gewitter', 'das hoch über skandinavien bestimmt unser wetter', 'das hoch über dem atlantik gewinnt morgen an bedeutung für unser wetter']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 5
+TIME: 1882.862850189209
+AVG. LOSS: 39.440969840784085
+EPOCH METRICS: {'BLEU_1': 0.41942145424414584, 'BLEU_2': 0.31207664010166813, 'BLEU_3': 0.24341085494462103, 'BLEU_4': 0.196911502372641, 'LOSS': 40.60535717515817, 'ROUGE': 0.45661490877599886, 'EXAMPLE': 'pred: am donnerstag breiten sich der nebel aus von südwesten teilweise dichtere wolken aus, target: sobald sich am donnerstag der nebel verzogen hat liegen die wolken unterschiedlich dicht beieinander'}
+BASELINE METRICS: {}
+['heute nacht ist es verbreitet klar', 'richtung süden ist es dank hochdruckeinfluss meist wolkig', 'in der nacht ist es verbreitet klar in der nordwesthälfte später locker bewölkt', 'im norden und südosten gibt es heute nacht noch einzelne schauer oder gewitter später lockert es dann auch mal auf']
+['in übrigsten undläuft die nacht klar', 'im süden sorgt nu wir noch ein hochnegebiete da be dans ein paar wolkentief', 'in der nacht istt es verbreitet auf in lock im westen und nordwest auf wolere wolken', 'im nordsten und süden heute es heute nacht fangs auch einzelne schauer oder gewitter auf lockt es dann in auf schon ab übrigen land auf ne']
+['im osten verläuft die nacht klar', 'im süden allerdings haben wir noch die hochdruckgebiete da komme höchstens ein paar wolken an', 'in der nacht klart es verbreitet auf später kommen im westen und norden wieder dichtere wolken auf', 'im osten und süden gibt es heute nacht anfangs noch einzelne schauer oder gewitter später klart es auch dort wie schon im übrigen land teilweise auf']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 6
+TIME: 1828.5694761276245
+AVG. LOSS: 35.75993219491728
+EPOCH METRICS: {'BLEU_1': 0.41320355527437796, 'BLEU_2': 0.3041964376118632, 'BLEU_3': 0.2346903697964062, 'BLEU_4': 0.18796567039627515, 'LOSS': 40.41360965216091, 'ROUGE': 0.45198272553660007, 'EXAMPLE': 'pred: ihnen einen schönen abend und machen sie es gut, target: ihnen einen schönen abend und machen sie es gut'}
+BASELINE METRICS: {}
+['heute nacht ist es meist stark bewölkt im norden hier und da fällt etwas regen', 'morgen temperaturen von achtzehn grad an der nordsee bis zwanzig grad am oberrhein', 'hier und da bildet sich nebel', 'und nun die wettervorhersage für morgen dienstag den dreißigsten dezember']
+['heute wird heute heute nacht über meist wolchten wolken im im norden hier schon etwas etwas dorttlich ein bisschen regenseln', 'morgen temperaturen von acht gradhn grad an der nordsee bis zundzreißig grad der lausitz', 'dabeigebietsweise bildet sich nebel und sich morgen langsam teil längere zeit freundlich sich', 'und uns es noch uns die die wettervorhersage für morgentwoch den ersten dezember']
+['so wird es heute nacht aus den dichten wolken die im norden ja schon angekommen sind gelegentlich ein bisschen nieseln', 'morgen temperaturen von achtzehn grad an der nordsee bis zweiunddreißig in der lausitz', 'gebietsweise bildet sich nebel der sich morgen zum teil längere zeit halten kann', 'was uns morgen erwartet dazu jetzt die wettervorhersage für mittwoch den ersten dezember']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 7
+TIME: 1833.0402388572693
+AVG. LOSS: 34.57930076968979
+EPOCH METRICS: {'BLEU_1': 0.39475384603190833, 'BLEU_2': 0.29582501141433915, 'BLEU_3': 0.23276508401201065, 'BLEU_4': 0.18947266038045815, 'LOSS': 40.32743009896177, 'ROUGE': 0.4472342052499101, 'EXAMPLE': 'pred: an den küsten ist es hier und da wolkig vereinzelt fallen ein paar tropfen, target: besonders in küstennähe tauchen auch mal wolken auf die aber keinen regen bringen'}
+BASELINE METRICS: {}
+['vorsicht wegen glätte', 'am wochenende fällt vor allem im süden und osten schnee oder schneeregen sonst bleibt es meist trocken', 'und nun die wettervorhersage für morgen dienstag den siebzehnten november', 'am montag wird es ein bisschen milder so vom schwarzwald bis neununddreißig grad']
+['vorsicht g glätteen', 'vor fällt es  allem in süden nochkräftigsweise schneeschau regenschau bleibt es trowiegend trocken', 'und nun die wettervorhersage für morgen samag den siebtenhnten november', 'am am wird einhin es es vor ein  warme luftma wir zußig grad westßig grad']
+['vorsicht wegen glätte', 'dabei gibt es vor allem im süden gebietsweise schnee oder regen sonst bleibt es überwiegend trocken', 'und nun die wettervorhersage für morgen dienstag den siebzehnten november', 'und das liegt daran dass wir dort noch diese sehr heiße luft haben teilweise dreißig über dreißig grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 8
+TIME: 1838.5289492607117
+AVG. LOSS: 33.608519651440915
+EPOCH METRICS: {'BLEU_1': 0.40322459855184994, 'BLEU_2': 0.2994932685230619, 'BLEU_3': 0.2343440907123879, 'BLEU_4': 0.19114918344864792, 'LOSS': 39.84121927360579, 'ROUGE': 0.4576387100990674, 'EXAMPLE': 'pred: morgen am nachmittag lässt sich der regen langsam nachlassen, target: da kommen die gewitter erst morgen nachmittag hin'}
+BASELINE METRICS: {}
+['in der westhälfte gibt es neben einigen wolken aber es bleibt meist trocken', 'im südwesten bleibt es meist freundlich', 'in der nacht regnet es hier und da', 'morgen erwartet uns noch leichter frost wechselhaftes wetter']
+['im der westhälfte gibt es auch viele wolken aber meist bleibt meist trocken', 'imrichtung südwesten recht freundlichs', 'es es auch wir auch noch eine schau langsam noch noch zu zu', 'und tagg dann frostfrei bleibt wechselhaft']
+['in der westhälfte gibt es zwar viele wolken aber es bleibt meist trocken', 'richtung südwesten recht freundlich', 'und da haben wir auch noch den regen der morgen dort sich noch aufhält', 'am montag dann frostfrei und wechselhaft']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 9
+TIME: 1839.3878211975098
+AVG. LOSS: 32.75357487102237
+EPOCH METRICS: {'BLEU_1': 0.4169643047987263, 'BLEU_2': 0.3123556360631109, 'BLEU_3': 0.2430987691402424, 'BLEU_4': 0.19610430225486175, 'LOSS': 39.07666985308734, 'ROUGE': 0.46744707285620135, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen dienstag den neunzehnten februar, target: und nun die wettervorhersage für morgen dienstag den neunten februar'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen mittwoch den vierzehnten oktober', 'am freitag muss mit unwetterartigen gewittern gerechnet werden im laufe des tages richtung westen und südwesten mitunter unwetterartigen gewittern gerechnet werden', 'heute nacht ist es verbreitet klar örtlich leichter frost', 'am dienstag sonne im westen und nordwesten einige wolken mit schauern und gewittern']
+['und nun die wettervorhersage für morgen mittwoch den vzehnten oktober', 'am sie sehen zu erwartenwetterwarnungen de siechten dann sie dann jederzeit über uns im we über den ähf text oder über über über dentter dasäh dasr tag e und', 'heute es auf nacht länger aufklart ör leichter frost möglich', 'am dienstag vielne und westen und es später und an wolkig   schauern und gewittern']
+['und nun die wettervorhersage für morgen mittwoch den vierzehnten oktober', 'wenn sie neues zu unwetterwarnungen erfahren möchten können sie das jederzeit bei uns im internet über den zdf text oder eben auch über wetter zdf punkt d e', 'wo es heute nacht länger aufklart ist leichter frost möglich', 'am dienstag sonne im westen ist es ab und an wolkig mit einzelnen schauern und gewittern']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 10
+TIME: 1816.9103140830994
+AVG. LOSS: 31.652040177832326
+EPOCH METRICS: {'BLEU_1': 0.41526176174816337, 'BLEU_2': 0.3143218233213144, 'BLEU_3': 0.24819564062353366, 'BLEU_4': 0.2028266471426739, 'LOSS': 39.20017388491732, 'ROUGE': 0.4703674681353658, 'EXAMPLE': 'pred: das hoch über skandinavien bestimmt unser wetter, target: das hoch über skandinavien lenkt eisige luft aus russland heran'}
+BASELINE METRICS: {}
+['hier und da fällt noch etwas schnee am alpenrand', 'sonst viele wolken hier und da regen oder schneeschauer vor allem am alpenrand auch längere zeit klar', 'am sonntag wird es etwas kühler aber am montag zeigt sich die sonne auch mal häufiger', 'tiefdruckgebiete bestimmen in den nächsten tagen unser wetter mit regen und mildere luft heran']
+['hier schnee fällt es dann im denern am alpenrand', 'auch nacht ist es viele wolken hier und da fälltseln ein paar flocken besonders in nordpennähe sowie im nordwest und nordwesten auch sich auch die sterne', 'am sonntag wirder abseitsühlung aber auch freundlicher wird am montag zeigt verbreitet häufig die sonne', 'das zwei tiefdruckzone bringt uns  teil giebige regenfälle und milde luft auch weiterhin für rechten tauwetter']
+['etwas schnee gibt es noch in bayern oder am alpenrand', 'heute nacht gibt es viele wolken hier und da rieseln ein paar flocken besonders in alpennähe sowie im norden und nordwesten zeigen sich auch die sterne', 'am sonntag leichte abkühlung aber wieder freundlicher und am montag scheint wieder verbreitet die sonne', 'eine umfangreiche tiefdruckzone bringt uns zum teil ergiebige regenfälle und milde luft die weiterhin für starkes tauwetter sorgt']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 11
+TIME: 1840.9472954273224
+AVG. LOSS: 30.915702476307935
+EPOCH METRICS: {'BLEU_1': 0.4266645244945197, 'BLEU_2': 0.3200171604810835, 'BLEU_3': 0.2510449194686796, 'BLEU_4': 0.20399934301185826, 'LOSS': 38.58278518651033, 'ROUGE': 0.4678741584105113, 'EXAMPLE': 'pred: am tag regnet es zunächst in der südhälfte ab dem nachmittag auch gewitter, target: am tag dann regenfälle im süden und südosten am nachmittag örtlich auch gewitter'}
+BASELINE METRICS: {}
+['heute nacht wird es verbreitet frostig nur in bayern bis minus vier grad an der nordsee gibt es stürmische böen', 'in der nacht regnet es im norden und osten hier und da sonst hier und da schauer sonst ist es teilweise klar', 'morgen schwacher bis mäßiger im nordwesten frischer wind mit starken bis stürmischen böen', 'sonst lässt der regen von den alpen her ein bisschen nach im norden klar']
+['heute wird heute heute heute der nacht f frosstig nur am bayern bis alpenrand minus minus vierund an wird es frisrig und frost und', 'heute heute wird heute nacht in norden und noch noch der nachtthälfte noch teil kräftiger sonster regen sonst regr hier hier schauer hier und da auch sich auch die sterne', 'morgen früh der wind nach nach nord von im nordwesten an antürmischer auf', 'ansonsten wird der el im der alpen bis ein bisschen nach sonst süden klar es klar klart dabeit']
+['es wird dann kalt in dieser nacht aber frostig nur in bayern am alpenrand bis minus zwei grad sonst ist einfach zu windig für frost', 'und so fällt heute nacht im norden zunächst auch in der osthälfte zum teil schauerartiger regen sonst nur noch einzelne schauer hier und da zeigen sich auch die sterne', 'morgen lässt der wind erst nach bevor es im nordwesten wieder stürmisch wird', 'sonst lässt der regen von den alpen her ein bisschen nach im norden wird es dann klar']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 12
+TIME: 1836.8732161521912
+AVG. LOSS: 30.06921246301765
+EPOCH METRICS: {'BLEU_1': 0.4321403712228929, 'BLEU_2': 0.3258350080139997, 'BLEU_3': 0.2571344673208169, 'BLEU_4': 0.21013170980440984, 'LOSS': 39.33722316368926, 'ROUGE': 0.478031382818213, 'EXAMPLE': 'pred: am nachmittag ziehen dann von westen wieder neue niederschläge heran, target: die werden am nachmittag in der nordwesthälfte wieder dichter und bringen regen'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen sonntag den einunddreißigsten januar', 'ein tief über skandinavien bringt dem nordwesten wolken und einige schauer', 'in den nächsten tagen bestimmen tiefs über dem atlantik deutlich mildere luft nach deutschland', 'heute nacht gibt es stellenweise kräftige schauer an der ostsee auch gewitter']
+['und nun die wettervorhersage für morgen sonntag den einundzreißigsten januar', 'ein tieftürdinavientief bringt dem vor allem dem nordwest und westen deutschlands noch wolken und einige schauer', 'in in den nächsten tagen wird es ein dieses tiefs dem atlantik deutlich mildere luft heran nach mitteleuropa', 'heute nacht gibt stellenweise schauer an der see sind kurze gewitter möglich']
+['und nun die wettervorhersage für morgen sonntag den einunddreißigsten januar', 'ein skandinavientief bringt morgen vor allem dem norden und westen deutschlands noch wolken und einige schauer', 'und in den nächsten tagen wird uns aber dieses tief auf dem atlantik deutlich mildere luft wieder nach mitteleuropa schicken', 'heute nacht fallen stellenweise schauer an der see sind kurze gewitter möglich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 13
+TIME: 1831.373592376709
+AVG. LOSS: 29.248098497863822
+EPOCH METRICS: {'BLEU_1': 0.4252950575526376, 'BLEU_2': 0.32044389237338383, 'BLEU_3': 0.2531714480258951, 'BLEU_4': 0.20755546217713602, 'LOSS': 38.81379700671731, 'ROUGE': 0.46699237654334536, 'EXAMPLE': 'pred: der wind weht schwach bis mäßig aus unterschiedlichen richtungen, target: der wind weht schwach bis mäßig aus südosten'}
+BASELINE METRICS: {}
+['morgen im südosten noch zum teil kräftige schauer und gewitter', 'am tag vierzehn grad bei dauerregen sonst achtzehn bis zwanzig grad', 'am freitag ähnliches wetter aber am samstag ziehen von norden wolkenfelder bis in die mitte dabei fällt stellenweise etwas schnee oder regen', 'in der südwesthälfte ist es heute nacht meist freundlich und trocken']
+['morgen im südo und oosten zum scho teil itrige  örtlich  länger anhaltende regenfälle', 'am tag vierzehn grad bei dauerregen sonst achtdauer zwischen achtzehn und zundzwanzig grad', 'am freitag und ähnliches wetter aber auch samstag ziehen von norden wolkenfelder bis ins mitte dabei fällt stellenweise etwas wenig regen schnee', 'in südensten bleibt es bis zum abend recht freundlich und meist trocken']
+['morgen im süden und südosten noch zum teil gewittrige und örtlich auch länger anhaltende regenfälle', 'am tag vierzehn grad bei dauerregen sonst werte zwischen achtzehn und fünfundzwanzig grad', 'am freitag noch ähnliches wetter aber am samstag ziehen von norden wolkenfelder bis in die mitte dabei fällt stellenweise ein wenig regen oder schnee', 'im südosten bleibt es bis zum abend teilweise freundlich und meist trocken']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 14
+TIME: 1864.9613873958588
+AVG. LOSS: 28.5241022937865
+EPOCH METRICS: {'BLEU_1': 0.428989309692239, 'BLEU_2': 0.32688241591288386, 'BLEU_3': 0.2588267077156398, 'BLEU_4': 0.2119434428402422, 'LOSS': 38.85572007327181, 'ROUGE': 0.47142929162355185, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen samstag den dritten oktober, target: und nun die wettervorhersage für morgen samstag den zweiten oktober'}
+BASELINE METRICS: {}
+['im erzgebirge können stürmische böen geben', 'auch am freitag ist es im norden freundlich sonst mehr wolken als sonne teilweise gewittrige regenfälle', 'tiefdruckgebiete über deutschland bestimmen in den nächsten tagen unser wetter', 'am montag regnet es in der südosthälfte gebietsweise kräftig sonst neben einzelnen schauern auch sonnenschein']
+['im die chlagen ers erzgebirge und unwetterwarnungen des deutschen wetterdienstes', 'am am freitag ist es im norden freundlich teil freundlich sonst viele wolken als sonne zum gewittrige', 'das  deutschlandsbereich tiefbereich einer umfangreichen tiefdruckzone die für recht wechselhaftes wetter', 'am montag reg es im der südosthälfte noch teil ergiebige regen sonst sonst einzelne schauer und etwas sonne']
+['für die höhenlagen des erzgebirges gelten unwetterwarnungen des deutschen wetterdienstes', 'auch am freitag ist es im norden zum teil freundlich sonst mehr wolken als sonne teilweise gewittrige regenfälle', 'noch liegt deutschland im einflussbereich einer umfangreichen tiefdruckzone die für recht wechselhaftes wetter sorgt', 'am montag gibt es in der südosthälfte zum teil ergiebige regenfälle sonst einzelne schauer und etwas sonne']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 15
+TIME: 1875.6811299324036
+AVG. LOSS: 27.77742024070112
+EPOCH METRICS: {'BLEU_1': 0.43189624910551466, 'BLEU_2': 0.32505769007573077, 'BLEU_3': 0.25787495759930035, 'BLEU_4': 0.21150641386674926, 'LOSS': 38.98474021568923, 'ROUGE': 0.4715240949426417, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen donnerstag den dritten oktober, target: und nun die wettervorhersage für morgen donnerstag den vierten oktober'}
+BASELINE METRICS: {}
+['heute nacht sieben bis ein grad am alpenrand bis acht grad im sauerland und fünfzehn grad im breisgau', 'über den alpen sind einzelne schauer und gewitter möglich', 'auch in der mitte gelegentlich wolkig', 'im bergland und im norden sturmböen']
+['heute nacht siebenwerte zwischen sieben und drei grad im tag acht acht grad in vogtland und achtzehn grad im rherhein', 'in den alpen sind einzelne schauer und gewitter möglich', 'auch in der mitte undtlich wolkig', 'der bergland und im norden sturmböen']
+['heute nacht werte zwischen sieben und ein grad am tag dann acht grad im vogtland und fünfzehn grad am oberrhein', 'über den alpen sind einzelne schauer oder gewitter möglich', 'auch in der mitte gelegentlich wolkig', 'im bergland und im norden sturmböen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 16
+TIME: 1842.3090121746063
+AVG. LOSS: 27.125214433992593
+EPOCH METRICS: {'BLEU_1': 0.43697965186885956, 'BLEU_2': 0.32622351418123124, 'BLEU_3': 0.25618084939386887, 'BLEU_4': 0.2081525675808295, 'LOSS': 38.963637830434735, 'ROUGE': 0.4751411745583882, 'EXAMPLE': 'pred: stürmisch wird es dann auch am montag, target: und sturm haben wir jeden tag auch dabei'}
+BASELINE METRICS: {}
+['am sonntag und montag teils sonne teils gewittrige regenfälle dabei kühlt es langsam ab', 'von nordwesten strömt kühlere luft heran in bayern und baden württemberg deutlich kühlere luft nach deutschland', 'morgen erwartet uns eine mischung aus nebel und hochnebelfeldern recht freundlich', 'im süden gibt es heute nacht noch einzelne schauer sonst teils klar teils wolkig teils klar']
+['am sonntag und montag teils sonne teils gewittrige regenfälle dabei kühlt es dann ab', 'sonstinter frt kühlereesluft heran so dass es in in bayern dabei inen württemberg deutlich kühler wirds heute', 'auch morgen kann es morgen ab häufignäckig sonst oder wird es aber auch freundlicher', 'in der nacht fallen im im süden noch ein paar schauer sonst ist es teil inwie nordsten ziehen dicht paar wolkenfelder meist']
+['am sonntag und montag teils sonne teils gewittrige regenfälle dabei kühlt es langsam ab', 'dahinter fließt kühle meeresluft heran so dass es auch in bayern und baden württemberg deutlich kühler wird als heute', 'und der kann sich morgen wieder hartnäckig halten regional wird es aber auch freundlich', 'in der nacht fallen ganz im süden noch ein paar schauer sonst ist es klar über die küsten ziehen ein paar wolkenfelder']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 17
+TIME: 1860.1096079349518
+AVG. LOSS: 26.32222019376185
+EPOCH METRICS: {'BLEU_1': 0.4157822526615567, 'BLEU_2': 0.31413348247498646, 'BLEU_3': 0.24770488115847697, 'BLEU_4': 0.2024012025045957, 'LOSS': 38.98165348212384, 'ROUGE': 0.46689153894746876, 'EXAMPLE': 'pred: die aussichten am montag mal sonne mal wolken hier und da fallen schauer, target: die aussichten am montag teils sonne teils wolken im westen schneit es etwas'}
+BASELINE METRICS: {}
+['im norden und westen mal sonne mal wolken', 'im süden und südwesten bleibt es meist trocken', 'ein sturmtief über dänemark bringt dem süden deutschlands morgen vor allem an den küsten', 'im westen und südwesten ähnlich freundlich wie heute mit sonne und wolken und nur ein schwacher wind']
+['im norden und westen mal sonne mal wolkent', 'im süden und südoen bleibt es meist tro trocken', 'zwischen  ein kleinesturmtief über dänemark das jetzt weiter nachht rechnen südenden für regen und noch nacht ein den küsten', 'in im ist westen und süd südwest haben freundlich wie heute mit sonne und wolken nu auch einr schw schwacherwind']
+['im norden und westen mal sonne mal wolken', 'im süden und südwesten bleibt es meist noch trocken', 'wir haben ein sturmtief über dänemark das jetzt weiterzieht richtung südschweden viel regen fällt dabei heute nacht noch an den küsten', 'aber sonst im westen und im süden ähnlich freundlich wie heute mit sonne und wolken und auch nur ein schwacher nordwind']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 18
+TIME: 1842.2657327651978
+AVG. LOSS: 25.512500913731813
+EPOCH METRICS: {'BLEU_1': 0.4382683950669687, 'BLEU_2': 0.3344798679574911, 'BLEU_3': 0.26398649076133995, 'BLEU_4': 0.2151545654668332, 'LOSS': 39.27258258713463, 'ROUGE': 0.48348384225411567, 'EXAMPLE': 'pred: am sonntag breiten sich dann von westen wieder neue schauer aus am alpenrand, target: am sonntag viel sonne an den alpen sind einzelne schauer möglich'}
+BASELINE METRICS: {}
+['auch am tag steigen die temperaturen an auf und dann wird es dort auch wieder freundlicher', 'in der nacht werden die wolken von westen dichter regenschauer breiten sich aus stellenweise sind gewitter dabei', 'in der nordwesthälfte ist es heute nacht verbreitet klar', 'heute nacht wird es kalt aber frostig nur in bayern am alpenrand bis minus zwei grad an der nordsee sturmböen']
+['und nun sommer sommertag sozuzel wird es auch morgen wieder ein sommerliches temperaturen mehr allen dingen im norden wiederwandelschieden', 'in der nacht ist die wolken von westen erneutchter undschauer währendn sich aus später sind gewitter dabei', 'im der nordwesthälfte istert es dann auch auf', 'aber wird dann auch in dieser nacht aber frostig amr am bayern am rhepenrand bis minus zwei grad an gibt es wind windig bis frostfrei']
+['und der letzte sommertag sozusagen wird sich auch morgen mit wenig sommerlichen temperaturen vor allen dingen im norden verabschieden', 'in der nacht werden die wolken von westen dichter regenschauer breiten sich aus teilweise sind gewitter dabei', 'in der nordwesthälfte lockert es dann wieder auf', 'es wird dann kalt in dieser nacht aber frostig nur in bayern am alpenrand bis minus zwei grad sonst ist einfach zu windig für frost']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 19
+TIME: 1844.3956232070923
+AVG. LOSS: 25.07904991786402
+EPOCH METRICS: {'BLEU_1': 0.122, 'BLEU_2': 0.05224478012048658, 'BLEU_3': 0.025682178172654942, 'BLEU_4': 0.01469897739922942, 'LOSS': 52.904108336895185, 'ROUGE': 0.11801872706012824, 'EXAMPLE': 'pred: dort sowie im südosten ist es heute nacht meist noch sonnig, target: am tag minus sieben grad im vogtland und null grad an der ostsee'}
+BASELINE METRICS: {}
+['in der zweiten nachthälfte lockert es hier und da auf örtlich bildet sich nebel', 'in der zweiten nachthälfte lockert es hier und da auf örtlich etwas regnen', 'in der zweiten nachthälfte lockert es hier und da auf örtlich bildet sich nebel', 'in der zweiten nachthälfte lockert es hier und da auf örtlich etwas regnen']
+['und sorgt  jeden fall inhler als in gibt am noch sch drei bishn bisschenzezwanzig grad am', 'aber bli es nochr zeit noch oland undttt', 'undr in kannom schwüringer wald bis nach erpenrandrost und  und dem sechs grad', 'am sonma zu uns jarömt ist zu indttt']
+['es ist auf jeden fall kühler als heute es sind meist noch so achtzehn bis vierundzwanzig grad', 'die gibt es zur zeit im bergland', 'nur so vom thüringer wald bis zum alpenrand frost zwischen null und minus fünf grad', 'die luft die zu uns strömt ist weiter mild']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 20
+TIME: 1851.27983212471
+AVG. LOSS: 24.845733665425453
+EPOCH METRICS: {'BLEU_1': 0.44059744597589706, 'BLEU_2': 0.3342453704223881, 'BLEU_3': 0.2650663655255993, 'BLEU_4': 0.21779948919099262, 'LOSS': 39.73538867471765, 'ROUGE': 0.4837390509199335, 'EXAMPLE': 'pred: im osten und süden scheint häufig die sonne in der nordwesthälfte ist es stark bewölkt hier und da regnet oder schauert es im süden auch vereinzelt, target: im osten und südosten scheint morgen verbreitet die sonne in der nordwesthälfte dagegen viele wolken und stellenweise etwas regen richtung süden auch ein paar schauer'}
+BASELINE METRICS: {}
+['am mittwoch legt der wind noch zu und es regnet weiter', 'am tag schneit es an den küsten hier und da etwas sonst regnet es teilweise ergiebig', 'und die temperaturen steigen weiter in den nächsten tagen ein bisschen sonniger', 'in der südwesthälfte wird es wieder wärmer als heute hier und da gibt es regen oder schauer vor allem in bayern in der südosthälfte auch heftige gewitter']
+['am mittwoch wechsel noch wind wieder zu und es regnen weiter', 'an tag sch den küsten kaum im südenen fällt regen oder schneere sonst nieselschläge die von nordosten immer mehr in regenneere übergeht', 'und die temperaturen auchsteigen auch ein den nächsten tagen ein wird einwiegend sonnig', 'im südwest und wewesten wird dieerorts regen in schauer in bayen w nach südostbayern kann dort kräftige gewitter']
+['am mittwoch legt der wind noch zu und es regnet weiter', 'am tag an den küsten und im nordwesten kaum regen oder schnee sonst niederschläge die von nordosten immer mehr in schnee übergehen', 'und die temperaturen steigen weiter in den nächsten tagen es wird überwiegend sonnig', 'im süden und südwesten allerdings vielerorts regen oder schauer von baden bis nach südostbayern auch einige kräftige gewitter']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 21
+TIME: 1829.3744776248932
+AVG. LOSS: 23.472049915266414
+EPOCH METRICS: {'BLEU_1': 0.4552138311912188, 'BLEU_2': 0.3459809371688006, 'BLEU_3': 0.2743393588643273, 'BLEU_4': 0.22493277624254862, 'LOSS': 39.51602817443065, 'ROUGE': 0.4939720459131399, 'EXAMPLE': 'pred: am tag fünf grad im osten und bis zu fünf grad im süden wird es deutlich wärmer, target: aber im osten haben wir noch anfangs die wärme vierundzwanzig grad genauso wie im östlichen bayern'}
+BASELINE METRICS: {}
+['in der nacht regnet es im süden und südosten hier und da richtung norden ist es teilweise klar', 'das tief über frankreich strömt sehr warme luft zu uns nach deutschland', 'der wind weht schwach bis mäßig aus unterschiedlichen richtungen', 'im laufe des tages entwickeln sich immer öfter zum teil heftige schauer und gewitter die mit höchsttemperaturen so bis zwanzig grad']
+['in der nacht regnet es im süden und südosten hier und da richtung norden ist es teilweise klar', 'das allem in frankreich   wärme aber leider bleibt uns wird aus aus uns', 'der wind weht schw schwach gelegentlich auch  mäßig', 'in nächsten s dann insgesamt wieder weniger gewitter und nu noch schauer und höchsttemperaturen bis bis drei dreiwanzig grad']
+['in der nacht regnet es im süden und südosten hier und da richtung norden ist es teilweise klar', 'vor allem in frankreich liegt die wärme aber leider wird sie uns nicht erreichen', 'der wind weht meist schwach gelegentlich auch mal mäßig', 'die nächsten tage bringen dann insgesamt zwar weniger gewitter aber immer noch schauer und höchsttemperaturen so bis maximal zwanzig grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 22
+TIME: 1818.4746720790863
+AVG. LOSS: 26.272001417271852
+EPOCH METRICS: {'BLEU_1': 0.4430795244408638, 'BLEU_2': 0.33728835410402136, 'BLEU_3': 0.26775873801182054, 'BLEU_4': 0.2205539438859321, 'LOSS': 39.38098631635567, 'ROUGE': 0.48479599521721384, 'EXAMPLE': 'pred: am donnerstag wird es später kräftig im norden windig und an den küsten regnet es nur wenig, target: am freitag wird es im norden und nordwesten windiger mit sturmböen an der nordsee und von dort zieht später etwas regen heran sonst ändert sich wenig'}
+BASELINE METRICS: {}
+['in der zweiten nachthälfte regnet es vereinzelt etwas im nordwesten sowie an der ostsee ist es heute nacht auch im südosten nicht mehr ganz so kalt', 'die warme luft die zu uns strömt ist weiter ostwärts', 'heute nacht ein grad an den alpen vierzehn grad an der ostsee', 'am sonntag viel sonne im osten einzelne schauer']
+['in gibt nacht von etwas regen wird es gesamten nordwesten sein die ostseeküste und auch wird laufe der nacht auch die nachtfel während sich im südensten  viel regenut', 'die  luft ver jetzt nach nordosten abgedrängt', 'heute nacht ein grad an den alpen vierzehn an an der ostsee', 'am sonntag viel sonneschein im osten noch schauer']
+['betroffen heute nacht von etwas regen wird der gesamten nordwesten sein die ostseeküste und dann im laufe der nacht auch die eifel während sich im südosten nicht viel tut', 'die warme luft wird erstmal nach nordosten abgedrängt', 'heute nacht ein grad an den alpen vierzehn grad an der ostsee', 'am sonntag viel sonnenschein im osten einzelne schauer']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 23
+TIME: 1845.8998346328735
+AVG. LOSS: 23.073839114107436
+EPOCH METRICS: {'BLEU_1': 0.4487272925734203, 'BLEU_2': 0.3408461656940066, 'BLEU_3': 0.2708801463043235, 'BLEU_4': 0.22160402895636575, 'LOSS': 39.295011568620716, 'ROUGE': 0.4801178333280307, 'EXAMPLE': 'pred: in küstennähe halten sich morgen viele wolken hier und da regnet oder schauert es vereinzelt gewitter, target: in der mitte halten sich allerdings wolken die morgen stellenweise für schauer oder gewitter sorgen'}
+BASELINE METRICS: {}
+['in den nächsten tagen scheint meist die sonne und es wird wieder heiß', 'ansonsten scheint verbreitet die sonne', 'die luft die zu uns strömt ist sehr kalte luft zu uns', 'morgen bleibt es kalt in bayern mit höchstwerten zwischen ein und zwei grad']
+['die den nächsten tagen wird dienig und wieder ganzer', 'ansonsten ist sich aber aber ken auch mal die sonne', 'kalte haben immer in kälte luft luft über dem nordensten da liegt in schwerpunkt', 'morgen wird es f in bayern noch einchsttem zwischen ein und zwei grad']
+['in den nächsten tagen verbreitet sonnig und wieder heißer', 'sonst zeigt sich neben vielen wolken auch mal die sonne', 'wir haben auch die kälteste luft über dem nordosten da liegt der schwerpunkt', 'morgen bleibt es kalt in bayern mit höchstwerten zwischen ein und drei grad']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 24
+TIME: 1816.7755920886993
+AVG. LOSS: 22.295950759760824
+EPOCH METRICS: {'BLEU_1': 0.4414419949013144, 'BLEU_2': 0.33933127000104085, 'BLEU_3': 0.2716544708688501, 'BLEU_4': 0.2239573042112649, 'LOSS': 39.61985504053002, 'ROUGE': 0.48737830142310135, 'EXAMPLE': 'pred: im übrigen land mal mehr mal weniger wolken und meist trocken, target: ganz anders an der nordsee da ist es milder und es bleibt auch in dieser nacht dort ziemlich mild es schneit nämlich'}
+BASELINE METRICS: {}
+['auch am dienstag scheint meist die sonne am alpenrand einzelne hitzegewitter', 'am tag im norden viel sonne auch im süden ist es recht freundlich an den alpen auch für längere zeit', 'am samstag übernimmt dann ein atlantiktief die wetterregie mit wolken und regen', 'tiefdruckgebiete sorgen dafür dass es in der nacht und morgen in teilen deutschlands kräftig schneit das tief über der adria und das tief bei frankreich']
+['auch am dienstag viel meist die sonne am denpennähe einzelne sich einzelne gewwärmegewitter entwickeln', 'am tag ist viel nordosten sonne auch im süden und es recht freundlich in den alpen auch für längere zeit', 'und samstag erreicht die ein atlanttief die wetterregie mit regenken und regenw', 'das zwei tiefs sorgen dafür dass es in der nacht und morgen in deutschland deutschland von kräftig schneit das tief über der adria und das tief bei frankreich ziehen']
+['auch am dienstag scheint meist die sonne in alpennähe können sich einzelne wärmegewitter entwickeln', 'am tag zunächst im nordosten sonne auch im süden ist es recht freundlich an den alpen auch für längere zeit', 'am samstag übernimmt dann ein atlantiktief die wetterregie mit wolken und regen', 'gleich zwei tiefs sorgen dafür dass es in der nacht und morgen in teilen deutschlands kräftig schneit das tief über der adria und das tief bei frankreich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 25
+TIME: 1887.2819335460663
+AVG. LOSS: 21.739987448882626
+EPOCH METRICS: {'BLEU_1': 0.4478505043021773, 'BLEU_2': 0.33674205538876517, 'BLEU_3': 0.26523923393364324, 'BLEU_4': 0.2175054638766627, 'LOSS': 40.164780451727744, 'ROUGE': 0.48294754104993964, 'EXAMPLE': 'pred: dort wird es auch sturmböen geben sonst weht der wind schwach bis mäßig an der nordsee auch frisch, target: bei uns kommt auch noch kräftiger wind dazu vor allen dingen in der nordhälfte mit stürmischen böen an der küste'}
+BASELINE METRICS: {}
+['wo es geregnet hat bildet sich örtlich nebel', 'am dienstag weiterhin wechselhaftes wetter mit sonne wolken und regen', 'in der neuen woche geht es dann mit atlantischen tiefausläufern recht wechselhaft weiter', 'und nun die wettervorhersage für morgen dienstag den einunddreißigsten august']
+['bei wind gibt weniger nebel', 'am dienstag gibt wechselhaftes wetter mit sonne wolken und regen', 'in der neuen woche sorgt es dann mit atlan  tiefausläufer  recht wechselhaft weiter', 'und nun die wettervorhersage für morgen dienstag den einunddreißigsten august']
+['mehr wind bedeutet weniger nebel', 'am dienstag weiterhin wechselhaftes wetter mit sonne wolken und regen', 'in der neuen woche geht es dann mit atlantischen tiefausläufern recht wechselhaft weiter', 'und nun die wettervorhersage für morgen dienstag den einunddreißigsten august']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 26
+TIME: 1887.555695772171
+AVG. LOSS: 21.420979274569127
+EPOCH METRICS: {'BLEU_1': 0.4402714486839375, 'BLEU_2': 0.3329508970185718, 'BLEU_3': 0.2631390098839859, 'BLEU_4': 0.2160862827755919, 'LOSS': 38.70453566645841, 'ROUGE': 0.4841468802945349, 'EXAMPLE': 'pred: liebe zuschauer guten abend, target: liebe zuschauer guten abend'}
+BASELINE METRICS: {}
+['es wird ja morgen wieder wärmer zwanzig bis fünfundzwanzig grad und auch in frankreich in spanien aber auch in der zweiten nachthälfte', 'morgen regnet es vor allem in der nordwesthälfte hier und da', 'von westen zieht ein sturmtief heran heran das der nordhälfte deutschlands morgen wieder regenfälle und stürmischen wind beschert', 'auch morgen sorgt tiefer luftdruck im norden deutschlands für regen']
+['und wird ist ja in europa schon viel wärmer zwanzig bis fünfundzwanzig grad und frankreich und derien und auch in der undechenland und der türkei ist', 'morgen tag regnet es nieittert des sch in der nordhälfte  nordenen undunter auch kräftig', 'vonom atlantik braust und neues tiefsturmtief das das heute nordhälfte deutschlands morgen wieder anw und stürmischen windeert', 'auch morgen sorgt eindruck luftdruck im norden deutschlands für regen']
+['aber es ist ja in europa schon viel wärmer zwanzig bis fünfundzwanzig grad in frankreich in spanien aber auch in italien griechenland und der türkei', 'am tag regnet oder gewittert des besonders in der nordhälfte im nordwesten mitunter auch kräftig', 'vom atlantik braust ein neues sturmtief heran das der nordhälfte deutschlands morgen wieder regenfälle und stürmischen wind beschert', 'auch morgen sorgt tiefer luftdruck im norden deutschlands für regen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 27
+TIME: 1832.9337055683136
+AVG. LOSS: 20.582847192026716
+EPOCH METRICS: {'BLEU_1': 0.43259219016205225, 'BLEU_2': 0.3263457572472733, 'BLEU_3': 0.2581077039719331, 'BLEU_4': 0.21110391610379586, 'LOSS': 40.13791835767456, 'ROUGE': 0.4794649708172537, 'EXAMPLE': 'pred: hochdruckeinfluss sorgt auch am freitag für freundliches wetter mit sonne und steigende temperaturen, target: das hoch bringt uns bis mindestens karfreitag überwiegend freundliches wetter und steigende temperaturen'}
+BASELINE METRICS: {}
+['im laufe des tages wird es aber immer mehr schnee und dieser schnee erreicht dann auch im südosten', 'ein tief das von england zur ostsee zieht bringt dem norden und der mitte deutschlands wolken die hier und da auch etwas regen fallen lassen', 'am tag achtzehn grad im norden und achtundzwanzig grad am oberrhein', 'morgen vormittag ziehen dann ebenfalls von westen zum teil kräftige schauer heranzieht']
+['und tags laufe des tages wird es immer immer mehr schnee sein dieser schnee erreicht dann auch abend im den südosten', 'ein tief zieht von england zur ostsee zieht bringt dem norden und der mitte deutschlands wolken und hier und da etwas noch regen fallen lassen', 'am tag achtzehn grad an norden und achtundzwanzig grad am oberrhein', 'und früh sch es erst stellenflockerungen am miten vormittag ziehen es westlich des rheins zu regnen']
+['und im laufe des tages wird es aber immer mehr schnee und dieser schnee erreicht dann am abend auch den südosten', 'ein tief das von england zur ostsee zieht bringt dem norden und der mitte deutschlands wolken die hier und da auch etwas regen fallen lassen', 'am tag achtzehn grad im norden und achtundzwanzig grad am oberrhein', 'am tag gibt es erst auflockerungen am späten vormittag beginnt es westlich des rheins zu regnen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 28
+TIME: 1844.5003623962402
+AVG. LOSS: 20.123289152358268
+EPOCH METRICS: {'BLEU_1': 0.4473228285937209, 'BLEU_2': 0.3429768460683197, 'BLEU_3': 0.27542294558605157, 'BLEU_4': 0.2297955527753254, 'LOSS': 39.8948411783042, 'ROUGE': 0.48513417411494125, 'EXAMPLE': 'pred: auch am samstag wieder ähnliches wetter im westen einzelne schauer oder gewitter, target: samstag ebenso und dann am sonntag vielleicht im westen die ersten schauer und gewitter'}
+BASELINE METRICS: {}
+['jetzt wünsche ich ihnen noch einen schönen abend', 'und nun die wettervorhersage für morgen freitag den zwölften februar', 'im nordosten lenkt das hoch ziemlich kalte luft und dort halten sich auch noch eine menge wolken die etwas regen bringen', 'in der nacht breiten sich von frankreich schauer und gewitter aus die örtlich unwetterpotenzial haben']
+['ihnen wünsche ich ihnen einen einen schönen abend', 'und nun die wettervorhersage für morgen freitag den drittenten juli', 'im der nordosten lenkt das tief ziemlich kalte luft und dort halten sich noch noch eine kalt wolken die hier regen bringen', 'in nachen nachabend ziehen dann von wereich schauer und gew unwetterartige gewitter heran']
+['jetzt wünsche ich ihnen noch einen schönen abend', 'und nun die wettervorhersage für morgen freitag den zwölften februar', 'in den nordosten lenkt das hoch ziemlich kalte luft und dort halten sich auch noch eine menge wolken die etwas regen bringen', 'am späten abend ziehen dann von frankreich schauer und teilweise unwetterartige gewitter heran']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 29
+TIME: 1860.9575068950653
+AVG. LOSS: 19.65601713762208
+EPOCH METRICS: {'BLEU_1': 0.4560886933407521, 'BLEU_2': 0.34538622509058337, 'BLEU_3': 0.27151039232925306, 'BLEU_4': 0.2211774880022195, 'LOSS': 39.764886610540124, 'ROUGE': 0.4871965071640619, 'EXAMPLE': 'pred: in den folgenden tagen erwartet uns unbeständiges wetter mit schnee, target: danach erwartet uns im ganzen land unbeständiges wetter mit weiteren schneefällen'}
+BASELINE METRICS: {}
+['von süden breiten sich später nebel oder hochnebelfelder aus', 'morgen früh da sind es elf bis sechzehn grad', 'am sonntag im westen hier und da schauer', 'im süden schwacher bis mäßiger wind sonst weht er schwach bis mäßig bei gewittern sind stürmische böen möglich']
+['diese allem im der südhälfte ziehtt sich hier und da nebel aus hochnebelfelder', 'morgen temperaturen da sind es elf bis dreichzehn grad', 'am am sonntag im westen vereinzelt   einen schauer', 'im südensten schwacher bis sonst auchht er meistach bis mäßig bei gewittern sind türmische böen möglich']
+['vor allem in der südhälfte breitet sich hier und da nebel oder hochnebel aus', 'morgen früh da sind es elf bis sechzehn grad', 'und am sonntag im westen vereinzelt vielleicht mal einen schauer', 'im südosten schwacher wind sonst weht er schwach bis mäßig bei gewittern sind stürmische böen möglich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 30
+TIME: 1845.589371919632
+AVG. LOSS: 19.102663003874202
+EPOCH METRICS: {'BLEU_1': 0.4519614036726997, 'BLEU_2': 0.3428260933335636, 'BLEU_3': 0.2717958438067268, 'BLEU_4': 0.22328422130826528, 'LOSS': 39.96486318053997, 'ROUGE': 0.4850287000411049, 'EXAMPLE': 'pred: liebe zuschauer guten abend, target: liebe zuschauer guten abend'}
+BASELINE METRICS: {}
+['dazu weht ein schwacher bis mäßiger südwestwind', 'ihnen einen schönen abend und machen sie es gut', 'die aussichten am samstag überall viel sonne bis neunundzwanzig grad auch meist die sonne', 'in der westhälfte gibt es zwar viele wolken aber meist trocken']
+['dazu dazu weht dazu auch nur schw schwacher bis bis südwestwind', 'ihnen damit war es für heute schönen abendt', 'die aussichten am samstag scheint viel sonne bis neunundzwanzig grad auch mal häufigntag scheint meist die die sonne', 'im der westhälfte ist es neben viele wolken aber es bleibt meist trocken']
+['und es weht dazu auch nur ein schwacher süd bis südwestwind', 'und das war es für heute schönen abend noch', 'die aussichten am samstag überall viel sonne bis neunundzwanzig grad auch am sonntag scheint meist noch die sonne', 'in der westhälfte gibt es zwar viele wolken aber es bleibt meist trocken']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 31
+TIME: 1857.9471790790558
+AVG. LOSS: 18.62817032737689
+EPOCH METRICS: {'BLEU_1': 0.44545749204341134, 'BLEU_2': 0.33964989730908896, 'BLEU_3': 0.26952334695908553, 'BLEU_4': 0.22101301402023246, 'LOSS': 39.793652117826575, 'ROUGE': 0.4858281887896807, 'EXAMPLE': 'pred: zwischen dem hoch über skandinavien und russland strömt wieder kältere luft zu uns, target: das hoch über skandinavien lenkt eisige luft aus russland heran'}
+BASELINE METRICS: {}
+['es gelten entsprechende warnungen des deutschen wetterdienstes', 'guten abend liebe zuschauer', 'sturm am wochenende hat die blätter vieler bäume ganz gut abgeräumt aber die trockenheit ist immer noch ein thema', 'der wind weht schwach bis mäßig']
+['es gelten entsprechende warnungen des deutschen wetterdienstes', 'guten abend liebe zuschauer', 'sturm am wochenende hat auch blätter  lassenortäuä gut abgeräumt die die trockenheit eigentlich immer selten ein bis', 'der wind weht schwweise mäßig bis der sie auchch']
+['es gelten entsprechende warnungen des deutschen wetterdienstes', 'guten abend liebe zuschauer', 'der sturm am wochenende hat die blätter vieler bäume ganz gut abgeräumt aber die trockenheit ist immer noch ein thema', 'der wind weht zeitweise mäßig an der sie frisch']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 32
+TIME: 1833.3443672657013
+AVG. LOSS: 18.333999478561633
+EPOCH METRICS: {'BLEU_1': 0.44590842886696425, 'BLEU_2': 0.3384660751861063, 'BLEU_3': 0.26904972499264435, 'BLEU_4': 0.22146580931895296, 'LOSS': 39.991050663251634, 'ROUGE': 0.48618671104215316, 'EXAMPLE': 'pred: am mittwoch ändert sich an diesem wetter wenig, target: ähnlich verläuft der mittwoch'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen freitag den vierzehnten august', 'morgen hält sich der nebel zum teil lange im süden oft den ganzen tag über', 'im nordwesten am nachmittag einzelne gewitter', 'über dem süden deutschlands liegt eine feuchte warme luftmassen über dem norden eine kühle aber recht trockene']
+['und nun die wettervorsichten für morgen freitag den vierzehnten mä', 'morgen hält sich der nebel oft teil lange im süden oft z ganzen tag', 'im nordwesten am nachmittag einzelne gewitter', 'über süd süden deutschlands liegt eine feuchte luft luftmassen über dem norden eine kühle aber recht trocken']
+['und nun die wetteraussichten für morgen freitag den vierzehnten august', 'morgen hält sich der nebel zum teil lange im süden oft den ganzen tag', 'im nordwesten am nachmittag einzelne gewitter', 'über dem süden deutschlands liegt eine feuchte warme luftmassen über dem norden eine kühle aber recht trockene']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 33
+TIME: 1862.3433637619019
+AVG. LOSS: 17.61006194413582
+EPOCH METRICS: {'BLEU_1': 0.44633381651394727, 'BLEU_2': 0.33873633800686576, 'BLEU_3': 0.2691873033413692, 'BLEU_4': 0.22167617522386737, 'LOSS': 40.257238986979104, 'ROUGE': 0.48429917161850666, 'EXAMPLE': 'pred: am sonntag nur noch wenige wolken im nordwesten etwas sonne, target: am sonntag nur noch wenig schnee im norden zeigt sich teilweise die sonne'}
+BASELINE METRICS: {}
+['am freundlichsten wird es im nordwesten im osten und südosten zum teil ergiebiger regen', 'zwischen dem hoch über schottland und dem tief über dem östlichen mitteleuropa strömt kalte und teilweise wolkenreiche luft zu uns nach deutschland', 'heute nacht bleibt es meist wolkenverhangen oder neblig trüb im osten und südosten fällt örtlich etwas schnee oder regen', 'im norden rieselt auch noch etwas schnee']
+['am freundlichsten im es im nordwesten im osten und südo regnet es schauert es mancherorts', 'der einem hoch über schottland und dem tief über der östlichen mitteleuropa strömt kalte und kalte wolkenreiche luft zu uns deutschland', 'heute nacht bleibt es meist wolkenverhangen ne neblig trüb im osten und südosten fällt örtlich leicht schnee oder regen', 'im norden fälltselt noch noch etwas schnee']
+['am freundlichsten wird es im nordwesten im osten und süden regnet oder schauert es mancherorts', 'zwischen dem hoch über schottland und dem tief über dem östlichen mitteleuropa strömt kalte und teilweise wolkenreiche luft zu uns nach deutschland', 'heute nacht bleibt es meist wolkenverhangen oder neblig trüb im osten und südosten fällt örtlich etwas schnee oder regen', 'im norden rieselt auch noch etwas schnee']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 34
+TIME: 1884.7853016853333
+AVG. LOSS: 17.49116614840614
+EPOCH METRICS: {'BLEU_1': 0.4449592815092458, 'BLEU_2': 0.3378743364711451, 'BLEU_3': 0.2692180959458946, 'BLEU_4': 0.22261260659249973, 'LOSS': 40.90791602033641, 'ROUGE': 0.4815349317291591, 'EXAMPLE': 'pred: im südwesten unter klarem himmel morgen vier bis neun grad, target: im süden und westen wird es klar morgen früh sind es vier bis neun grad'}
+BASELINE METRICS: {}
+['das bedeutet für uns wechselhaftes wetter', 'guten abend liebe zuschauer', 'im übrigen land mehr oder weniger dichte wolken die gebietsweise etwas regen bringen', 'auch am donnerstag meist sonnig an der nordsee zum teil auch mal wolkig aber weiterhin trocken']
+['das bedeutet für  wechselhaftes wetter', 'guten abend liebe zuschauer', 'im norden land mehr oder weniger dichte wolken die vereinsweise regen regen bringen', 'auch am dienststag ist sonnig und der nordsee zum teil auch mal dichtkig aber es trocken']
+['das bedeutet für uns wechselhaftes wetter', 'guten abend liebe zuschauer', 'im übrigen land mehr oder weniger dichte wolken die gebietsweise etwas regen bringen', 'auch am donnerstag meist sonnig an der nordsee zum teil auch mal wolkig aber weiterhin trocken']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 35
+TIME: 1877.297453403473
+AVG. LOSS: 16.873654837538453
+EPOCH METRICS: {'BLEU_1': 0.44615043650280295, 'BLEU_2': 0.3389370330900697, 'BLEU_3': 0.26925985347663534, 'BLEU_4': 0.2214396873379753, 'LOSS': 40.44289986395882, 'ROUGE': 0.48088430898266943, 'EXAMPLE': 'pred: und auch am samstag kommt von norden her ein bisschen kühler, target: ähnliches wetter auch am samstag von norden wird es allerdings kühler'}
+BASELINE METRICS: {}
+['es bestehen entsprechende unwetterwarnungen des deutschen wetterdienstes', 'ihnen einen schönen abend und machen sie es gut', 'örtlich bildet sich nebel', 'im süden macht sich morgen ein tief über dem mittelmeer bemerkbar']
+['es bestehen entsprechende unwetterwarnungen des deutschen wetterdienstes', 'ihnench wünsche ihnen einen schönen abend und machen sie es gut', 'in die geht sich in dieser nacht aber nebel', 'im süden macht sich morgen morgen ein tief über dem mittelmeer bemerkbar']
+['es bestehen entsprechende unwetterwarnungen des deutschen wetterdienstes', 'ich wünsche noch einen schönen abend und machen sie es gut', 'und es bildet sich in dieser nacht noch nebel', 'im süden macht sich bereits morgen ein tief über dem mittelmeer bemerkbar']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 36
+TIME: 1860.2914786338806
+AVG. LOSS: 16.43221887015436
+EPOCH METRICS: {'BLEU_1': 0.4514322384969149, 'BLEU_2': 0.3458921004759254, 'BLEU_3': 0.2772538575362104, 'BLEU_4': 0.2297965381199748, 'LOSS': 40.24558354296896, 'ROUGE': 0.49344781163610413, 'EXAMPLE': 'pred: aber in den nächsten tagen kühlt es weiter ab, target: aber tagsüber ist es dann dort kühler als in süddeutschland'}
+BASELINE METRICS: {}
+['morgen im südosten zunächst noch wolkenlücken sonst fällt verbreitet schnee', 'zwischendurch kann sich auch mal die sonne blicken lassen am ehesten noch im norden', 'und nun die wettervorhersage für morgen samstag den achtundzwanzigsten mai', 'schwacher bis mäßiger im nordwesten auch frischer wind aus ost bis südost']
+['morgen fällt südosten zunächst noch nichtkenlücken sonst fällt heute schnee', 'zwischen diesen zeigt sich auch mal die sonne zeigencken und am ehesten noch im norden', 'und nun die wettervorhersage für morgen samstag den achtundzwanzigsten mai', 'schwacher bis mäßiger im der nordwesthälfte auch frischer wind teil stark böiger wind aus unterschiedlich bis südwest']
+['morgen im südosten zunächst noch wolkenlücken sonst fällt verbreitet schnee', 'zwischendurch kann sich auch mal die sonne blicken lassen am ehesten noch im norden', 'und nun die wettervorhersage für morgen samstag den achtundzwanzigsten mai', 'schwacher bis mäßiger in der nordwesthälfte auch frischer zum teil stark böiger wind aus süd bis südwest']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 37
+TIME: 1920.2183108329773
+AVG. LOSS: 16.058112505457984
+EPOCH METRICS: {'BLEU_1': 0.4588079908406628, 'BLEU_2': 0.3507493539205664, 'BLEU_3': 0.2799988146291522, 'BLEU_4': 0.23132117375025715, 'LOSS': 40.34280229682867, 'ROUGE': 0.4931035081412054, 'EXAMPLE': 'pred: auch an der oder und neiße sowie im laufe des tages hier und da wolken, target: auch am oberrhein nehmen gegen abend die wolken zu'}
+BASELINE METRICS: {}
+['morgen scheint in der südosthälfte häufig die sonne richtung nordwesten einige auflockerungen aber auch dichte wolkenfelder und mitunter etwas regen', 'am tag regnet es im süden und südosten teilweise ergiebig sonst mal sonne mal wolken', 'ihnen einen schönen abend und machen sie es gut', 'schon heute nachmittag hatten wir den regen und jetzt in den abendstunden eben auch schon im westen']
+['am in in der südosthälfte häufig die sonne richtung nordwesten einige lockflockerungen auch auch sonstchte wolkenfelder und mitunter nas regen', 'am tag regnet es im süden und oosten teilweise ergiebig sonst mal sonne mal wolken', 'ihnen damit schönen guten abend meine', 'heuten heute nachtmittag reg wir den regen und jetzt in den abendstunden wird auch übern im westen']
+['morgen scheint in der südosthälfte häufig die sonne richtung nordwesten einige auflockerungen aber auch dichte wolkenfelder und mitunter etwas regen', 'am tag regnet es im süden und südosten teilweise ergiebig sonst mal sonne mal wolken', 'und damit schönen guten abend', 'schon heute nachmittag hatten wir den regen und jetzt in den abendstunden eben auch schon im westen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 38
+TIME: 1863.663999080658
+AVG. LOSS: 15.916725010721363
+EPOCH METRICS: {'BLEU_1': 0.4421153494730575, 'BLEU_2': 0.33535135215840384, 'BLEU_3': 0.264603666397222, 'BLEU_4': 0.21612035138023078, 'LOSS': 40.263979751250645, 'ROUGE': 0.48025546575627676, 'EXAMPLE': 'pred: vor allem im nordwesten ist es sehr windig, target: vor allem im nordwesten ist es sehr windig'}
+BASELINE METRICS: {}
+['am donnerstag insgesamt mehr wolken als sonne und gebietsweise regen', 'am tag im süden viel sonne in der mitte überwiegen die wolken stellenweise regnet es etwas vor allem an der ostsee fallen schauer', 'und nun die wettervorhersage für morgen samstag den ersten mai', 'es weht ein schwacher bis mäßiger wind aus nord bis nordwest mit stürmischen böen']
+['am donnerstag mal mehr wolken als sonne und gebietsweise fällt', 'am süden und es in tag recht freundlich in der mitte vielewiegen die wolken stellenweise regnet es etwas an allem an der ostsee fallen schauer', 'und nun die wettervorhersage für morgen samstag den ersten mai', 'der malht der wind meistmäßig bis stark bis allem in der nordwesthälfte gegen abend erste sturmböen']
+['am donnerstag insgesamt mehr wolken als sonne und gebietsweise regen', 'im süden bleibt es am tag recht freundlich in der mitte überwiegen die wolken stellenweise regnet es etwas vor allem an der ostsee fallen schauer', 'und nun die wettervorhersage für morgen samstag den ersten mai', 'erst weht der wind mäßig später stark vor allem in der nordwesthälfte gegen abend erste sturmböen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 39
+TIME: 1854.58123254776
+AVG. LOSS: 15.393373234699382
+EPOCH METRICS: {'BLEU_1': 0.45102920282488806, 'BLEU_2': 0.3421453826104067, 'BLEU_3': 0.27130716915902725, 'BLEU_4': 0.2231992713417085, 'LOSS': 40.37585762803495, 'ROUGE': 0.4830599908526253, 'EXAMPLE': 'pred: am sonntag im westen und nordwesten viele wolken hier und da regen im osten ist es teilweise freundlich, target: am sonntag im westen und nordwesten wieder viele wolken und etwas regen richtung osten ist es weiterhin recht freundlich'}
+BASELINE METRICS: {}
+['am dienstag kommen von nordwesten kräftiger schneefall auf der später vor allem im nordwesten und westen in regen übergeht', 'im nordwesten stürmische böen bei schauern auch schwere sturmböen auf den bergen zum teil orkanböen', 'was uns das wetter weiter beschert hier die aussichten', 'im norden ist es in den nächsten tagen meist stark bewölkt mit regen und windig zum teil auch stürmisch']
+['am dienstag kommen von nordwesten kräftiger schneefall auf der später vor allem im nordwesten und westen in regen über', 'in gibt es türmische böen an kräftigern auch schwere sturmböen auf den bergen zum teil orkanartigöen', 'und der jetzt wetter weiter beschert hier die aussichtent', 'in en ist es in den kommenden tagen meist stark bewölkt mit regen und windig zum teil s stürmisch']
+['am dienstag kommen von nordwesten kräftiger schneefall auf der später vor allem im nordwesten und westen in regen übergeht', 'verbreitet gibt es stürmische böen bei schauern auch schwere sturmböen auf den bergen zum teil orkanböen', 'was uns das wetter weiter beschert hier die aussichten', 'im norden ist es in den kommenden tagen meist stark bewölkt mit regen und windig zum teil auch stürmisch']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 40
+TIME: 1861.0754907131195
+AVG. LOSS: 15.234158406800589
+EPOCH METRICS: {'BLEU_1': 0.45102920282488806, 'BLEU_2': 0.34025099189434904, 'BLEU_3': 0.27048911335744835, 'BLEU_4': 0.22312599543801198, 'LOSS': 40.8838158166018, 'ROUGE': 0.48322616228736437, 'EXAMPLE': 'pred: im süden freundlicher, target: in der südhälfte präsentiert sich das wetter freundlicher'}
+BASELINE METRICS: {}
+['ich wünsche ihnen einen schönen abend und machen sie es gut', 'winterlich geht es dann auch ins wochenende', 'deshalb gibt es heute nacht zum teil erhebliche verkehrsbehinderungen', 'ansonsten gibt es dichte wolken gelegentlich auch lücken und nur vereinzelt ein paar tropfen']
+['ich wünsche ihnen einen schönen abend und machen sie es gut', 'derlich geht es eigentlich auch ins wochenendeer', 'und gibt es heute nacht zum teil erheblichen verkehrsbehinderungen', 'ansonsten gibt es dichte wolken undtlich nu lücken in nur vereinzelt ein paar tropfen']
+['ich wünsche ihnen einen schönen abend und machen sie es gut', 'winterlich geht es dann auch ins wochenende', 'deshalb gibt es heute nacht zum teil erhebliche verkehrsbehinderungen', 'ansonsten gibt es dichte wolken gelegentlich auch lücken und nur vereinzelt ein paar tropfen']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 41
+TIME: 1868.4481661319733
+AVG. LOSS: 14.640057766719762
+EPOCH METRICS: {'BLEU_1': 0.4492682956117957, 'BLEU_2': 0.34382529683830937, 'BLEU_3': 0.2754656928212802, 'BLEU_4': 0.22857450060955117, 'LOSS': 40.592483807161365, 'ROUGE': 0.4882404533241542, 'EXAMPLE': 'pred: richtung westen machen sich tiefdruckgebiete bemerkbar die am sonntag gebietsweise schnee oder gefrierenden regen bringen, target: von westen macht sich tiefer luftdruck bemerkbar der am sonntag für schnee und gefrierenden regen sorgt'}
+BASELINE METRICS: {}
+['auch am tag bleibt es bei eher wechselhaftem wetter', 'der wind weht schwach aus nord bis nordwest im nordosten dreht er auf ost', 'und nun die wettervorhersage für morgen mittwoch den achten dezember', 'morgen temperaturen von fünfzehn grad an der see bei auflandigem wind bis fünfundzwanzig grad im südwesten']
+['auch am kommt es bei eher wechselhaftes wetter', 'der wind weht schwach aus nord bis nordwest im nordosten dreht er auf ost', 'und nun die wettervorhersage für morgen mittwoch den achten dezember', 'morgen temperaturen von fünfzehn grad an der oste bei auflandigem wind bis fünfundzwanzig grad im rhein ne gebiet']
+['auch danach bleibt es bei eher wechselhaftem wetter', 'der wind weht schwach aus nord bis nordwest im nordosten dreht er auf ost', 'und nun die wettervorhersage für morgen mittwoch den achten dezember', 'morgen temperaturen von fünfzehn grad an der see bei auflandigem wind bis fünfundzwanzig grad im rhein main gebiet']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 42
+TIME: 1862.945288658142
+AVG. LOSS: 14.402449657710052
+EPOCH METRICS: {'BLEU_1': 0.4498555654793961, 'BLEU_2': 0.3429743113917407, 'BLEU_3': 0.27492002284130324, 'BLEU_4': 0.228420350859373, 'LOSS': 40.551876155627255, 'ROUGE': 0.4857555782829811, 'EXAMPLE': 'pred: am freitag ziehen von westen wieder regenwolken heran dabei ist es sehr windig, target: am freitag kommen von westen neue regenfälle auf dabei ist es teilweise windig'}
+BASELINE METRICS: {}
+['dabei bleibt es für die jahreszeit etwas zu kühl', 'und nun die wettervorhersage für morgen dienstag den neunundzwanzigsten september', 'und nun die wettervorhersage für morgen mittwoch den siebenundzwanzigsten oktober', 'dabei gibt es schauer zum teil mit graupel oder blitz und donner']
+['etwas bleibt es noch ein ja doszeit etwas kü rechtühl', 'und nun die wettervorhersage für morgen dienstag den neunundzwanzigsten märz', 'und nun die wettervorhersage für morgen mittwoch den siebenundzwanzigsten oktober', 'aber fallen es schauer zum teil mit nochpel oder blitz und donner']
+['dabei bleibt es für die jahreszeit etwas zu kühl', 'und nun die wettervorhersage für morgen dienstag den neunundzwanzigsten märz', 'und nun die wettervorhersage für morgen mittwoch den siebenundzwanzigsten oktober', 'dabei gibt es schauer zum teil mit graupel oder blitz und donner']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 43
+TIME: 1874.8397381305695
+AVG. LOSS: 13.874199479515953
+EPOCH METRICS: {'BLEU_1': 0.4471655536724399, 'BLEU_2': 0.3408938259481346, 'BLEU_3': 0.2714054714870533, 'BLEU_4': 0.22320210453529934, 'LOSS': 40.655464604410824, 'ROUGE': 0.47986170333416556, 'EXAMPLE': 'pred: löst er sich auf ist es meist nur locker bewölkt oder klar, target: bis auf ein paar harmlose schleierwolken ist es dann klar'}
+BASELINE METRICS: {}
+['ansonsten gibt es dichte wolken gelegentlich auch lücken und nur vereinzelt ein paar tropfen', 'morgen an der küste vereinzelt sturmböen', 'dort morgen bis vierundzwanzig grad im äußersten süden nur noch zwölf grad', 'sonntag und montag wird es meist trocken teils sonnig teils auch wolkig']
+['ansonsten gibt es einigechte wolken gelegentlich auch lücken und nur vereinzelt ein paar tropfen oder', 'an an der küste vereinzelt sturmböen', 'dort morgen bis dreiundzwanzig grad im äußersten süden nur noch zwölf grad', 'sonntag und montag wird es meist trocken teils sonnig teils wol wolkig']
+['ansonsten gibt es dichte wolken gelegentlich auch lücken und nur vereinzelt ein paar tropfen', 'morgen an der küste vereinzelt sturmböen', 'dort morgen bis vierundzwanzig grad im äußersten süden nur noch zwölf grad', 'sonntag und montag wird es meist trocken teils sonnig teils auch wolkig']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 44
+TIME: 1841.1166727542877
+AVG. LOSS: 13.642859576116688
+EPOCH METRICS: {'BLEU_1': 0.4542639275564921, 'BLEU_2': 0.34665101634953654, 'BLEU_3': 0.2762855179160547, 'BLEU_4': 0.2276147809365167, 'LOSS': 40.72799522660831, 'ROUGE': 0.49048433995733176, 'EXAMPLE': 'pred: in der nacht schneit es zunächst hier und da nur leicht im osten später auch am tag schneit es für längere zeit im norden und osten hier und da, target: in der nacht ziehen die schneefälle allmählich in die südlichen und östlichen landesteile am tag einige schneeschauer im nordosten schneit es teilweise länger'}
+BASELINE METRICS: {}
+['diese lokalen unwetter verlagern sich im laufe der nacht auch richtung nordosten schwacher bis mäßiger an der ostsee auch frischer wind', 'richtung südosten bleibt es meist trocken', 'am wochenende bleibt es wechselhaft in manchen regionen fällt schnee in den niederungen auch regen', 'sonst überwiegend freundlich']
+['also scho wir schon hinter uns an  abend aber es gibt dann weitere die son sich langsam abschwächen und nach nordosten  richtung ostseeküste', 'imrichtung südosten bleibt es meist trocken', 'am wochenende bleibt  wechselhaft in manchen regionen fällt schnee in den niederungen auch regen', 'sonst überwiegend son zwischen kleine']
+['einige haben wir schon hinter uns an diesem abend aber es gibt noch weitere die jetzt sich langsam abschwächen und nach nordosten ziehen richtung ostseeküste', 'richtung südosten bleibt es meist trocken', 'am wochenende bleibt es wechselhaft in manchen regionen fällt schnee in den niederungen auch regen', 'sonst überwiegend freundlich']
+--------------------------------------------------
+
+--------------------------------------------------
+EPOCH: 45
+TIME: 1858.7477095127106
+AVG. LOSS: 13.238813878180881
+EPOCH METRICS: {'BLEU_1': 0.451394886553757, 'BLEU_2': 0.342426399693681, 'BLEU_3': 0.2724180762231118, 'BLEU_4': 0.22500115760987724, 'LOSS': 40.68093247909766, 'ROUGE': 0.4873891383273067, 'EXAMPLE': 'pred: und jetzt wünsche ich ihnen noch einen schönen abend, target: jetzt wünsche ich ihnen noch einen schönen abend'}
+BASELINE METRICS: {}
+['der wind weht schwach bis mäßig bei schauern und gewittern frischt er stark bis stürmisch auf', 'es besteht glatteisgefahr', 'und morgen die sonne ziemlich ungerecht verteilt im norden', 'ein kleines hoch über süddeutschland beschert uns morgen überwiegend freundliches wetter und steigende temperaturen']
+['der wind weht schw schwach bis mäßig bei schauern und gewittern frisch er stark bis stürmisch auf', 'es besteht bestehte glättegefahr', 'morgen wolken und regen bekommt die sonne morgen vor allem im norden eine chance und', 'kleines tief über süddeutschland beschert uns morgen überwiegend freundliches wetter und steigende temperaturen']
+['der wind weht morgen schwach bis mäßig bei schauern und gewittern frischt er stark bis stürmisch auf', 'es besteht erhöhte glättegefahr', 'zwischen wolken und regen bekommt die sonne morgen vor allem im norden eine chance', 'ein kleines hoch über süddeutschland beschert uns morgen überwiegend freundliches wetter und steigende temperaturen']
+--------------------------------------------------

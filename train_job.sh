@@ -11,7 +11,7 @@
 ### -- set walltime limit: hh:mm --  maximum 24 hours for GPU-queues right now
 #BSUB -W 24:00
 # request 32GB of system-memory
-#BSUB -R "rusage[mem=60GB]"
+#BSUB -R "rusage[mem=30GB]"
 #BSUB -R "select[gpu80gb]"
 
 ### -- set the email address --

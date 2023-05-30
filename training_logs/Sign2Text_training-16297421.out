@@ -1,0 +1,38 @@
+Mon Apr 17 15:55:56 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
+| N/A   30C    P0               45W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+Freezing up to block 4 in S3D backbone
+Loading entire state dict directly...
+Succesfully loaded
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+
+--------------------------------------------------
+EPOCH: 0
+TIME: 1104.8033678531647
+AVG. LOSS: nan
+EPOCH METRICS: {'BLEU_1': 0.0, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'ROUGE': 0.0, 'EXAMPLE': 'pred: , target: tiefer luftdruck bestimmt in den nächsten tagen unser wetter'}
+BASELINE METRICS: {'BLEU_1': 0.0, 'BLEU_2': 0.0, 'BLEU_3': 0.0, 'BLEU_4': 0.0, 'ROUGE': 0.23388072408127406}
+--------------------------------------------------

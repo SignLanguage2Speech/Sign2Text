@@ -18,10 +18,10 @@ def main():
     T_CFG = Training_cfg()
     
     ### initialize data ###
-    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:1]
+    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')
     val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')
     test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
-
+    
     ### initialize data ###
     PhoenixTrain = PhoenixDataset(train_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='train')
     PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev')

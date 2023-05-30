@@ -1,0 +1,47 @@
+Fri May 19 14:07:36 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
+| N/A   31C    P0               44W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+----------GLOSS VOCAB SIZE 1085----------
+Loading entire state dict directly...
+Succesfully loaded
+Freezing up to block 4 in S3D backbone
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
+Iter: 100/519
+Iter: 200/519
+Iter: 300/519
+Iter: 400/519
+Iter: 500/519
+
+--------------------------------------------------
+EPOCH: 0
+TIME: 1810.3031690120697
+AVG. LOSS: 48.27052301485863
+EPOCH METRICS: {'BLEU_1': 0.10949764521193095, 'BLEU_2': 0.045884947490220436, 'BLEU_3': 0.027179876938650146, 'BLEU_4': 0.019292882162073, 'LOSS': 61.15689940627141, 'ROUGE': 0.11504222640632203, 'EXAMPLE': 'pred: im norden und westen lockert es hier und da etwas schneegriesel fallen ein paar tropfen, target: heute nacht sechs bis dreizehn grad am tag steigen die temperaturen an auf zehn grad an den alpen und bis fünfundzwanzig grad am niederrhein'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen freitag den einundzwanzigsten juli', 'und nun die wettervorhersage für morgen freitag den einundzwanzigsten juli', 'und nun die wettervorhersage für morgen freitag den einundzwanzigsten juli', 'am sonntag regnet es in der nordwesthälfte ab und an mit etwas schnee oder gefrierender regen']
+['am allem in norden und süd der derungen auch sich der schbel teilweise zum teil hartnäckig halten sie sie sie sie', 'am der nächsten tagen wird bei uns schon überlingshaft mit temperaturen bisr noch acht sie über über sie sie sie sie sie sie', 'am temperaturenacher bis mäßiger an der nordwestthälfte mit frischer wind mit starktürmischen böen im weland auchsturmböen an', 'am nun die wettervorhersage für morgen freig den fünfften juni']
+['vor allem im norden und in einigen niederungen hält sich der nebel morgen zum teil hartnäckig', 'in den nächsten tagen dann bei fast schon frühlingshaften temperaturen nur noch regen', 'morgen schwacher bis mäßiger in der nordosthälfte auch frischer wind mit stürmischen böen im bergland sturmböen', 'und nun die wettervorhersage für morgen montag den elften januar']
+--------------------------------------------------

@@ -1,0 +1,44 @@
+Loaded dependency [python3/3.10.7]: gcc/11.3.0-binutils-2.38
+Loaded module: python3/3.10.7
+
+Loading python3/3.10.7
+  Loading requirement: gcc/11.3.0-binutils-2.38
+Loaded module: cuda/12.0
+Loaded module: cudnn/v8.3.2.44-prod-cuda-11.X
+Exception ignored in: <function _MultiProcessingDataLoaderIter.__del__ at 0x7fc8ea508d30>
+Traceback (most recent call last):
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/utils/data/dataloader.py", line 1478, in __del__
+    def __del__(self):
+KeyboardInterrupt: 
+Traceback (most recent call last):
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 60, in <module>
+    main()
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 56, in main
+    train(model, dataloader_train, dataloader_val, T_CFG)
+  File "/zhome/6b/b/151617/Sign2Text/Trainer/trainer.py", line 68, in train
+    preds, probs = model(ipt.to(CFG.device))
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/Sign2Text/Sign2Text/Sign2Text.py", line 28, in forward
+    out = self.language_model(gloss_representations,gloss_language_features)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/Sign2Text/mBART/TranslationModel.py", line 25, in forward
+    encoder_outputs = self.mbart.model.encoder(inputs_embeds=visual_language_features)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/transformers/models/mbart/modeling_mbart.py", line 838, in forward
+    layer_outputs = encoder_layer(
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/transformers/models/mbart/modeling_mbart.py", line 328, in forward
+    hidden_states, attn_weights, _ = self.self_attn(
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/transformers/models/mbart/modeling_mbart.py", line 213, in forward
+    key_states = self._shape(self.k_proj(hidden_states), -1, bsz)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/linear.py", line 114, in forward
+    return F.linear(input, self.weight, self.bias)
+KeyboardInterrupt

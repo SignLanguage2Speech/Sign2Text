@@ -1,0 +1,25 @@
+Loaded dependency [python3/3.10.7]: gcc/11.3.0-binutils-2.38
+Loaded module: python3/3.10.7
+
+Loading python3/3.10.7
+  Loading requirement: gcc/11.3.0-binutils-2.38
+Loaded module: cuda/12.0
+Loaded module: cudnn/v8.3.2.44-prod-cuda-11.X
+Traceback (most recent call last):
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 59, in <module>
+    main()
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 55, in main
+    train(model, dataloader_train, dataloader_val, T_CFG)
+  File "/zhome/6b/b/151617/Sign2Text/Trainer/trainer.py", line 104, in train
+    preds, probs, loss_ce = model(ipt.to(CFG.device), tokenized_trg_transl, ipt_len)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/Sign2Text/Sign2Text/Sign2Text.py", line 35, in forward
+    out, loss = self.language_model(gloss_representations, trg, ipt_len)
+  File "/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1501, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/6b/b/151617/Sign2Text/mBART/TranslationModel.py", line 57, in forward
+    kwargs = self.prepare_feature_inputs(visual_language_features, input_lengths, trg = trg)
+  File "/zhome/6b/b/151617/Sign2Text/mBART/TranslationModel.py", line 65, in prepare_feature_inputs
+    inputs_embeds = self.mbart.get_input_embeddings()(torch.tensor(self.tokenizer.pad_token_id).to(self.device)).unsqueeze(0).repeat(batch_size,self.max_seq_length,1)
+KeyboardInterrupt

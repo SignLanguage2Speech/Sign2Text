@@ -10,6 +10,7 @@ from PIL import Image
 import pdb
 from math import ceil
 
+
 def normalize(video):
   ''' stack & normalization '''
   # video = video.sub_(255).div(255)
@@ -201,7 +202,7 @@ def collator(data, data_augmentation):
   3. perform spatial augmentations
   """
   image_path_lists, vid_lens, trgs,  trg_lens, trg_trans, trg_gloss = [list(x) for x in list(zip(*data))] # ! Might be inefficient!
-  
+
   if data_augmentation.split_type == "train":
     for i,image_paths in enumerate(image_path_lists):
         selected_indexs, new_len = get_selected_indexs(vid_lens[i], t_min=0.5, t_max=1.5, max_num_frames=400)
@@ -232,7 +233,6 @@ def collator(data, data_augmentation):
 
 
 
-
 # from torch.utils.data import DataLoader
 
 # class DataPaths:
@@ -241,17 +241,17 @@ def collator(data, data_augmentation):
 #     self.phoenix_labels = '/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/annotations/manual'
 
 # dp = DataPaths()
-# test_df = pd.read_csv(os.path.join(dp.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')[:4]
+# val_df = pd.read_csv(os.path.join(dp.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')[10:15]
 # train_df = pd.read_csv(os.path.join(dp.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')[:4]
-# PhoenixTest = PhoenixDataset(test_df, dp.phoenix_videos, vocab_size=1085, split='test')
+# PhoenixVal = PhoenixDataset(val_df, dp.phoenix_videos, vocab_size=1085, split='dev')
 # PhoenixTrain = PhoenixDataset(train_df, dp.phoenix_videos, vocab_size=1085, split='train')
 
 
-# test_augmentations = DataAugmentations(split_type='val')
-# dataloaderTest = DataLoader(PhoenixTest, batch_size=1, 
+# val_augmentations = DataAugmentations(split_type='val')
+# dataloaderVal = DataLoader(PhoenixVal, batch_size=1, 
 #                                    shuffle=False,
 #                                    num_workers=0,
-#                                    collate_fn=lambda data: collator(data, test_augmentations)
+#                                    collate_fn=lambda data: collator(data, val_augmentations)
 #                                    )
 
 # train_augmentations = DataAugmentations(split_type='train')
@@ -263,8 +263,7 @@ def collator(data, data_augmentation):
                               
 # if __name__ == '__main__':
 #   import cv2
-
-#   for (ipt, ipt_len, trg, trg_len) in dataloaderTest:
+#   for i, (ipt, ipt_len, trg, trg_len,  trg_trans, trg_gloss, max_ipt_len) in enumerate(dataloaderVal):
 #     # pdb.set_trace()
 #     ipt_np = revert_transform_rgb(ipt[0])
 #     w = h = 224
@@ -274,7 +273,7 @@ def collator(data, data_augmentation):
     
 #     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
 #     # fourcc = cv2.VideoWriter_fourcc(*"avc1")
-#     video = cv2.VideoWriter('test.mp4', fourcc, float(fps), (w, h))
+#     video = cv2.VideoWriter(f'test{i}.mp4', fourcc, float(fps), (w, h))
 #     for frame_count in range(len(ipt_np)):
 #       # img_ = np.random.randint(0,255, (h,w,c), dtype = np.uint8)
 #       img = ipt_np[frame_count].astype(np.uint8)
@@ -286,9 +285,8 @@ def collator(data, data_augmentation):
 #     print(ipt_len)
 #     print("TRGG", trg.size())
 #     print(trg_len)
-#     break
 
-#   for (ipt, ipt_len, trg, trg_len) in dataloaderTrain:
+#   for (ipt, ipt_len, trg, trg_len,  trg_trans, trg_gloss, max_ipt_len) in dataloaderTrain:
 #     # pdb.set_trace()
 
 #     for i in range(4):
