@@ -23,9 +23,9 @@ def main():
     test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
     
     ### initialize data ###
-    PhoenixTrain = PhoenixDataset(train_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='train')
-    PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev')
-    PhoenixTest = PhoenixDataset(test_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='test')
+    PhoenixTrain = PhoenixDataset(train_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='train', use_synthetic_glosses=T_CFG.synthetic_glosses)
+    PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev', use_synthetic_glosses=T_CFG.synthetic_glosses)
+    PhoenixTest = PhoenixDataset(test_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='test', use_synthetic_glosses=T_CFG.synthetic_glosses)
     
     ### get dataloaders ###
     train_augmentations = DataAugmentations(split_type='train')
@@ -52,6 +52,8 @@ def main():
     model = Sign2Text(S2T_CFG, VE_CFG).to(T_CFG.device)
 
     ### train model ###
+    import pdb
+    pdb.set_trace()
     train(model, dataloader_train, dataloader_val, T_CFG)
 
 

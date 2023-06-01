@@ -1,6 +1,7 @@
 ##### Dataset class for Phoenix #####
 import os
 from train_datasets.preprocess_PHOENIX import preprocess_df
+from train_datasets.get_synthetic_glosses import GlossPredicter, getGlossLabels
 import torch
 import torchvision
 from torch.utils import data
@@ -162,7 +163,7 @@ def load_imgs(ipt_dir):
 
 
 class PhoenixDataset(data.Dataset):
-    def __init__(self, df, ipt_dir, vocab_size, split='train'):
+    def __init__(self, df, ipt_dir, vocab_size, split='train', use_synthetic_glosses=False):
         super().__init__()
 
         self.ipt_dir = ipt_dir
@@ -170,6 +171,12 @@ class PhoenixDataset(data.Dataset):
         self.vocab_size = vocab_size
         self.df = preprocess_df(df, split, save=False, save_name=None)
         self.video_folders = list(self.df['name'])
+        self.use_synthetic_glosses = use_synthetic_glosses
+        if use_synthetic_glosses:
+           GP = GlossPredicter(self.df)
+           df_new = GP.getSyntheticGlosses()
+           self.df = getGlossLabels(df_new)
+        
 
     def __getitem__(self, idx):
         ### Assumes that within a sample (id column in df) there is only one folder named '1' ###
@@ -180,14 +187,17 @@ class PhoenixDataset(data.Dataset):
         N = len(image_names)
         ipt_len = N
 
-        # make a one-hot vector for target class
+        # make a one-hot vector for target class of glosses
         trg_labels = torch.tensor(self.df.iloc[idx]['gloss_labels'], dtype=torch.int32)
         trg_length = len(trg_labels)
 
         # translation #
         trg_trans = self.df.iloc[idx]['translation']
-        trg_gloss = self.df.iloc[idx]['orth']
-
+        if not self.use_synthetic_glosses:
+          trg_gloss = self.df.iloc[idx]['orth']
+        else:
+           trg_gloss = self.df.iloc[idx]['synthetic glosses']
+           
         return image_names, ipt_len, trg_labels, trg_length, trg_trans, trg_gloss
 
     def __len__(self):

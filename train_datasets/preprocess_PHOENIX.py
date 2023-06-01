@@ -27,21 +27,21 @@ def getLabels(df, t_vocab, g_vocab):
         G = clean_phoenix_glosses(df.iloc[i]['orth']).split(' ')
         T_labels = []
         G_labels = []
+        
         for word in T:
             try:
                 T_labels.append(t_vocab[word])
             except KeyError:
-                T_labels.append(1086) # TODO Figure out how to handle OOV in validation & test
+                T_labels.append(2888) # Handle OOV in validation & test
         
         for gloss in G:
             try:
                 G_labels.append(g_vocab[gloss])
             except KeyError:
-                G_labels.append(1086) # TODO Figure out how to handle OOV in validation & test
+                G_labels.append(1086) # Handle OOV in validation & test
                 
         all_translations.append(T_labels)
         all_glosses.append(G_labels)
-    
     df['translation_labels'] = all_translations
     df['gloss_labels'] = all_glosses
 
@@ -57,39 +57,9 @@ def getVocab(path):
 
     translations = list(train['translation']) #+ list(test['translation']) + list(val['translation'])
     translations = list(sorted(set([word for sent in translations for word in sent.replace(chars,'').split(' ')])))
-    
     gloss_vocab = {word: glosses.index(word)+1 for word in glosses}
     translation_vocab = {word: translations.index(word)+1 for word in translations}
     return gloss_vocab, translation_vocab
-
-def addLengths(df, features_path, cutoff=330):
-  video_names = list(df['name'])
-  lengths = []
-  for name in video_names:
-    length = len(os.listdir(os.path.join(features_path, 'train', name)))
-    lengths.append(length)
-  
-  df['video_length'] = lengths
-  df = df[df['video_length'] < cutoff]
-  return df.reset_index()
-
-def groupByBin(df):
-  ### calculate bins
-  min_val = min(df['video_length'])
-  max_val = max(df['video_length'])
-  bins = [min_val]
-  val = min_val
-
-  while val < max_val:
-    val = int(val*1.25)
-    bins.append(val)
-
-  dataframes = []
-  for i in range(len(bins)-1):
-    df_new = df[(df['video_length'] >= bins[i]) & (df['video_length'] < bins[i+1])]
-    dataframes.append(df_new)
-
-  return dataframes
 
 
 def clean_phoenix_glosses(prediction):
@@ -127,3 +97,36 @@ def clean_phoenix_glosses(prediction):
     prediction = prediction.strip()
 
     return prediction
+
+"""
+### Deprecated! ###
+
+def addLengths(df, features_path, cutoff=330):
+  video_names = list(df['name'])
+  lengths = []
+  for name in video_names:
+    length = len(os.listdir(os.path.join(features_path, 'train', name)))
+    lengths.append(length)
+  
+  df['video_length'] = lengths
+  df = df[df['video_length'] < cutoff]
+  return df.reset_index()
+
+def groupByBin(df):
+  ### calculate bins
+  min_val = min(df['video_length'])
+  max_val = max(df['video_length'])
+  bins = [min_val]
+  val = min_val
+
+  while val < max_val:
+    val = int(val*1.25)
+    bins.append(val)
+
+  dataframes = []
+  for i in range(len(bins)-1):
+    df_new = df[(df['video_length'] >= bins[i]) & (df['video_length'] < bins[i+1])]
+    dataframes.append(df_new)
+
+  return dataframes
+"""
