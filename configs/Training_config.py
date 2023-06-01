@@ -24,7 +24,7 @@ class Training_cfg:
         self.save_path = '/work3/s200925/Sign2Text/final_training2/'
         self.save_checkpoints = True
         ### loading model ###
-        self.load_checkpoint_path =  None # '/work3/s200925/Sign2Text/final_training/Sign2Text_Epoch37_loss_18.47734777784307_B4_0.25157189075688613' # '/work3/s200925/Sign2Text/label_smooth/Sign2Text_Epoch37_loss_16.43221887015436_B4_0.2297965381199748'
+        self.load_checkpoint_path = '/work3/s200925/Sign2Text/final_training/Sign2Text_Epoch37_loss_18.47734777784307_B4_0.25157189075688613' # '/work3/s200925/Sign2Text/label_smooth/Sign2Text_Epoch37_loss_16.43221887015436_B4_0.2297965381199748'
         ### device ###
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         ### ablation study ###

@@ -237,7 +237,6 @@ def getGlossLabels(df):
 
     df['gloss_labels'] = all_gloss_labels
     return df
-        
 
 
 

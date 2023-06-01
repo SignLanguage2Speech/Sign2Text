@@ -12,9 +12,8 @@ class Sign2Text_cfg:
         self.VL_mapper_dropout = 0.0
         ### ??? ###
         self.n_visual_features = 512
-        self.n_classes = 1085 + 1
+        #self.n_classes = 1085 + 1
         ### cc25 params
         self.vocab_data = 'mBART/german_data.txt'
         self.src_lang = 'gl_DE'
         self.trg_lang = 'de_DE'
-

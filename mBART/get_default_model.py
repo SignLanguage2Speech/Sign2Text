@@ -20,24 +20,18 @@ def reduce_to_vocab(model, tokenizer, CFG):
     new_tokenizer, new_vocab_ids = get_new_tokenizer(tokenizer, vocab, CFG)
     pruned_model = prune_model_embeddings(model, new_tokenizer, new_vocab_ids, CFG)
     return pruned_model, new_tokenizer
+
 import pdb
 def get_data_for_tokenizer(data_path, df ):
     
     german_words = []
     file = open(data_path,'r',encoding='latin1')
     for line in file.readlines():
-<<<<<<< HEAD
-        german_words.append(line.replace("\n",""))
-    df_train = load_phoenix_train()
-    train_words = list(set([word for sent in df_train['translation'] for word in sent.split(' ')]))
-    german_words = list(set(german_words + train_words))
-=======
         german_words.append(line.replace("\n","").lower())
     # add train words and glosses to vocab
     words = [word.lower() for sent in df['translation'] for word in sent.split(' ')]
     glosses = [gloss.lower() for gloss_sent in df['orth'] for gloss in gloss_sent.split(' ')]
     german_words = list(set(german_words + words + glosses))
->>>>>>> d42e032 (Added synthetic gloss generation)
     return german_words
 
 def prune_model_embeddings(model: MBartForConditionalGeneration, tokenizer: MBartTokenizer, vocab_ids, CFG):

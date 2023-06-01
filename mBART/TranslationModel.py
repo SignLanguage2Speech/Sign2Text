@@ -19,34 +19,12 @@ class TranslationModel(nn.Module):
         if CFG.mbart_path is not None:
             print("Loading model from pretrained checkpoint!")
             self.tokenizer = get_tokenizer(CFG.mbart_path)
-<<<<<<< HEAD
             self.mbart = MBartForConditionalGeneration.from_pretrained(CFG.mbart_path).to(CFG.device)
             freeze_params(self.mbart.model.shared)
-=======
-            self.mbart = MBartForConditionalGeneration.from_pretrained(CFG.mbart_path).to(CFG.device) 
-            old_vocab_size = self.mbart.config.vocab_size
-            mbart_pre = MBartForConditionalGeneration.from_pretrained("facebook/mbart-large-cc25") 
-            config = mbart_pre.config
-            config.vocab_size = old_vocab_size
-            generation_config = mbart_pre.generation_config
-            self.mbart.config = config
-            self.mbart.generation_config = generation_config
->>>>>>> d42e032 (Added synthetic gloss generation)
         else:
             print("Loading model with cc25 initialization!")
             default_model, default_tokenizer = get_model_and_tokenizer(CFG)
             self.mbart, self.tokenizer = reduce_to_vocab(default_model, default_tokenizer, CFG) ### prune default mBART
-<<<<<<< HEAD
-=======
-            print(f"mBART vocab size: {self.mbart.config.vocab_size}")
-            generation_config = default_model.generation_config
-            self.mbart.generation_config = generation_config
-            
-            
-        self.mbart.config.dropout = CFG.mbart_dropout
-        self.mbart.config.attention_dropout = CFG.mbart_attention_dropout
-        self.mbart.config.classif_dropout = CFG.mbart_classif_dropout
->>>>>>> d42e032 (Added synthetic gloss generation)
 
     def generate(self, visual_language_features, input_lengths, skip_special_tokens = True):
         kwargs = self.prepare_feature_inputs(visual_language_features, input_lengths, generate = True)
@@ -79,14 +57,7 @@ class TranslationModel(nn.Module):
             inputs_embeds[i,:feature_len,:] = cropped_feature
             attention_mask[i,:feature_len] = 1
         
-<<<<<<< HEAD
         labels = None
-=======
-        if generate:
-            decoder_input_ids = None #torch.ones([batch_size, 1],dtype=torch.long, device=visual_language_features.device) * self.tokenizer.lang_code_to_id["de_DE"]
-            labels = None
-
->>>>>>> d42e032 (Added synthetic gloss generation)
         if not generate:
             labels = trg
             decoder_input_ids = None

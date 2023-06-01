@@ -169,15 +169,10 @@ class PhoenixDataset(data.Dataset):
         self.ipt_dir = ipt_dir
         self.split=split
         self.vocab_size = vocab_size
-        self.df = preprocess_df(df, split, save=False, save_name=None)
-        self.video_folders = list(self.df['name'])
         self.use_synthetic_glosses = use_synthetic_glosses
-        if use_synthetic_glosses:
-           GP = GlossPredicter(self.df)
-           df_new = GP.getSyntheticGlosses()
-           self.df = getGlossLabels(df_new)
+        self.df = preprocess_df(df, split, save=False, save_name=None, use_synthetic_glosses=self.use_synthetic_glosses)
+        self.video_folders = list(self.df['name'])
         
-
     def __getitem__(self, idx):
         ### Assumes that within a sample (id column in df) there is only one folder named '1' ###
         image_folder = os.path.join(self.ipt_dir, self.split, self.video_folders[idx])
