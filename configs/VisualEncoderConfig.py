@@ -7,7 +7,7 @@ class cfg:
         self.VOCAB_SIZE = self.n_classes - 1
         # S3D backbone
         self.use_block = 4 # use everything except lass block
-        self.freeze_block = 4 # 4! [0, ...5] 
+        self.freeze_block = 2 # 4! [0, ...5] 
         # Head network
         self.ff_size = 2048
         self.input_size = 832
