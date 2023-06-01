@@ -35,7 +35,6 @@ def main():
     PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev', use_synthetic_glosses=VE_CFG.use_synthetic_glosses)
     PhoenixTest = PhoenixDataset(test_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='test', use_synthetic_glosses=VE_CFG.use_synthetic_glosses)
     
-    pdb.set_trace()
     ### get dataloaders ###
     train_augmentations = DataAugmentations(split_type='train')
     val_augmentations = DataAugmentations(split_type='val')
@@ -61,7 +60,6 @@ def main():
     model = Sign2Text(S2T_CFG, VE_CFG).to(T_CFG.device)
 
     ### train model ###
-    pdb.set_trace()
     train(model, dataloader_train, dataloader_val, T_CFG)
 
 
