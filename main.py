@@ -8,6 +8,8 @@ from configs.Training_config import Training_cfg
 from train_datasets.PHOENIXDataset import PhoenixDataset, collator, DataAugmentations
 from torch.utils.data import DataLoader
 from Trainer.trainer import train
+from utils.test_compute_metrics_downsampling import test_compute_metrics_downsampling
+from utils.load_model_from_checkpoint import load_model_from_checkpoint
 
 
 def main():
@@ -52,7 +54,13 @@ def main():
     model = Sign2Text(S2T_CFG, VE_CFG).to(T_CFG.device)
 
     ### train model ###
-    train(model, dataloader_train, dataloader_val, T_CFG)
+    # train(model, dataloader_train, dataloader_val, T_CFG)
+
+    model = load_model_from_checkpoint(T_CFG.load_checkpoint_path, model)
+    model.eval()
+    
+    metrics = test_compute_metrics_downsampling(model, dataloader_val, 1, T_CFG)
+    print(metrics)
 
 
 if __name__ == '__main__':
