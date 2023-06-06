@@ -1,354 +1,0 @@
-Fri May 19 17:11:44 2023       
-+---------------------------------------------------------------------------------------+
-| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
-|-----------------------------------------+----------------------+----------------------+
-| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
-|                                         |                      |               MIG M. |
-|=========================================+======================+======================|
-|   0  NVIDIA A100 80GB PCIe           On | 00000000:CA:00.0 Off |                    0 |
-| N/A   45C    P0               45W / 300W|      0MiB / 81920MiB |      0%   E. Process |
-|                                         |                      |             Disabled |
-+-----------------------------------------+----------------------+----------------------+
-                                                                                         
-+---------------------------------------------------------------------------------------+
-| Processes:                                                                            |
-|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
-|        ID   ID                                                             Usage      |
-|=======================================================================================|
-|  No running processes found                                                           |
-+---------------------------------------------------------------------------------------+
-----------GLOSS VOCAB SIZE 1085----------
-----------GLOSS VOCAB SIZE 1085----------
-----------GLOSS VOCAB SIZE 1085----------
-Loading entire state dict directly...
-Succesfully loaded
-Freezing up to block 4 in S3D backbone
-
---------------------Preparing Baseline Metrics--------------------
-
---------------------Starting Training--------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 0
-TIME: 1713.3111729621887
-AVG. LOSS: 48.40671208301844
-EPOCH METRICS: {'BLEU_1': 0.11362542128069329, 'BLEU_2': 0.04304262622910487, 'BLEU_3': 0.020128173332029525, 'BLEU_4': 0.010972524450361634, 'LOSS': 60.6162136735714, 'ROUGE': 0.11828421637767016, 'EXAMPLE': 'pred: im norden und osten heute nacht örtlich strenger frost am oberrhein bis dreizehn grad, target: vor allem im nordwesten ist es sehr windig'}
-BASELINE METRICS: {}
-['heute nacht sechs grad an der ostsee und bis zu drei grad an den alpen', 'am freitag ist es im süden und osten teilweise kräftige und gewittrige schneeregenschauer', 'heute nacht dreizehn grad an der nordsee bis dreizehn grad am oberrhein', 'heute nacht gibt es im osten und südosten noch zum teil kräftige schauer und gewitter die unwetterartig ausfallen können']
-['am wind weht schwach bis und da auch mäßig sich sich sich sich sich sich sich', 'am aussi woche beginnt dann  ganzee und hochckene mischung aus sonbel wolne und wolken', 'am aussichten am mitntag ist die wolken unterschiedlich dicht beieinander hier', 'am der nacht reg klarer frost an oberdensee bishin ne an der nordseekü dreize']
-['der wind weht schwach hier und da auch mäßig', 'die neue woche bringt dann eine ruhige und trockene mischung aus nebel sonne und wolken', 'die aussichten am sonntag liegen die wolken unterschiedlich dicht beieinander', 'in der nacht verbreitet leichter frost am bodensee immerhin drei an der nordsee bis vier grad plus']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 1
-TIME: 1429.1536107063293
-AVG. LOSS: 68.03101491565333
-EPOCH METRICS: {'BLEU_1': 0.12203592814371257, 'BLEU_2': 0.04914746152516888, 'BLEU_3': 0.019659144370402445, 'BLEU_4': 0.0068772617544114725, 'LOSS': 58.59577747392746, 'ROUGE': 0.13141851789427783, 'EXAMPLE': 'pred: heute nacht minus zwei grad an der ostsee und minus fünf grad am oberrhein, target: und nun die wettervorhersage für morgen freitag den einundzwanzigsten mai'}
-BASELINE METRICS: {}
-['am tag regnet es in der südhälfte gebietsweise kräftig sonst ist es teilweise freundlich', 'am tag regnet es in der südhälfte ab und an teilweise ergiebig sonst ist es verbreitet klar', 'am tag minus fünf grad an der ostsee und bis zu fünfundzwanzig grad am oberrhein', 'am tag regnet es in der mitte und im süden hier und da etwas schnee oder gefrierender regen']
-['am allem in almittag ist auch gewitter dabeinnnn innn wieder von von', 'am temperaturen allemg net es zeitweise im kräftigern undom südarz bis zur ostw küh', 'am we imne ab wolken die von dann von an', 'am aussifangs und am nochen itter in südsten und süden istühl nordlaufe der  undk']
-['vor allem am nachmittag sind einzelne gewitter dabei', 'morgen vormittag regnet es zeitweise weiter mit schauern vom saarland bis zur ostsee küste', 'es wechseln sonne und wolken', 'die anfangs noch teilweise heftigen gewitter im osten und süden klingen im laufe der nacht ab']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 2
-TIME: 1477.2426931858063
-AVG. LOSS: 62.808674795387766
-EPOCH METRICS: {'BLEU_1': 0.06856674558368238, 'BLEU_2': 0.03071920002415871, 'BLEU_3': 0.015468246999153803, 'BLEU_4': 0.009529394530128046, 'LOSS': 58.28808841999326, 'ROUGE': 0.08893082905708002, 'EXAMPLE': 'pred: heute nacht ist es meist stark bewölkt oder neblig trüb teils klar teils locker bewölkt teils klar teils wolkig teils klar teils sonnig, target: von dresden runter bis zum alpenrand null bis minus sechs grad im norden bleibt es aber frostfrei da haben wir es morgen auch wieder mild'}
-BASELINE METRICS: {}
-['heute nacht minus fünf grad an der ostsee und minus fünf grad im breisgau bis minus fünfzehn grad am oberrhein', 'heute nacht ist es meist klar oder nur locker bewölkt oder neblig trüb teils klar teils sonnig teils wolkig teils klar teils locker bewölkt oder neblig teils freundlich teils klar teils wolkig teils klar teils sonnig teils', 'heute nacht ist es meist klar oder nur locker bewölkt oder neblig trüb im nordwesten gibt es einzelne gewitter', 'heute nacht ist es meist klar oder nur locker bewölkt oder neblig trüb im nordwesten gibt es einzelne gewitter']
-['im wind war es zu früh son son tro heutelte lufts heute sie sie', 'in we sonwachsen scheint wetter einzelnenneken und einzelne schauern auch', 'und temperaturen es dannrübe sein sein denwest neuesschen sonni und auchverein nordseesten und an auchnetisch bergenen auch mitte im teilmittag dann gew gewkräftige', 'heute demseeriesland und den nordsel bisr im imatlanzelt bisschauer und und sind auch bei']
-['der januar war bislang fast überall ein paar grad kälter als normal', 'sonst eher durchwachsenes wetter mit sonne wolken und einzelnen schauern', 'morgen wird es trübe sein in norddeutschland ein bisschen sonne vielleicht richtung nord osten und teilweise regnerisch im nordwesten der regen zum nachmittag hin auch etwas kräftiger', 'zwischen ostfriesland und der mosel nur ganz vereinzelt schauer']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 3
-TIME: 1398.161810874939
-AVG. LOSS: 61.123083380653206
-EPOCH METRICS: {'BLEU_1': 0.11317835947885778, 'BLEU_2': 0.05352344046355273, 'BLEU_3': 0.0376722428082561, 'BLEU_4': 0.02945498401763273, 'LOSS': 56.890615935500186, 'ROUGE': 0.12508125973199835, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen samstag den fünfundzwanzigsten januar, target: in den nächsten tagen gibt es teils sonne teils wolken hier und da einzelne schauer oder gewitter'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen dienstag den fünfundzwanzigsten januar', 'und nun die wettervorhersage für morgen samstag den sechsundzwanzigsten januar', 'und nun die wettervorhersage für morgen dienstag den fünfundzwanzigsten januar', 'und nun die wettervorhersage für morgen samstag den sechsundzwanzigsten januar']
-['und westen wird sich noch überläufer sorgen einigenucht regender luft  luftken dielich luftmerkbar', 'am dem tief über demland und dem hoch über demn ließt auchucht meer luft heran deutschland', 'und nordsten unddeutschlands bleibt daser luftdruck be so dieken und ne', 'und der süd reg die itern e sturmbsturzelt  orkanartige böen möglich']
-['von westen machen sich tiefausläufer mit feucht milder und sehr wolkenreicher luft bemerkbar', 'zwischen einem hoch über england und einem tief über polen fließt feucht kalte luft nach deutschland', 'im osten deutschlands sorgt tiefer luftdruck noch für wolken und regen', 'in der nacht sind bei gewittern schwere sturm vereinzelt auch orkanartige böen dabei']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 4
-TIME: 1405.3624560832977
-AVG. LOSS: 59.54505711617554
-EPOCH METRICS: {'BLEU_1': 0.11916474971313466, 'BLEU_2': 0.05474985684744958, 'BLEU_3': 0.03528535586198995, 'BLEU_4': 0.02636616238207974, 'LOSS': 57.476448338385495, 'ROUGE': 0.12514338756332283, 'EXAMPLE': 'pred: heute nacht minus fünf grad an der ostsee und minus fünf grad im breisgau, target: heute nacht sind im norden und in der mitte ein paar schauer unterwegs an den alpen regnet es hier und da'}
-BASELINE METRICS: {}
-['am freitag ist es im süden teilweise freundlich sonst neben wolken sonne auch dichtere wolken hier und da regnet oder nieselt es etwas', 'heute nacht minus fünf grad am oberrhein und minus fünf grad an den alpen', 'am freitag ist es im süden teils freundlich teils bewölkt oder neblig teils freundlich teils bewölkt oder neblig teils freundlich teils wolkig teils klar', 'und nun die wettervorhersage für morgen sonntag den fünfundzwanzigsten november']
-['am aussi ver esn im windühl im es im im auch bay mitte und im süden wieder grad zu fünfund im es wieder früh  imtlich  son werdenhe straßen', 'am sie wirdsturmb zieht dern im derbritannien sorgt nacht weiter   über  nordsee und nachsees dem we südsten  es dens noch imnee dabei', 'am samtag ist der südwestlfte vielchte wolwolken heran süd südo und es meist freundlich', 'und wird südsten und südo gibt es im westen zum milder bleibt die']
-['die nacht wird schon sehr kühl wo es klar wird in der mitte und im süden null bis minus ein grad kann es morgens auch örtlich mal glatt werden auf nassen straßen', 'also das sturmtief liegt schon über großbritannien zieht heute nacht mit dem regen über die nordsee und norddeutschland und das heißt im osten kann anfangs noch schnee dabei sein', 'am freitag in der nordhälfte dichte regenwolken weiter im süden ist es teilweise freundlich', 'zumindest im osten und süden während es im westen deutlich milder bleibt']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 5
-TIME: 1380.6700611114502
-AVG. LOSS: 58.02338937451451
-EPOCH METRICS: {'BLEU_1': 0.1245945781751185, 'BLEU_2': 0.058083801729772976, 'BLEU_3': 0.037464012050882144, 'BLEU_4': 0.028103054401699825, 'LOSS': 56.707734269673196, 'ROUGE': 0.1324282861446956, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen montag den dreiundzwanzigsten august, target: abgesehen von gewitterböen weht der wind schwach bis mäßig aus südost bis süd'}
-BASELINE METRICS: {}
-['am tag fünfzehn grad an der ostsee und bis zu fünfundzwanzig grad im breisgau', 'heute nacht vierzehn grad am niederrhein und vierzehn grad im breisgau', 'und nun die wettervorhersage für morgen mittwoch den dreiundzwanzigsten august', 'heute nacht minus drei grad an der ostsee und minus fünf grad im breisgau']
-['und der nachtwestlfte istacher im mäßiger an aus weht er schwmäßig an frisch auf den bergen stark schwere sturmböen böneeverwehungen', 'und nun die wettervorhersage für morgen montantag den neten august', 'am süden land teil wol weniger wolchten wolken und ingebietsweise regen regen bringen', 'am hoch das stur st derland undert uns allem in süden deutschlands einigenet']
-['in der nordhälfte schwacher bis mäßiger wind sonst weht er mäßig bis frisch auf den bergen teilweise schwere sturmböen und schneeverwehungen', 'und nun die wettervorhersage für morgen sonntag den zehnten juni', 'im übrigen land mehr oder weniger dichte wolken die gebietsweise etwas regen bringen', 'das hoch mit zentrum über england beschert vor allem den norden deutschlands auch sonne']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 6
-TIME: 1402.8150041103363
-AVG. LOSS: 56.88169634311963
-EPOCH METRICS: {'BLEU_1': 0.10663959950405849, 'BLEU_2': 0.05331585577872371, 'BLEU_3': 0.03960210662867636, 'BLEU_4': 0.032706444397455785, 'LOSS': 56.461542535609134, 'ROUGE': 0.1250615787285924, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen sonntag den vierundzwanzigsten januar, target: am tag dann vierzehn grad an den küsten bei regen einundzwanzig grad am oberrhein'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen sonntag den vierundzwanzigsten januar', 'am tag fünfzehn grad an der nordsee und bis vierundzwanzig grad am oberrhein', 'und nun die wettervorhersage für morgen sonntag den vierundzwanzigsten januar', 'und nun die wettervorhersage für morgen sonntag den dreißigsten januar']
-['unddeutschland nordsten ist heute nu schnee und kann es am tro', 'und haben auchr luft gewe dendeutschlandeuropa und auch uns ein dendeutschland drei dreißig grad es südwesten auchr noch sieben zwanzig grad', 'am  für diee teile deutschlands es wetterttttttt', 'und nun die wettervorläen für morgen dienstntag den dreibze maitt']
-['richtung osten fällt meist noch schnee glatt kann es überall werden', 'wir haben hohe temperaturunterschiede in mitteleuropa also bei uns in deutschland bis zu dreißig grad aber im nordwesten eben nur bis zu zwanzig grad', 'das bedeutet für weite teile deutschlands freundliches wetter', 'und nun die wetteraussichten für morgen sonntag den siebten november']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 7
-TIME: 1404.2458112239838
-AVG. LOSS: 55.57725406720894
-EPOCH METRICS: {'BLEU_1': 0.12266058728839986, 'BLEU_2': 0.05409690343285969, 'BLEU_3': 0.033059673847807315, 'BLEU_4': 0.023761399640229185, 'LOSS': 56.44075448434936, 'ROUGE': 0.12784334530504313, 'EXAMPLE': 'pred: am tag fünfzehn grad an der ostsee und bis zu vierundzwanzig grad am oberrhein, target: das tief über dem baltikum wird schwächer bestimmt aber morgen noch das wetter im osten und süden deutschlands'}
-BASELINE METRICS: {}
-['am tag fünfzehn grad an der ostsee und bis zu fünfundzwanzig grad am oberrhein', 'heute nacht vierzehn grad am niederrhein und vierzehn grad an den alpen', 'heute nacht minus zwei grad am niederrhein und minus ein grad an den alpen', 'und nun die wettervorhersage für morgen mittwoch den sechsundzwanzigsten mai']
-['am nacht sieben gradzwanzig grad am der ostale und biszehn grad der alpen', 'am den nordfel heute nacht nezehn an der norde bis seundzwanzig grad', 'am noch schönen abend und machen sie es gutttt', 'am bleibt wieder nicht nicht schhler und uns alle wochenendebe grad fünfundhn grad alntag']
-['heute nacht zweiundzwanzig grad an der saale und vierzehn grad an den alpen', 'in der eifel heute nach dreizehn an der spree bis zweiundzwanzig grad', 'ihnen einen schönen abend und machen sie es gut', 'es wird leider noch etwas kühler für uns alle am wochenende elf bis neunzehn grad am sonntag']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 8
-TIME: 1401.383219242096
-AVG. LOSS: 54.66618244303351
-EPOCH METRICS: {'BLEU_1': 0.11265474552957362, 'BLEU_2': 0.05388468093074705, 'BLEU_3': 0.03586295960605963, 'BLEU_4': 0.027018082480154318, 'LOSS': 56.61652589992751, 'ROUGE': 0.12063307941219818, 'EXAMPLE': 'pred: am tag fünfzehn grad an der ostsee und bis sechzehn grad am oberrhein, target: gegen abend kann es westlich des rheins leicht regnen'}
-BASELINE METRICS: {}
-['am tag fünfzehn grad an der ostsee und bis siebzehn grad am oberrhein', 'und nun die wettervorhersage für morgen freitag den dreißigsten januar', 'und nun die wettervorhersage für morgen freitag den sechzehnten juli', 'am tag regnet es in der nordwesthälfte ab und an richtung südosten teilweise kräftige schauer und gewitter sonst ist es meist bewölkt oder neblig trüb teils klar teils wolkig teils klar teils bildet sich nebel']
-['am wünsche die auch durch das jederzeitwetter dasstraßeüsss morgen t', 'am hochban zieht uns weiterr im südsten und süd bleibt sich  mehrächer werden die sommer die son aber nicht in erwarten', 'amrichtung südenen bleibtßt die wolken zue morgen etwas', 'im imze achtun grad derfriesland und fünf südsgau bis zwei grad']
-['damit kommen sie gut durch das winterwetter und tschüss bis morgen', 'dieses regengebiet erreicht uns nur im westen und es wird dabei immer schwächer werden das heißt viel regen ist zunächst nicht zu erwarten', 'richtung nordwesten reißt die wolkendecke auch mal auf', 'morgen drei bis neun in nordfriesland und im breisgau bis zehn grad']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 9
-TIME: 1407.10631108284
-AVG. LOSS: 53.43577127948416
-EPOCH METRICS: {'BLEU_1': 0.12913508676277471, 'BLEU_2': 0.06741980189417907, 'BLEU_3': 0.04802564670617139, 'BLEU_4': 0.03804399183901743, 'LOSS': 55.941465975921275, 'ROUGE': 0.14140945781082473, 'EXAMPLE': 'pred: heute nacht vierzehn grad am niederrhein und vierzehn grad am oberrhein, target: elf grad heute nacht im allgäu bis siebzehn an neckar und spree'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen freitag den dreiundzwanzigsten november', 'am tag fünfzehn grad bei dauernebel im südwesten und fünfundzwanzig grad am oberrhein', 'am tag dreizehn grad im breisgau und fünfundzwanzig grad am oberrhein', 'heute nacht vierzehn grad am niederrhein und minus fünf grad im breisgau']
-['am nordsten und es heute zum der der mitte zum wir auch diekräftiger undtttt undttt undt mitt', 'am kommt die regen im im usitz und es südensten zumerns sich in westen teilweiseflockert', 'heute haben dann morgen immer deutlichde temperaturenende mit im nordstenttben und in diesert', 'am am tagntag reg sonne und süden osten und südwesten einzelne in den regen nebelße und da regkenfelder auchr seltenvereinzelt schauer']
-['im osten ist es noch regen in der mitte haben wir noch schauer', 'später erreicht der regen auch die lausitz und den südosten bayerns während es von westen auflockert', 'wir erleben dann morgen einen milden extrem milden tag im westen', 'auch am sonntag viel sonne im äußersten westen und südwesten sowie an oder und neiße hier und da wolken aber nur vereinzelt schauer']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 10
-TIME: 1402.1719889640808
-AVG. LOSS: 52.33199000902732
-EPOCH METRICS: {'BLEU_1': 0.10568685615591791, 'BLEU_2': 0.0520595260916023, 'BLEU_3': 0.037269831836942026, 'BLEU_4': 0.02996895413666172, 'LOSS': 56.26848667343228, 'ROUGE': 0.12000358566525329, 'EXAMPLE': 'pred: am tag regnet es im süden und osten hier und da sonst neben wolken auch freundliche momente, target: morgen teils dicht bewölkt teils sonnig wobei sich die sonne im osten am häufigsten zeigt'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen dienstag den achtundzwanzigsten januar', 'und nun die wettervorhersage für morgen dienstag den vierundzwanzigsten januar', 'und nun die wettervorhersage für morgen dienstag den achtundzwanzigsten januar', 'und nun die wettervorhersage für morgen dienstag den vierundzwanzigsten januar']
-['im süden undacher wind mit weht er ach bis mäßig an ostost bis nord', 'am nun die wettervorhersage für morgen donnerstag den neuundhnten april', 'im tagstag ists wetter und hier sontwoch und', 'am norden ween und bis achtwanzig grad meist bis dreichzehn grad']
-['im norden schwacher wind sonst weht er schwach bis mäßig aus nordost bis ost', 'und nun die wettervorhersage für morgen donnerstag den fünfzehnten juli', 'am donnerstag ähnliches wetter wie am mittwoch', 'im äußersten süden morgen bis zwanzig sonst zehn bis sechzehn grad']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 11
-TIME: 1394.5467746257782
-AVG. LOSS: 51.19035345482202
-EPOCH METRICS: {'BLEU_1': 0.12182137115245373, 'BLEU_2': 0.06134613083100504, 'BLEU_3': 0.043193982327687855, 'BLEU_4': 0.034412157974755206, 'LOSS': 56.22186223344307, 'ROUGE': 0.1340168653451227, 'EXAMPLE': 'pred: in der nacht regnet es im süden und osten hier und da sonst ist es teilweise klar oder nur locker bewölkt, target: in der nacht temperaturen von null bis fünf am main bis sieben grad'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen montag den dreiundzwanzigsten november', 'und nun die wettervorhersage für morgen samstag den fünfundzwanzigsten juli', 'und nun die wettervorhersage für morgen samstag den fünfundzwanzigsten juli', 'im norden ist es heute nacht meist stark bewölkt oder neblig trüb teils klar teils wolkig teils klar teils bildet sich nebel']
-['am nacht regnet es nieneit es hier hier norden nordsten und südosten an und', 'und tag im gradhn grad im dauernsteigenregen und werte zwischen sechszehn und el gradzwanzig grad am', 'und hoch auch für für die son  obenälfte  sich aber newigt sich und da dabei sich nebel oder', 'am der nacht nachthälfte lock es wind von dersten noch dabeier während imlagert sich im im weiter die mitte']
-['heute nacht regnet oder schneit es noch im äußersten osten und südosten', 'am tag vierzehn grad bei dauerregen sonst werte zwischen achtzehn und fünfundzwanzig grad', 'das gilt auch noch für die erste nachthälfte bevor sich wieder beruhigt hier und da bildet sich nebel', 'in der zweiten nachthälfte wird der regen von osten noch intensiver und verlagert sich morgen langsam in die mitte']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 12
-TIME: 1428.4769203662872
-AVG. LOSS: 51.06561248824441
-EPOCH METRICS: {'BLEU_1': 0.11470049963315891, 'BLEU_2': 0.05701961702921196, 'BLEU_3': 0.03784572703828337, 'BLEU_4': 0.028468942947314276, 'LOSS': 56.48578181294347, 'ROUGE': 0.1247482718909713, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen samstag den fünfundzwanzigsten september, target: liebe zuschauer guten abend'}
-BASELINE METRICS: {}
-['heute nacht vierzehn grad am oberrhein und minus fünf grad an den alpen', 'und nun die wettervorhersage für morgen donnerstag den vierundzwanzigsten september', 'und nun die wettervorhersage für morgen samstag den vierundzwanzigsten september', 'am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau']
-['und nun bleibt dann we auf dieserleswig holstein nicht auf z grad dann den alpenrand unddauerrerost', 'am tagtag ist  regenitter die am donnerstag ist mis abirkeronten unwettern', 'am der nächsten tagen wird wird  überalln überalllingswärme geht temperaturen nochr kü leicht und', 'am nacht zehn grad vier grad im der see und grad']
-['und so kommen die temperaturen in schleswig holstein nicht über null grad hinaus auch am alpenrand dauerfrost', 'am freitag kaum noch gewitter dann am samstag eine neue gewitterfront mit unwettern', 'in den nächsten tagen dann bei fast schon frühlingshaften temperaturen nur noch regen', 'heute nacht drei bis zehn grad an der see zwölf grad']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 13
-TIME: 1409.841945886612
-AVG. LOSS: 50.225792129465006
-EPOCH METRICS: {'BLEU_1': 0.12560130195760283, 'BLEU_2': 0.060953669112289374, 'BLEU_3': 0.04287096713506789, 'BLEU_4': 0.034144371435551005, 'LOSS': 55.839097666143225, 'ROUGE': 0.1325711399455961, 'EXAMPLE': 'pred: am freitag mal sonne mal wolken vor allem im norden und westen einzelne schauer oder gewitter, target: und nun die wettervorhersage für morgen mittwoch den einunddreißigsten märz'}
-BASELINE METRICS: {}
-['am tag vierzehn grad an der ostsee und bis vierundzwanzig grad im breisgau', 'und nun die wettervorhersage für morgen samstag den vierundzwanzigsten november', 'am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau', 'und nun die wettervorhersage für morgen dienstag den vierundzwanzigsten januar']
-['am wird im ween und osten und viel nochkräftige regen sonst dern lagen sch dasnee dabei', 'und  uns dannchstwerte zwischen acht fünf und plus fünf grad', 'und wird von derrichtungerlöstre der landsten mit stark regen aber schaue regenneefälle sehrtürmchem wind', 'am nun das morgen dann freistag im amtag im es ki auch von unterschiedlich']
-['morgen dann im süden und osten mitunter kräftiger regen in höheren lagen ist schnee dabei', 'morgen erwarten uns höchstwerte zwischen minus ein und plus sechs grad', 'morgen kommt dann kräftig bewegung ins wetter mit einem tief das uns kräftige schneefälle bringen wird und stürmischem wind', 'und was dann folgt am donnerstag und freitag sieht ziemlich gewöhnlich aus']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 14
-TIME: 1409.0702793598175
-AVG. LOSS: 48.81898687335262
-EPOCH METRICS: {'BLEU_1': 0.11915597369353995, 'BLEU_2': 0.056589623253973625, 'BLEU_3': 0.038929859578324046, 'BLEU_4': 0.030036823477488275, 'LOSS': 56.661108756570684, 'ROUGE': 0.12619520080263386, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen freitag den einundzwanzigsten november, target: bis auf ein paar harmlose schleierwolken ist es dann klar'}
-BASELINE METRICS: {}
-['heute nacht ist es meist stark bewölkt oder neblig trüb mancherorts regnet es hier und da', 'und nun die wettervorhersage für morgen freitag den fünfundzwanzigsten oktober', 'und nun die wettervorhersage für morgen freitag den fünfundzwanzigsten oktober', 'und nun die wettervorhersage für morgen freitag den vierundzwanzigsten oktober']
-['am der nacht reg zwischen drei grad an südgäu bis minuschzehn grad südsgau', 'im tief über von großbritannien ver weiter morgen das wettert und ist', 'und dem mitte unds liegt ein tiefs tief um das tief das bringt schönenen bogenn', 'am südenen heute es unter nacht meist trocken aber we mit  kräftigen schauern undgerechnet werdentlich mit blitz und donner']
-['in der nacht temperaturen von zehn grad im allgäu bis sechzehn grad im breisgau', 'das tief das über großbritannien zieht bestimmt morgen unser wetter', 'über der mitte europas liegt ein umfangreiches hoch um das tiefs einen weiten bogen machen', 'im nordwesten bleibt es heute nacht meist trocken sonst muss mit teilweise kräftigen schauern gerechnet werden örtlich mit blitz und donner']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 15
-TIME: 1398.300678730011
-AVG. LOSS: 48.10154087102121
-EPOCH METRICS: {'BLEU_1': 0.11672511576801206, 'BLEU_2': 0.05701957213262365, 'BLEU_3': 0.04058814371182379, 'BLEU_4': 0.03244002568584508, 'LOSS': 56.346702922975396, 'ROUGE': 0.12625902684131426, 'EXAMPLE': 'pred: am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau, target: und morgen früh ist es mild in ganz deutschland acht bis sechzehn grad'}
-BASELINE METRICS: {}
-['in der nacht regnet es im süden und osten hier und da sonst ist es teilweise klar stellenweise bildet sich nebel', 'am tag regnet es im norden und osten hier und da sonst neben dichten wolken auch mal lücken in der wolkendecke sonst regnet es hier und da', 'und nun die wettervorhersage für morgen donnerstag den vierundzwanzigsten januar', 'und nun die wettervorhersage für morgen donnerstag den einundzwanzigsten november']
-['am nun die wettervorhersage für morgen donnertwoch den einzeigsten julitttt', 'und sie sich informationen zu un temperaturenwetterwarnungen de mö können können sie das jederzeit über über den zdf text oder über das internet wirdtt', 'am abend muss im mal westen undn wind den bergen sindsturmböen', 'im nordenen bleibt paarschen  meist ober einen ganztimeter zum auch auch oachland  osten und bis osten und drei zßig gradtimeter neu dort ozgebirge zu zzigzbö zentimeterhnee']
-['und nun die wettervorhersage für morgen mittwoch den dreißigsten november', 'wenn sie aktuelle informationen zu den unwetterwarnungen bekommen möchten können sie das jederzeit auch über den zdf text und über das internet', 'gegen abend dann auch im westen frischer wind auf den bergen sturmböen', 'im nordwesten ein bisschen knapp so ungefähr einen zentimeter aber teilweise im flachland im westen zehn im osten bis zu dreißig zentimeter und im erzgebirge bis zu fünfundsiebzig zentimeter schnee']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 16
-TIME: 1399.6739563941956
-AVG. LOSS: 47.419169508997705
-EPOCH METRICS: {'BLEU_1': 0.11429968181210065, 'BLEU_2': 0.05395044287149189, 'BLEU_3': 0.03889282482678074, 'BLEU_4': 0.031473784823633714, 'LOSS': 56.16926378000219, 'ROUGE': 0.12944678127375184, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen mittwoch den siebzehnten juli, target: im nordosten gibt es noch einzelne schauer die in der nacht aber rasch abklingen'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen mittwoch den dreiundzwanzigsten november', 'am mittwoch ist es meist stark bewölkt oder neblig trüb hier und da regnet oder nieselt es etwas', 'und nun die wettervorhersage für morgen mittwoch den siebzehnten juli', 'und nun die wettervorhersage für morgen mittwoch den siebzehnten juli']
-['amg wird es   paars gewwechsel trost', 'amn heute nacht morgen kenfelder nach und es allen dingen auch am der alstenn am regenwärmer', 'am temperaturenht der wind meistach bis norden mäßig bis an der küsten auch frisch süd bis südost', 'und es gibt im regensturmböentbenerbenttt']
-['montag gibt es noch ein kleines fragezeichen', 'schon heute ja kaum wolken am himmel und vor allen dingen auch an den küsten schon etwas wärmer', 'morgen weht der wind schwach im norden mäßig und an den küsten auch frisch aus ost bis nordost', 'und dazu auch erste sturmböen']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 17
-TIME: 1418.2201318740845
-AVG. LOSS: 47.07688897681861
-EPOCH METRICS: {'BLEU_1': 0.11362495535513091, 'BLEU_2': 0.04735751939107728, 'BLEU_3': 0.029017392417277067, 'BLEU_4': 0.021548008662001076, 'LOSS': 55.96786244342782, 'ROUGE': 0.12555167489289887, 'EXAMPLE': 'pred: am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau, target: aber im osten haben wir noch anfangs die wärme vierundzwanzig grad genauso wie im östlichen bayern'}
-BASELINE METRICS: {}
-['am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau', 'und nun die wettervorhersage für morgen mittwoch den fünfundzwanzigsten juli', 'heute nacht fünfzehn grad am alpenrand bis vierzehn grad am oberrhein', 'am tag fünfzehn grad an der ostsee und bis fünfundzwanzig grad im breisgau']
-['am tief bei s tikumho ein sland bringt uns vor allem dem südsten deutschlands regener sonnenschein', 'und es ist ja auch nochn wieder nächste der temperaturgee temperaturentt', 'am mal es deutlich malübergehend freundlicher', 'am nun temperaturen die auch nocher uns n nordwind vor allen dingen im kühler bleibt']
-['das hoch über dem baltikum zieht nach russland und bringt morgen vor allem dem osten deutschlands noch häufiger sonnenschein', 'aber das ist dann auch schon das höchste der temperaturgefühle', 'sonst wird es morgen vorübergehend freundlicher', 'und die luft ist auch angenehm bei dem frischen westwind und vor allen dingen etwas kühler']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183Iter: 0/519
-Iter: 100/519
-Iter: 200/519
-Iter: 300/519
-Iter: 400/519
-Iter: 500/519
-
---------------------------------------------------
-EPOCH: 18
-TIME: 1391.441261291504
-AVG. LOSS: 45.72418648211107
-EPOCH METRICS: {'BLEU_1': 0.12243408799452603, 'BLEU_2': 0.05922621003056296, 'BLEU_3': 0.03965591430299094, 'BLEU_4': 0.030600758277697333, 'LOSS': 56.256877764112, 'ROUGE': 0.13135170090600412, 'EXAMPLE': 'pred: am tag fünfzehn grad an der ostsee und bis vierundzwanzig grad im breisgau, target: am samstag viel sonne ganz im norden einzelne schauer'}
-BASELINE METRICS: {}
-['und nun die wettervorhersage für morgen sonntag den dreiundzwanzigsten januar', 'heute nacht ist es verbreitet klar oder nur locker bewölkt hier und da bildet sich nebel', 'und nun die wettervorhersage für morgen sonntag den fünfundzwanzigsten januar', 'und nun die wettervorhersage für morgen sonntag den dreiundzwanzigsten januar']
-['am winden  allerdings immer we alken eines tiefs über islandschottland gestreift', 'und  hle fünf luft gradhn grad achtundzwanzig grad ober bis dreiundzwanzig grad', 'undacher bis mäßiger wind derwestenunter frischer wind mit starken böen', 'und südo bleibt es meist tro freundlichttt esst auch mitstt']
-['der norden wird allerdings von den wolken eines tiefs bei schottland gestreift', 'morgen deutlich kühlere achtzehn bis dreiundzwanzig am main bis vierundzwanzig grad', 'schwacher bis mäßiger in nordwest mitunter frischer wind mit starken böen', 'im süden bleibt es noch länger freundlich']
---------------------------------------------------
-0/118310/118320/118330/118340/118350/118360/118370/118380/118390/1183100/1183110/1183120/1183130/1183140/1183150/1183160/1183170/1183180/1183190/1183200/1183210/1183220/1183230/1183240/1183250/1183260/1183270/1183280/1183290/1183300/1183310/1183320/1183330/1183340/1183350/1183360/1183370/1183380/1183390/1183400/1183410/1183420/1183430/1183440/1183450/1183460/1183470/1183480/1183490/1183500/1183510/1183520/1183530/1183540/1183550/1183560/1183570/1183580/1183590/1183600/1183610/1183620/1183630/1183640/1183650/1183660/1183670/1183680/1183690/1183700/1183710/1183720/1183730/1183740/1183750/1183760/1183770/1183780/1183790/1183800/1183810/1183820/1183830/1183840/1183850/1183860/1183870/1183880/1183890/1183900/1183910/1183920/1183930/1183940/1183950/1183960/1183970/1183980/1183990/11831000/11831010/11831020/11831030/11831040/11831050/11831060/11831070/11831080/11831090/11831100/11831110/11831120/11831130/11831140/11831150/11831160/11831170/11831180/1183

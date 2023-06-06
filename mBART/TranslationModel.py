@@ -4,8 +4,8 @@ from model.Sign2Text.mBART.get_tokenizer import get_tokenizer
 import torch.nn as nn
 import torch
 import numpy as np
-from mBART.get_default_model import get_model_and_tokenizer, reduce_to_vocab
-from utils.freeze_params import freeze_params
+from model.Sign2Text.mBART.get_default_model import get_model_and_tokenizer, reduce_to_vocab
+from model.Sign2Text.utils.freeze_params import freeze_params
 
 class TranslationModel(nn.Module):
     def __init__(self,CFG):

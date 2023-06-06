@@ -3,7 +3,7 @@ import pandas as pd
 from torch import nn
 import torch
 from pathlib import Path
-from sentencepiece import sentencepiece_model_pb2 as spm
+# from sentencepiece import sentencepiece_model_pb2 as spm
 from typing import List
 
 def get_model_and_tokenizer(CFG):
@@ -106,7 +106,8 @@ def get_new_tokenizer(tokenizer: MBartTokenizer, data: List[str], CFG):
     tokenizer.save_pretrained('tokenizer')
 
     # load vocab into spm
-    m = spm.ModelProto()
+    # m = spm.ModelProto()
+    m = None
     m.ParseFromString(open('tokenizer/sentencepiece.bpe.model', 'rb').read())
     N = len(m.pieces)
 
