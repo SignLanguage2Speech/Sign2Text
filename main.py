@@ -8,6 +8,7 @@ from configs.Training_config import Training_cfg
 from train_datasets.PHOENIXDataset import PhoenixDataset, collator, DataAugmentations
 from torch.utils.data import DataLoader
 from Trainer.trainer import train
+import pdb
 
 
 def main():
@@ -18,14 +19,21 @@ def main():
     T_CFG = Training_cfg()
     
     ### initialize data ###
-    train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')
-    val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')
-    test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
-    
+    if not VE_CFG.use_synthetic_glosses:
+      print("Loading data with gt glosses")
+      train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.csv'), delimiter = '|')
+      val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.csv'), delimiter = '|')
+      test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.csv'), delimiter = '|')
+    else:
+      print("Loading data with SYNTHETIC GLOSSES!")
+      train_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.train.corpus.synthetic.glosses.csv'))
+      val_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.dev.corpus.synthetic.glosses.csv'))
+      test_df = pd.read_csv(os.path.join(T_CFG.phoenix_labels, 'PHOENIX-2014-T.test.corpus.synthetic.glosses.csv'))
+       
     ### initialize data ###
-    PhoenixTrain = PhoenixDataset(train_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='train')
-    PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev')
-    PhoenixTest = PhoenixDataset(test_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='test')
+    PhoenixTrain = PhoenixDataset(train_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='train', use_synthetic_glosses=VE_CFG.use_synthetic_glosses)
+    PhoenixVal = PhoenixDataset(val_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='dev', use_synthetic_glosses=VE_CFG.use_synthetic_glosses)
+    PhoenixTest = PhoenixDataset(test_df, T_CFG.phoenix_videos, vocab_size=VE_CFG.VOCAB_SIZE, split='test', use_synthetic_glosses=VE_CFG.use_synthetic_glosses)
     
     ### get dataloaders ###
     train_augmentations = DataAugmentations(split_type='train')

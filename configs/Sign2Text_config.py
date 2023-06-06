@@ -16,4 +16,5 @@ class Sign2Text_cfg:
         self.n_classes = 1085 + 1
         ### cc25 params
         self.vocab_data = 'mBART/german_data.txt'
-
+        self.src_lang = 'gl_DE'
+        self.trg_lang = 'de_DE'

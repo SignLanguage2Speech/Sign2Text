@@ -60,10 +60,12 @@ class TranslationModel(nn.Module):
         labels = None
         if not generate:
             labels = trg
+            decoder_input_ids = None
 
         transformer_inputs =  {
             'inputs_embeds': inputs_embeds,
             'attention_mask': attention_mask,
+            'decoder_input_ids':decoder_input_ids,
             'input_ids' : None,
             'labels': labels,
         }

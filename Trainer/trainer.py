@@ -89,9 +89,9 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
     for epoch in range(CFG.start_epoch, CFG.epochs):
         losses[epoch] = []
         epoch_start_time = time.time()
-
+        
         for i, (ipt, ipt_len, trg, trg_len, trg_transl, trg_gloss, max_ipt_len) in enumerate(dataloaderTrain):
-
+            
             tokenized_trg_transl = tokenize_targets(
                 trg_transl, 
                 model.language_model.tokenizer, 
@@ -112,7 +112,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             #     nn.functional.log_softmax(preds,dim=-1).contiguous().view(-1,preds.size(-1)), 
             #     tokenized_trg_transl.contiguous().view(-1)) / ipt.size(0)
 
-            loss_nll = loss_preds_fc(
+            loss_ce = loss_preds_fc(
                 nn.functional.log_softmax(preds,dim=-1), 
                 tokenized_trg_transl) / ipt.size(0)
 
@@ -122,7 +122,7 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
                     input_lengths=ipt_len_ctc, 
                     target_lengths=trg_len) / ipt.size(0)
 
-            loss = loss_nll+loss_ctc
+            loss = loss_ce + loss_ctc
 
             # loss = (loss_preds_fc(
             #     preds_permute, 
@@ -139,8 +139,9 @@ def train(model, dataloaderTrain, dataloaderVal, CFG):
             optimizer.step()
             losses[epoch].append(loss.detach().cpu().numpy())
 
-            if CFG.verbose_batches and i % 10 == 0:
+            if CFG.verbose_batches and i % 100 == 0:
                 print(f"{i}/{len(dataloaderTrain)}", end="\r", flush=True)
+        
         
         with torch.no_grad():
             model.eval()
