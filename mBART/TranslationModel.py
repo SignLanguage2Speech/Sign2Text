@@ -56,7 +56,7 @@ class TranslationModel(nn.Module):
             cropped_feature = feature[:feature_len]
             inputs_embeds[i,:feature_len,:] = cropped_feature
             attention_mask[i,:feature_len] = 1
-        
+
         labels = None
         if not generate:
             labels = trg

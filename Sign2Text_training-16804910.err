@@ -1,0 +1,25 @@
+Loaded dependency [python3/3.10.7]: gcc/11.3.0-binutils-2.38
+Loaded module: python3/3.10.7
+
+Loading python3/3.10.7
+  Loading requirement: gcc/11.3.0-binutils-2.38
+Loaded module: cuda/12.0
+Loaded module: cudnn/v8.3.2.44-prod-cuda-11.X
+/zhome/6b/b/151617/env2/lib/python3.10/site-packages/torch/utils/data/dataloader.py:561: UserWarning: This DataLoader will create 8 worker processes in total. Our suggested max number of worker in current system is 1, which is smaller than what this DataLoader is going to create. Please be aware that excessive worker creation might get DataLoader running slow or even freeze, lower the worker number to avoid potential slowness/freeze if necessary.
+  warnings.warn(_create_warning_msg(
+Traceback (most recent call last):
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 72, in <module>
+    main()
+  File "/zhome/6b/b/151617/Sign2Text/main.py", line 65, in main
+    train(model, dataloader_train, dataloader_val, T_CFG)
+  File "/zhome/6b/b/151617/Sign2Text/Trainer/trainer.py", line 149, in train
+    epoch_metrics[epoch] = compute_metrics(model, dataloaderVal, loss_preds_fc, ctc_loss_fc, tokenize_targets, epoch, CFG)
+  File "/zhome/6b/b/151617/Sign2Text/utils/compute_metrics.py", line 70, in compute_metrics
+    raw_preds = model.predict(ipt.to(CFG.device), ipt_len)
+  File "/zhome/6b/b/151617/Sign2Text/Sign2Text/Sign2Text.py", line 41, in predict
+    preds = self.language_model.generate(
+  File "/zhome/6b/b/151617/Sign2Text/mBART/TranslationModel.py", line 30, in generate
+    kwargs = self.prepare_feature_inputs(visual_language_features, input_lengths, generate = True)
+  File "/zhome/6b/b/151617/Sign2Text/mBART/TranslationModel.py", line 68, in prepare_feature_inputs
+    'decoder_input_ids':decoder_input_ids,
+UnboundLocalError: local variable 'decoder_input_ids' referenced before assignment

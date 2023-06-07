@@ -1,0 +1,121 @@
+Sun Jun  4 18:52:44 2023       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 530.41.03              Driver Version: 530.41.03    CUDA Version: 12.1     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                  Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf            Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A100 80GB PCIe           On | 00000000:65:00.0 Off |                    0 |
+| N/A   31C    P0               43W / 300W|      0MiB / 81920MiB |      0%   E. Process |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+Loading data with SYNTHETIC GLOSSES!
+----------GLOSS VOCAB SIZE 2391----------
+----------GLOSS VOCAB SIZE 2391----------
+----------GLOSS VOCAB SIZE 2391----------
+Loading entire state dict directly...
+Succesfully loaded
+Freezing up to block 4 in S3D backbone
+Loading model from pretrained checkpoint!
+
+--------------------Preparing Baseline Metrics--------------------
+
+--------------------Starting Training--------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 0
+TIME: 8512.35277056694
+AVG. LOSS: 10.796495556024984
+EPOCH METRICS: {'BLEU_1': 0.30591308871887585, 'BLEU_2': 0.19899503046268477, 'BLEU_3': 0.14355203858053867, 'BLEU_4': 0.1111337650753631, 'LOSS': -39.04510907883359, 'ROUGE': 0.3327580122125796, 'EXAMPLE': 'pred: am freitag im süden und osten sonne und wolken hier und da regnet oder schauert es, target: am freitag in der südosthälfte zum teil noch freundlich während sich die wolken von nordwesten verdichten und gebietsweise regen bringen'}
+BASELINE METRICS: {}
+['heute nacht acht grad am niederrhein und vierzehn grad am oberrhein', 'am sonntag im westen und südwesten schauer und gewitter']
+['heute der nacht vier grad am nierhein und bis grad amrichtung alzgebirge', 'amze achtwanzig gradtimeter schschnee in möglichdrin na']
+['in der nacht acht grad am oberrhein und ein grad richtung erzgebirge', 'fünf bis zwanzig zentimeter neuschnee sind durchaus drin']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 1
+TIME: 9739.317840576172
+AVG. LOSS: 1.890932122171933
+EPOCH METRICS: {'BLEU_1': 0.318690983492638, 'BLEU_2': 0.21314065875262803, 'BLEU_3': 0.15314753396596387, 'BLEU_4': 0.11765607607522116, 'LOSS': -38.65527541283698, 'ROUGE': 0.3463528688508398, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen samstag den einundzwanzigsten november, target: und nun die wettervorhersage für morgen samstag den zweiten oktober'}
+BASELINE METRICS: {}
+['am tag ist es im osten und südosten meist trocken sonst teils wolkig teils klar', 'im südosten und südosten bleibt es meist freundlich']
+['und esüber wirdt es noch ab und amn', 'im süden und osten ist es meist freundlich']
+['aber tagsüber taut es schnell ab', 'im süden und osten bleibt es noch freundlich']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 2
+TIME: 9798.595384597778
+AVG. LOSS: -38.90703258049394
+EPOCH METRICS: {'BLEU_1': 0.10344822970076523, 'BLEU_2': 0.0567393919003528, 'BLEU_3': 0.04501048116928417, 'BLEU_4': 0.038908739901072464, 'LOSS': -246.78710422442367, 'ROUGE': 0.13383167217778622, 'EXAMPLE': 'pred: und nun die wettervorhersage für morgen mittwoch den einundzwanzigsten oktober, target: sonst teils sonne teils wolken und nur einzelne schauer im südwesten zeigt sich die sonne am häufigsten'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen mittwoch den einundzwanzigsten oktober', 'und nun die wettervorhersage für morgen mittwoch den einundzwanzigsten oktober']
+['am gibt esde eswärmetikluft herangezogenerlandn heute a wird heute heute heute', 'am nun die wettervorhersage für morgen montag den siebtenhnten januar']
+['dabei wird milde atlantikluft herangeführt', 'und nun die wettervorhersage für morgen montag den siebzehnten mai']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 3
+TIME: 9762.45129776001
+AVG. LOSS: -128.40256150256687
+EPOCH METRICS: {'BLEU_1': 0.2515460161662589, 'BLEU_2': 0.15985980644467557, 'BLEU_3': 0.1144587458416615, 'BLEU_4': 0.08769378221222437, 'LOSS': -786.9484769241428, 'ROUGE': 0.2697811453214802, 'EXAMPLE': 'pred: morgen schwacher bis mäßiger an der nordsee frischer wind aus süd bis südost, target: heute nacht sowie ab morgen nachmittag an der küste und in den hochlagen von harz und erzgebirge schwere sturmböen'}
+BASELINE METRICS: {}
+['und nun die wettervorhersage für morgen mittwoch den siebten juli', 'guten abend liebe zuschauer']
+['und es bleibt ja in t', 'im zuschauer gutenstag img']
+['aber es ist besserung in sicht', 'liebe zuschauer']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 4
+TIME: 9795.125947237015
+AVG. LOSS: -271.28662890014414
+EPOCH METRICS: {'BLEU_1': 0.2514392630972942, 'BLEU_2': 0.16114946736380611, 'BLEU_3': 0.1159754875682778, 'BLEU_4': 0.08972621065369225, 'LOSS': -410.006032210554, 'ROUGE': 0.2665223822742656, 'EXAMPLE': 'pred: im süden und südosten zeigt sich neben wolkenfeldern auch mal die sonne, target: sonst setzt sich von südwesten allmählich die sonne durch'}
+BASELINE METRICS: {}
+['das tief das sich vom atlantik bis nach mitteleuropa erstreckt bestimmt in den nächsten tagen unser wetter', 'am tag ist es im norden wolkig hier und da fallen schauer']
+['und grad ne grad sind es in rherhein bis zu dreihund am', 'am norden und es heute wolkenlücken und    schauer']
+['zwei bis fünf grad sind es meist am oberrhein bis zu sechs grad', 'im norden gibt es später wolkenlücken und nur noch einzelne schauer']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 5
+TIME: 9737.705362081528
+AVG. LOSS: -373.86103187432553
+EPOCH METRICS: {'BLEU_1': 0.29314386170524465, 'BLEU_2': 0.18954779375323833, 'BLEU_3': 0.13619707629554498, 'BLEU_4': 0.10515473519552115, 'LOSS': -174.89889612409192, 'ROUGE': 0.30342480136547034, 'EXAMPLE': 'pred: heute nacht ist es teils freundlich teils wolkig gebietsweise zeigt sich die sonne auch mal für längere zeit, target: das hoch bringt uns bis mindestens karfreitag überwiegend freundliches wetter und steigende temperaturen'}
+BASELINE METRICS: {}
+['heute nacht sechs grad im südwesten und minus zwei grad im nordosten', 'in gewitternähe sind schwere sturmböen möglich am sonntag einzelne schauer oder gewitter']
+['in nacht chancekeit in morgen und schitter heute nacht im o landenen früh teil nochlingss regendauerfrogen imrichtung osten', 'im der nordsee s es schwere sturmböen und am schauervereinzelt gewitter im im im im am im im am']
+['die größte wahrscheinlichkeit für regen und gewitter heute nacht im gesamten südwesten morgen zum teil frühmorgens der dauerregen auch richtung osten', 'an der nordsee gibt sogar schwere sturmböen dazu viele schauer vereinzelt gewitter']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 6
+TIME: 9773.756955385208
+AVG. LOSS: -467.0415774851265
+EPOCH METRICS: {'BLEU_1': 0.3269597146430122, 'BLEU_2': 0.21920238628390776, 'BLEU_3': 0.15876299301746336, 'BLEU_4': 0.12160461981082381, 'LOSS': -715.6164757355559, 'ROUGE': 0.343778900392689, 'EXAMPLE': 'pred: am tag regnet es in der nordhälfte ab und an richtung küsten zeigt sich auch mal die sonne, target: dort kann es auch morgen in einigen regionen regnen während nördlich des mains nach nebelauflösung häufig die sonne scheint'}
+BASELINE METRICS: {}
+['am freitag und am samstag scheint verbreitet die sonne und es wird etwas wärmer', 'heute nacht acht grad am niederrhein und vierzehn grad an der ostsee']
+['amtag und freistag scheint viel mehr sonne und am wird auch wieder wieder freundlichwärmer am am am', 'heute nacht minuswerte zwischen minus grad im allerischen wald bis zunzehn grad der nordsee']
+['freitag und samstag überall deutlich mehr sonne und es wird auch langsam wieder wärmer', 'heute nacht werte von zwölf grad im bayerischen wald bis neunzehn an der ostsee']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548
+--------------------------------------------------
+EPOCH: 7
+TIME: 9737.251540899277
+AVG. LOSS: -374.03876682931167
+EPOCH METRICS: {'BLEU_1': 0.33334629360490714, 'BLEU_2': 0.22948385241282515, 'BLEU_3': 0.16981083733599844, 'BLEU_4': 0.13300083764174622, 'LOSS': 6.55649993523177e+35, 'ROUGE': 0.3594715593281011, 'EXAMPLE': 'pred: an der nordsee stürmische böen, target: an den küsten ist es windig'}
+BASELINE METRICS: {}
+['am donnerstag an den küsten etwas kühler aber meist trocken', 'und nun die wettervorhersage für morgen montag den neunundzwanzigsten juli']
+['sonst auch an den küsten ist es noch kühler sonken ver tro troere', 'am nun die wettervorhersage für morgen montag den dreiten deze und']
+['und nur an den küsten bleibt es etwas kühler die wolken sind halt dicht', 'und nun die wettervorhersage für morgen montag den sechsten september']
+--------------------------------------------------
+0/3548100/3548200/3548300/3548400/3548500/3548600/3548700/3548800/3548900/35481000/35481100/35481200/35481300/35481400/35481500/35481600/35481700/35481800/35481900/35482000/35482100/35482200/35482300/35482400/35482500/35482600/35482700/35482800/35482900/35483000/35483100/35483200/35483300/35483400/35483500/3548

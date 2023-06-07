@@ -21,7 +21,9 @@ class cfg:
         self.backbone_weights_filename = None #'/work3/s204138/bach-models/trained_models/S3D_WLASL-91_epochs-3.358131_loss_0.300306_acc'
         self.head_weights_filename = None
         self.checkpoint_path = '/work3/s204138/bach-models/AblationS2G/S3D_PHOENIX-22_epochs-35.002686_loss_0.700047_WER' #'/work3/s204138/bach-models/Kinetics_CTC_training/S3D_PHOENIX-100_epochs-12.429813_loss_0.229911_WER' # None  # if None train from scratch
-        self.gloss_vocab, self.translation_vocab = getVocab('/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/annotations/manual')
+        self.use_synthetic_glosses = True
+        self.gloss_vocab, self.translation_vocab = getVocab('/work3/s204138/bach-data/PHOENIX/PHOENIX-2014-T-release-v3/PHOENIX-2014-T/annotations/manual',
+                                                             self.use_synthetic_glosses)
         ### device ###
         self.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
